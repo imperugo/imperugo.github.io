@@ -3,14 +3,14 @@ layout: page
 title: Tags
 ---
 
-<div class="sitemap-col" style="width: 100%;">
+<div class="sitemap-col" style="width: 100%;" itemscope itemtype="http://schema.org/Blog">
 	{% for tag in site.tags %}
 		<a name="{{ tag[0] }}"></a>
 		<h2>{{ tag[0] }}</h2>
 		<ul>
 			{% for post in tag[1] %}
 				<li>
-					<a href="{{ post.url | remove:'.html' }}">{{ post.title }} - ({{ post.date | date_to_string }})</a>
+					<a href="{{ post.url | remove:'.html' }}">{{ post.title }} - (<time>{{ post.date | date_to_string }}</time>)</a>
 				</li>
 			{% endfor %}
 		</ul>
