@@ -3,10 +3,16 @@ layout: page
 title: Tags
 ---
 
-{% for tag in site.tags %}
-<a name="{{ tag[0] }}"></a>
-<span class="badge">{{ tag[0] }}</span>
-  {% for post in tag[1] %}
-<li><a href="{{ post.url | remove:'.html' }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</li>
-  {% endfor %}
-{% endfor %}
+<div class="sitemap-col" style="width: 100%;">
+	{% for tag in site.tags %}
+		<a name="{{ tag[0] }}"></a>
+		<h2>{{ tag[0] }}</h2>
+		<ul>
+			{% for post in tag[1] %}
+				<li>
+					<a href="{{ post.url | remove:'.html' }}">{{ post.title }} - ({{ post.date | date_to_string }})</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endfor %}
+</div>

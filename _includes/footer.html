@@ -1,1 +1,74 @@
+<div class="container">
+		<div class="clearfix">
+			<div class="footer-widget">
+				<div id="search-2" class="fwidget widget_search">
+					<form role="search" method="get" id="searchform" class="searchform" action="http://www.google.com/search">
+						<div>
+							<label class="screen-reader-text" for="q">Search for:</label>
+							<input type="text" value="" name="q">
+							<input type="hidden" name="sitesearch" value="tostring.it">
+							<input type="submit" id="searchsubmit" value="Search">
+						</div>
+					</form>
+				</div> <!-- end .fwidget -->
+
+				<div id="recent-posts-2" class="fwidget widget_recent_entries">
+					<h4 class="widgettitle">Recent Posts</h4>
+					<ul>
+						{% for post in site.posts limit: 5%}
+							<li>
+								<a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}C</a>
+							</li>
+						{% endfor %}	
+					</ul>
+		</div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget"><div id="archives-2" class="fwidget widget_archive"><h4 class="widgettitle">Archives</h4>		<ul>
+			<li><a href="http://tostring.it/2014/01/">January 2014</a></li>
+	<li><a href="http://tostring.it/2013/12/">December 2013</a></li>
+	<li><a href="http://tostring.it/2013/09/">September 2013</a></li>
+	<li><a href="http://tostring.it/2013/06/">June 2013</a></li>
+	<li><a href="http://tostring.it/2013/05/">May 2013</a></li>
+	<li><a href="http://tostring.it/2013/03/">March 2013</a></li>
+	<li><a href="http://tostring.it/2013/01/">January 2013</a></li>
+	<li><a href="http://tostring.it/2012/12/">December 2012</a></li>
+	<li><a href="http://tostring.it/2012/11/">November 2012</a></li>
+	<li><a href="http://tostring.it/2012/10/">October 2012</a></li>
+	<li><a href="http://tostring.it/2012/09/">September 2012</a></li>
+	<li><a href="http://tostring.it/2012/08/">August 2012</a></li>
+	<li><a href="http://tostring.it/2012/07/">July 2012</a></li>
+	<li><a href="http://tostring.it/2012/06/">June 2012</a></li>
+	<li><a href="http://tostring.it/2012/05/">May 2012</a></li>
+		</ul>
+</div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget last"><div id="categories-2" class="fwidget widget_categories"><h4 class="widgettitle">Categories</h4>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://tostring.it/category/dotnet/" title="View all posts filed under .NET">.NET</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://tostring.it/category/webdev/aspnetmvc/" title="View all posts filed under aspnetmvc">aspnetmvc</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://tostring.it/category/azure/" title="View all posts filed under Azure">Azure</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://tostring.it/category/events/" title="View all posts filed under Events">Events</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://tostring.it/category/linkflood/" title="Starting from the Dev news to Tech news, this is the right place to keep updated! Most news come from my twitter account (@imperugo)">Linkflood</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://tostring.it/category/various/" title="View all posts filed under Various">Various</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://tostring.it/category/webdev/webapi-webdev/" title="View all posts filed under WebAPI">WebAPI</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://tostring.it/category/webdev/" title="View all posts filed under WebDev">WebDev</a>
+</li>
+		</ul>
+</div> <!-- end .fwidget --><div id="meta-2" class="fwidget widget_meta"><h4 class="widgettitle">Meta</h4>			<ul>
+						<li><a href="http://tostring.it/wp-login.php">Log in</a></li>
+			<li><a href="http://feeds.feedburner.com/override/tostring/it" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://imperugo.disqus.com/latest.rss" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
+</div> <!-- end .fwidget --></div> <!-- end .footer-widget -->
+		</div> <!-- #footer-widgets -->
+
+	</div>
+
+
+
+
+
+
 {% include disqus.html %}

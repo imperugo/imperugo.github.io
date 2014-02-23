@@ -1,12 +1,17 @@
 ---
 layout: page
-title: Tags
+title: Categories
 ---
-
-{% for cat in site.categories %}
-<a name="{{ cat[0] }}"></a>
-<span class="badge">{{ cat[0] }}</span>
-  {% for post in cat[1] %}
-<li><a href="{{ post.url | remove:'.html' }}">{{ post.title }}</a> ({{ post.date | date_to_string }})</li>
-  {% endfor %}
-{% endfor %}
+<div class="sitemap-col" style="width: 100%;">
+	{% for cat in site.categories %}
+		<a name="{{ cat[0] }}"></a>
+		<h2>{{ cat[0] }}</h2>
+		<ul>
+			{% for post in cat[1] %}
+				<li>
+					<a href="{{ post.url | remove:'.html' }}">{{ post.title }} - ({{ post.date | date_to_string }})</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endfor %}
+</div>

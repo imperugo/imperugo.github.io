@@ -2,15 +2,55 @@
 layout: default
 ---
 
-<article class="page">
-    {% if page.title %}
-    <h1 class="title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+<article class="page type-page status-publish hentry entry et-bg-layout-dark et-white-bg et-animated">
+    <div class="container clearfix">
+        <header class="entry-title">
+            <h1>
+                {{ page.title }}
+            </h1>
+        </header>
+    </div> <!-- .container -->
+</article> <!-- .entry-->
+
+<article class="et-additional-content">
+    <div id="breadcrumbs">
+        <div class="container clearfix">
+            <div id="breadcrumbs-links">
+                <a href="/" class="breadcrumbs_home">Home</a> 
+                <span class="raquo">&raquo;</span>
+                {% for category in page.categories limit: 20 %}
+                    <a href="/categories/#category={{category}}">{{category}}</a> 
+                {% endfor %}
+                <span class="raquo">&raquo;</span> 
+                {{ page.title }}
+            </div> <!-- #breadcrumbs-links -->
+
+            {% include search.html %}
+        </div> <!-- .container -->
+    </div> <!-- #breadcrumbs -->
+
+    <div class="entry-content container clearfix">
+        {{ content | excerpt }}
+    </div> <!-- .entry-content -->
+
+    <div id="page-navigation" class="container"> 
+        <div class="previous"> 
+            {% if page.previous.url %} 
+                    <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+            {% endif %} 
+        </div>
+
+        <div class="next"> 
+            {% if page.next.url %} 
+                   <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &raquo; </a> 
+            {% endif %} 
+        </div>
+    </div> 
+
+    {% if site.disqus_short_name and page.comments == true %}
+        <div id="disqus_thread" class="container" aria-live="polite">{% include post/disqus_thread.html %}</div>
     {% endif %}
-    <div class="entry-content">{{ content }}</div>
-</article>
-{% if site.disqus_short_name and page.comments == true %}
-<section id="comment">
-    <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
-</section>
-{% endif %}
+
+</article> <!-- .et-additional-content -->
+
+

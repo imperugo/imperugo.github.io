@@ -3,7 +3,12 @@
 {% if index %}
     <body class="home blog et-scroll-animations chrome et_includes_sidebar">
 {% else %}
-    <body class="single single-post single-format-standard et-scroll-animations chrome et_includes_sidebar">
+    {% if page.id %}
+        <body class="single single-post single-format-standard et-scroll-animations chrome et_includes_sidebar">
+    {% else %}
+        <body class="page page-template-default et-scroll-animations chrome et_includes_sidebar">
+    {% endif %}
+    
 {% endif %}
 
 	{% include header.html %}
