@@ -1,0 +1,23 @@
+---
+layout: post
+status: publish
+published: true
+title: Io c'ero!
+author: imperugo
+author_login: imperugo
+author_email: imperugo@gmail.com
+wordpress_id: 1565
+wordpress_url: http://imperugo.tostring.it/blog/post/io-c-ero/
+date: 2009-09-11 11:35:21.000000000 +01:00
+categories:
+- Various
+tags:
+- Windows 7
+- Visual Studio 2010
+- WPF
+comments: true
+---
+<p>Ne parlavo oggi con <a title="Raffaele Rialdi" rel="nofollow" target="_blank" href="http://blogs.ugidotnet.org/raffaele/Default.aspx">Raf</a> al telefono e ho avuto troppa voglia di fare questo post :-).</p>
+<p>Approfitto del post per comunicare che <a href="http://www.weloveraf.com/">http://www.weloveraf.com/</a> &egrave; tornato online ed i fact vecchi sono stati ripristinati ;).</p>
+<p>W il SurfRaf</p>
+<p><a class="more" href="http://imperugo.tostring.it/blog/post/io-c-ero/">continue...</a></p>

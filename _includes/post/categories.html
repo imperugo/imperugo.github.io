@@ -1,0 +1,12 @@
+{% if post.categories %}
+	{% for category in post.categories %}
+  	<a href="/categories#{{ category }}" title="">{{ category }}</a>
+	{% endfor %}
+{% endif %}
+
+
+{% if page.categories %}
+	{% for category in page.categories %}
+	  <a href="/categories#{{ category }}" title="">{{ category }}</a>
+	{% endfor %}
+{% endif %}

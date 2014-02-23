@@ -1,6 +1,41 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+{% include head.html %}
+
+{% if index %}
+    <body class="home blog et-scroll-animations chrome et_includes_sidebar">
+{% else %}
+    <body class="single single-post single-format-standard et-scroll-animations chrome et_includes_sidebar">
+{% endif %}
+
+	{% include header.html %}
+	
+	{{ content }}
+
+<footer id="footer" id="main-footer">{% include footer.html %}</footer>
+
+<script type='text/javascript' src='/js/superfish.js?ver=1.0'></script>
+<script type='text/javascript' src='/js/waypoints.min.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_custom = {"mobile_nav_text":"Navigation Menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/js/custom.js?ver=1.0'></script>
+<script type='text/javascript' src='/js/fancybox/jquery.easing-1.3.pack.js?ver=1.3.4'></script>
+<script type='text/javascript' src='/js/fancybox/jquery.fancybox-1.3.4.pack.js?ver=1.3.4'></script>
+<script type='text/javascript' src='/js/et-ptemplates-frontend.js?ver=1.1'></script>
+
+<!--  CodeProject AD  -->
+<script>
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script'); 
+        _dma.type = 'text/javascript';
+        _dma.async = true; 
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js');}
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000);})();
+</script>
+
+</body>
+</html>

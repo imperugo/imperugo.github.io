@@ -1,0 +1,22 @@
+<article style="padding-bottom:0px; padding-top: 40px;" class="post format-standard hentry entry et-bg-layout-dark et-white-bg et-animated" style="background-color: #ffffff;" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="container clearfix">
+
+		<header class="entry-title">
+			<h2 itemprop="name">
+				<a href="{{ post.url }}" itemprop="url">
+				{{ post.title }}
+				</a>
+			</h2>
+		</header>
+
+		{% include post/meta.html %}
+
+		<div class="entry-content clearfix">
+			<p>{{ content | excerpt }}</p>
+		</div>
+
+		<footer class="entry-footer">
+			<a href="{{ post.url }}" class="read-more"><span>Read More</span></a>
+		</footer>
+	</div>
+</article>

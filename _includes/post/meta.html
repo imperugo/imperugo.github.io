@@ -1,0 +1,19 @@
+{% assign author = site.author %}
+
+{% if post.author %}
+	{% assign author = post.author %}
+{% endif %}
+
+{% if page.author %}
+	{% assign author = page.author %}
+{% endif %}
+
+<p class="meta-info"> 
+	
+	By <strong>{{ author }}</strong> on 
+	{% include post/date.html %}
+	in 
+	{% include post/categories.html %}
+	 | 
+	{% include post/comments_link.html %}
+</p>

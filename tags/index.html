@@ -1,0 +1,23 @@
+---
+layout: page
+title: Tag cloud
+---
+
+<div id='tag_cloud'>
+{% for tag in site.tags %}
+<a href="/tag#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+{% endfor %}
+</div>
+
+ 
+<script src="/js/libs/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
+<script language="javascript">
+$.fn.tagcloud.defaults = {
+    size: {start: 0.9, end: 2, unit: 'em'},
+      color: {start: '#BBB', end: '#333'}
+};
+ 
+$(function () {
+    $('#tag_cloud a').tagcloud();
+});
+</script>

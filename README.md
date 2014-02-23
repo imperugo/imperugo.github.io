@@ -1,40 +1,40 @@
-# Jekyll-Bootstrap
+# tostring.it
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+This is my blog build using [Jekyll](http://jekyllrb.com/). The skin is based on [Haacked.com](https://github.com/Haacked/haacked.com) repository.
 
-## Usage
+## Testing
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+[HTML::Proofer](https://github.com/gjtorikian/html-proofer) is set up to validate all links within the project.  You can run this locally to ensure that your changes are valid:
 
-## Version
+```shell
+bundle install
+bundle exec rake test
+```
 
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
+## Add new post
+```ruby
+rake post title="Hello World"
+```
 
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
+## Add new page
+Create pages easily via rake task:
 
-## Contributing
+```
+$ rake page name="about.md"
+```
 
+Create a nested page:
 
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
+```
+$ rake page name="pages/about.md"
+```
 
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
+Create a page with a "pretty" path:
 
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
+```
+$ rake page name="pages/about"
+```
 
-**Jekyll-Bootstrap Documentation Website.**
+this will create the file: ./pages/about/index.html
 
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
-
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
+Both pages and posts will be created with the right formatted filename and YAML Front Matter

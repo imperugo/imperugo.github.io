@@ -1,0 +1,27 @@
+---
+layout: post
+status: publish
+published: true
+title: Anti-XSS 3.0
+author: imperugo
+author_login: imperugo
+author_email: imperugo@gmail.com
+wordpress_id: 1586
+wordpress_url: http://imperugo.tostring.it/blog/post/anti-xss-30/
+date: 2009-07-30 10:00:00.000000000 +01:00
+categories:
+- ASP.NET
+tags:
+- Ottimizzazione
+- News
+- Security
+- XSS Cross Site Scripting
+- ASP.NET
+- .NET
+comments: true
+---
+<p>Da poche settimane &egrave; stata rilasciata la versione 3.0 della libreria <strong>Microsoft Anti-Cross Site Scripting,</strong> che introduce numerose novit&agrave;.     <br />
+Per chi non la conoscesse, si tratta di una libreria che facilita l&rsquo;utente nella prevenzione di attacchi di tipo <strong>XSS (Cross Site Scripting)</strong> alle proprie applicazioni web.</p>
+<p>Nello specifico questa libreria &egrave; composta da una serie di metodi come l&rsquo;<em>HtmlEncode</em>, <em>UrlEncode</em>, <em>JavascriptEncode</em>, ecc, che offrono un controllo maggiore sulle stringhe rispetto agli analoghi metodi presenti nel <strong>.NET Framework</strong>.</p>
+<p>Maggiori informazioni sono presenti sul blog del Team <a href="http://blogs.msdn.com/securitytools/archive/2009/07/15/anti-xss-library-3-0-rtm.aspx">qui</a>, il download &egrave; invece disponibile direttamente sul sito Microsoft <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=051ee83c-5ccf-48ed-8463-02f56a6bfc09&amp;displaylang=en">qui</a>, mentre sotto potete trovare un video che ne descrive le nuove funzionalit&agrave;.</p>
+<p><a class="more" href="http://imperugo.tostring.it/blog/post/anti-xss-30/">continue...</a></p>

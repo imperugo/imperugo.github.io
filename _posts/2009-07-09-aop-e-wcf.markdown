@@ -1,0 +1,191 @@
+---
+layout: post
+status: publish
+published: true
+title: AOP e WCF
+author: imperugo
+author_login: imperugo
+author_email: imperugo@gmail.com
+wordpress_id: 1605
+wordpress_url: http://imperugo.tostring.it/blog/post/aop-e-wcf/
+date: 2009-07-09 03:54:47.000000000 +01:00
+categories:
+- .NET
+tags:
+- Windows Communication Foundation
+- SpringFramework
+- ASP.NET
+- Configurazione
+- AOP
+comments: true
+---
+<p>Dopo il <a target="_blank" href="http://imperugo.tostring.it/Blog/Post/AOP-per-il-Bug-Fixing">post</a> precedente, in cui ho descritto l&rsquo;utilizzo di <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Aspect-oriented_programming" title="Aspect Oriented Programming">AOP</a> in un servizio WCF, ho ricevuto delle richieste relativamente al modo in cui ho realizzato questo tipo di implementazione.     <br />
+Di seguito potete trovare il codice necessario alla realizzazione di un Custom Behavior per WCF che instanzi un proxy <a target="_blank" rel="nofollow" href="http://en.wikipedia.org/wiki/Aspect-oriented_programming" title="Aspect Oriented Programming">AOP</a> in sostituzione al servizio WCF, e la rispettiva configurazione per utilizzarlo ed aggiungergli Interceptor.     <br />
+Per ovvi motivi non posso postare il codice che ha permesso l&rsquo;invalidazione della cache, ma la creazione di un Interceptor simile &egrave; veramente banale.</p>
+{% raw %}<pre class="brush: csharp; ruler: true;">
+public class AOPInstanceServiceElement : BehaviorExtensionElement
+{
+    protected override object CreateBehavior()
+    {
+        return new AOPInstanceServiceBehavior();
+    }
+
+    public override Type BehaviorType
+    {
+        get
+        {
+            return typeof(AOPInstanceServiceBehavior);
+        }
+    }
+}
+
+public class AOPInstanceServiceBehavior : IServiceBehavior
+{
+    public void ApplyDispatchBehavior(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
+    {
+        foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)
+        {
+            ChannelDispatcher cd = cdb as ChannelDispatcher;
+            if (cd != null)
+            {
+                foreach (EndpointDispatcher ed in cd.Endpoints)
+                {
+                    ed.DispatchRuntime.InstanceProvider = new AOPInstanceProvider(serviceDescription.ServiceType);
+                }
+            }
+        }
+    }
+
+    public void AddBindingParameters(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase, Collection&amp;lt;ServiceEndpoint&amp;gt; endpoints, BindingParameterCollection bindingParameters)
+    {
+    }
+
+    public void Validate(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
+    {
+    }
+}
+
+public class AOPInstanceProvider : IInstanceProvider
+{
+    private readonly Type serviceType;
+
+    public AOPInstanceProvider(Type serviceType)
+    {
+        this.serviceType = serviceType;
+    }
+
+    public object GetInstance(InstanceContext instanceContext)
+    {
+        return GetInstance(instanceContext, null);
+    }
+
+    public object GetInstance(InstanceContext instanceContext, Message message)
+    {
+        IApplicationContext context = ContextRegistry.GetContext();
+
+        string proxyName = serviceType.FullName;
+        if (!context.ContainsObject(proxyName))
+            throw new ArgumentException(string.Format(&amp;quot;There must exist exactly one &amp;lt;object&amp;gt; definition for the {0} service in the Spring configuration&amp;quot;, serviceType.Name));
+
+        return context.GetObject(proxyName);
+    }
+
+    public void ReleaseInstance(InstanceContext instanceContext, object instance)
+    {
+        if (instance is IDisposable)
+        {
+            ((IDisposable)instance).Dispose();
+        }
+    }
+}
+
+
+public class MyLogAdvice : IMethodInterceptor
+{
+    public object Invoke(IMethodInvocation invocation)
+    {
+        string className = invocation.TargetType.FullName;
+
+        Logger.Info(className, string.Format(&quot;Start Method : {0}&quot;, invocation.Method.Name));
+
+        object result = invocation.Proceed();
+
+        Logger.Info(className, string.Format(&quot;End Method : {0}&quot;, invocation.Method.Name));
+
+        return result;
+    }
+}</pre>{% endraw %}
+<p>Configurazione del servizio:</p>
+{% raw %}<pre class="brush: xml; ruler: true;">
+&lt;spring&gt;
+    &lt;context&gt;
+        &lt;resource uri=&quot;config://spring/objects&quot; /&gt;
+    &lt;/context&gt;
+    &lt;objects xmlns=&quot;http://www.springframework.net&quot;&gt;
+        &lt;object id=&quot;logAdvice&quot; type=&quot;CommunityDays.WCF.AOP.LogAdvice.MyLogAdvice, CommunityDays.WCF.AOP.LogAdvice&quot; /&gt;
+        &lt;object id=&quot;rewardingAdvice&quot; type=&quot;CommunityDays.WCF.AOP.RewardingAdvice.MyRewardingAdvice, CommunityDays.WCF.AOP.RewardingAdvice&quot; /&gt;
+        &lt;object id=&quot;CommunityDays.WCF.AOP.Service.Service1&quot; type=&quot;Spring.Aop.Framework.ProxyFactoryObject, Spring.Aop&quot;&gt;
+            &lt;property name=&quot;Target&quot;&gt;
+                &lt;ref object=&quot;Service1AOP&quot; /&gt;
+            &lt;/property&gt;
+            &lt;property name=&quot;InterceptorNames&quot;&gt;
+                &lt;list&gt;
+                    &lt;value&gt;logAdvice&lt;/value&gt;
+                &lt;/list&gt;
+            &lt;/property&gt;
+        &lt;/object&gt;
+        &lt;object id=&quot;Service1AOP&quot; type=&quot;CommunityDays.WCF.AOP.Service.Service1, CommunityDays.WCF.AOP.Service&quot; /&gt;
+    &lt;/objects&gt;
+&lt;/spring&gt;
+
+&lt;system.serviceModel&gt;
+    
+    &lt;extensions&gt;
+        &lt;behaviorExtensions&gt;
+            &lt;!-- ocio a non togliere mai gli spazi dopo le , - usare sempre anche il version number - &egrave; un bug di WCF --&gt;
+            &lt;add name=&quot;aopInstanceBehavior&quot; type=&quot;CommunityDays.WCF.AOP.Services.Behaviors.AOPInstanceServiceElement, CommunityDays.WCF.AOP.Services.Behaviors, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot; /&gt;
+        &lt;/behaviorExtensions&gt;
+    &lt;/extensions&gt;
+
+    &lt;services&gt;
+        &lt;service name=&quot;CommunityDays.WCF.AOP.Service.Service1&quot; behaviorConfiguration=&quot;MyServiceConfiguration&quot;&gt;
+            &lt;host&gt;
+                &lt;baseAddresses&gt;
+                    &lt;add baseAddress=&quot;net.pipe://localhost/Service1&quot;/&gt;
+                    &lt;add baseAddress=&quot;net.tcp://localhost:7002&quot; /&gt;
+                &lt;/baseAddresses&gt;
+            &lt;/host&gt;
+            &lt;endpoint address=&quot;Service1&quot; binding=&quot;netTcpBinding&quot; contract=&quot;CommunityDays.WCF.AOP.Contracts.IService1&quot; /&gt;
+            &lt;endpoint binding=&quot;netNamedPipeBinding&quot; bindingConfiguration=&quot;MyNamedPipeBinding&quot; contract=&quot;CommunityDays.WCF.AOP.Contracts.IService1&quot; /&gt;
+            &lt;endpoint address=&quot;Service1/mex&quot; binding=&quot;mexTcpBinding&quot; contract=&quot;IMetadataExchange&quot;/&gt;
+        &lt;/service&gt;
+    &lt;/services&gt;
+
+    &lt;bindings&gt;
+        &lt;netNamedPipeBinding&gt;
+            &lt;binding name=&quot;MyNamedPipeBinding&quot; &gt;
+                &lt;security mode=&quot;None&quot;&gt;
+                &lt;/security&gt;
+            &lt;/binding &gt;
+        &lt;/netNamedPipeBinding&gt;
+    &lt;/bindings&gt;
+
+    &lt;behaviors&gt;
+        &lt;serviceBehaviors&gt;
+            &lt;behavior name=&quot;MyServiceConfiguration&quot;&gt;
+                &lt;serviceMetadata /&gt;
+                &lt;aopInstanceBehavior /&gt;
+            &lt;/behavior&gt;
+        &lt;/serviceBehaviors&gt;
+    &lt;/behaviors&gt;
+    
+&lt;/system.serviceModel&gt;</pre>{% endraw %}
+
+<div id="scid:fb3a1972-4489-4e52-abe7-25a00bb07fdf:a56b200d-d628-48ce-b9b5-75b5513992ea" class="wlWriterEditableSmartContent" style="margin: 0px; padding: 0px; display: inline; float: none;">
+<p>
+Download esempio
+<a target="_blank" href="http://imperugo.tostring.it/Content/Uploaded/image/aop.zip">qui</a>
+</p>
+</div>
+
+<p>Ciauz</p>

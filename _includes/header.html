@@ -1,0 +1,41 @@
+<header id="main-header">
+	<div class="container clearfix">
+		<a href="/">
+			<img src="/images/logazzo2.png" alt="Home Page" id="logo" />
+		</a>
+		
+		{% include navigation.html %}
+
+		<div id="et-social-icons">
+			{% if site.googleplus_user %}
+				<a href="https://plus.google.com/{{ site.googleplus_user }}/" target="_blank">
+					<img src="/images/google.png" alt="Google Plus" />
+				</a>
+			{% endif %}
+
+			{% if site.facebook_user %}
+				<a href="https://www.facebook.com/{{ site.facebook_user }}" target="_blank">
+					<img src="/images/facebook.png" alt="Facebook" />
+				</a>
+			{% endif %}
+
+			{% if site.twitter_user %}
+				<a href="http://twitter.com/{{ site.twitter_user }}" target="_blank">
+					<img src="/images/twitter.png" alt="Twitter" />
+				</a>
+			{% endif %}
+		</div>
+
+		{% include navigation_mobile.html %}
+	</div><!-- .container -->
+</header><!-- #main-header -->
+
+{% if index %}
+	<div id="breadcrumbs" style="margin-bottom: 0;">
+	  <div class="container clearfix">
+	    <div id="breadcrumbs-links"> Microsoft MVP. Father. Snowboarder. All round nice guy.</div>
+	    	{% include search.html %}
+	   </div>
+	</div>
+	}
+{% endif %}
