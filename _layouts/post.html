@@ -3,7 +3,7 @@ layout: default
 single: true
 ---
 
-<article class="post type-post status-publish format-standard hentry entry et-bg-layout-dark et-white-bg et-animated" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post type-post status-publish format-standard hentry entry et-bg-layout-dark et-white-bg" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="container clearfix">
 
         <header class="entry-title">
@@ -19,7 +19,10 @@ single: true
         <span class="et-avatar">
             <img alt="" src="http://1.gravatar.com/avatar/91dc93f70aa2c457a41657437194933a?s=62&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D62&amp;r=G" class="avatar avatar-62 photo" height="62" width="62">
             <span class="et-share-buttons">
-            <a href="https://plus.google.com/share?url=http://tostring.it/2014/01/14/create-a-javascriptresult-for-asp-net-mvc/" target="_blank" class="et-share-button et-share-google">Share On Google</a><a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=http://tostring.it/2014/01/14/create-a-javascriptresult-for-asp-net-mvc/&amp;p[images][0]=&amp;p[title]=Create a JavascriptResult for ASP.NET MVC" target="_blank" class="et-share-button et-share-facebook">Share On Facebook</a><a href="https://twitter.com/intent/tweet?url=http://tostring.it/2014/01/14/create-a-javascriptresult-for-asp-net-mvc/&amp;text=Create a JavascriptResult for ASP.NET MVC" target="_blank" class="et-share-button et-share-twitter">Share On Twitter</a>      </span>
+                <a href="https://plus.google.com/share?url={{ site.url }}{{page.url}}" target="_blank" class="et-share-button et-share-google">Share On Google</a>
+                <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={{ site.url }}{{page.url}}&amp;p[images][0]=&amp;p[title]={{page.title}}" target="_blank" class="et-share-button et-share-facebook">Share On Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{page.url}}&amp;text={{page.title}}" target="_blank" class="et-share-button et-share-twitter">Share On Twitter</a>
+            </span>
         </span>
     </div>
 </article> <!-- .entry-->
@@ -28,12 +31,12 @@ single: true
     <div id="breadcrumbs">
         <div class="container clearfix">
             <div id="breadcrumbs-links">
-                <a href="/" class="breadcrumbs_home">Home</a> 
+                <a href="/" class="breadcrumbs_home">Home</a>
                 <span class="raquo">&raquo;</span>
                 {% for category in page.categories limit: 20 %}
-                    <a href="/categories/#category={{category}}">{{category}}</a> 
+                    <a href="/categories/#category={{category}}">{{category}}</a>
                 {% endfor %}
-                <span class="raquo">&raquo;</span> 
+                <span class="raquo">&raquo;</span>
                 {{ page.title }}
             </div> <!-- #breadcrumbs-links -->
 
@@ -45,19 +48,19 @@ single: true
         {{ content | excerpt }}
     </div> <!-- .entry-content -->
 
-    <div id="page-navigation" class="container"> 
-        <div class="previous"> 
-            {% if page.previous.url %} 
+    <div id="page-navigation" class="container">
+        <div class="previous">
+            {% if page.previous.url %}
                     <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
-            {% endif %} 
+            {% endif %}
         </div>
 
-        <div class="next"> 
-            {% if page.next.url %} 
-                   <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &raquo; </a> 
-            {% endif %} 
+        <div class="next">
+            {% if page.next.url %}
+                   <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &raquo; </a>
+            {% endif %}
         </div>
-    </div> 
+    </div>
 
     {% if site.disqus_short_name and page.comments == true %}
         <div id="disqus_thread" class="container" aria-live="polite">{% include post/disqus_thread.html %}</div>

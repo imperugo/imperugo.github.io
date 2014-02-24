@@ -11,6 +11,8 @@ subscribe_rss: http://feeds.feedburner.com/imperugo
 encoding: utf-8
 lang: en-US
 excerpt_separator: ""   # Workaround for http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+pygments: true
 
 # Github repositories
 github_user: imperugo
@@ -40,7 +42,7 @@ google_analytics_domain: tostring.it
 markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
-permalink: /archive/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 paginate: 50
 paginate_path: "page/:num"
 category_dir: categories

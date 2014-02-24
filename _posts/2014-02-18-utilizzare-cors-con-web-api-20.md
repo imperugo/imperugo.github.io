@@ -41,7 +41,8 @@ Una volta creato il nostro progetto, come prima cosa è necessario abilitare il 
 Se avete utilizzato il template di default di Visual Studio, il vostro golbal.asax.cs dovrebbe essere più o meno come questo.
 
 
-```c#
+
+{% highlight c# linenos=table %}
 public class WebApiApplication : System.Web.HttpApplication
 {
 	protected void Application_Start()
@@ -53,7 +54,7 @@ public class WebApiApplication : System.Web.HttpApplication
 		BundleConfig.RegisterBundles(BundleTable.Bundles);
 	}
 }
-```
+{% endhighlight %}
 
 Da qui il file da modificare è quello contenente la configurazione delle Web API, quindi "WebApiConfig.cs" contenuto nella folder "App_Start".
 
@@ -70,7 +71,7 @@ Da qui il file da modificare è quello contenente la configurazione delle Web AP
 Una volta che tutti gli "ingredienti" sono pronti, non ci resta che abilitare il CORS a livello applicativo e specificare per ogni singolo controller i "trusted" domain così:
 
 
-```c#
+{% highlight c# linenos=table %}
 using System.Web.Http;
 
 namespace imperugo.webapi.cors.server
@@ -93,11 +94,11 @@ namespace imperugo.webapi.cors.server
 		}
 	}
 }
-```
+{% endhighlight %}
 
 Mentre il nostro ValueController risulta così:
 
-```c#
+{% highlight c# linenos=table %}
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -115,7 +116,8 @@ namespace imperugo.webapi.cors.server.Controllers
 	}
 }
 
-```
+{% endhighlight %}
+
 La parte importante di quest'ultimo blocco di codice è l'attributo **EnableCors** dove viene specificato l'url accettato per la richeista, gli headers ed i vari metodi.
 > Se non si vuole "aprire" un intero controller a delle chiamate Cross Domain, è possibile utilizzare l'attributo anche solo sulla singola Action oppure lasciare l'attributo sul controller e disabilitare una singola Action tramite l'attributo DisableCors
 
@@ -126,7 +128,7 @@ Il codice sottostante è un semplicissimo codice javascript, quindi può risiede
 
 La pagina HTML sarà così composta:
 
-```html
+{% highlight html linenos=table %}
 <div class="jumbotron">
     <h2>Test CORS (Cross-origin resource sharing)</h2>
 	<p class="lead">
@@ -136,10 +138,10 @@ La pagina HTML sarà così composta:
 		NoResponse
 	</p>
 </div>
-```
+{% endhighlight %}
 con il seguente codice javascript:
 
-```js
+{% highlight js linenos=table %}
 <script language="javascript">
 	var feedbackArea = $('#response');
 	$('#testButton')
@@ -154,7 +156,7 @@ con il seguente codice javascript:
 			});
 	});
 </script>
-```
+{% endhighlight %}
 
 Se abbiamo fatto tutto correttamente, non ci resta che deployare l'applicazione server e quella client.  Se utilizzate il template di Visual Studio, quest'ultima dovrebbe apparire così:
 
