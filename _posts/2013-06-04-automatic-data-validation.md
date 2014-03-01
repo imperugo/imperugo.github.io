@@ -77,7 +77,7 @@ The first one contains only the necessary stuff to create the right interceptor;
 
 The first thing to do is to install the package (Castle in this case):
 
-<a href="http://tostring.it/wp-content/uploads/2013/06/Capture.jpg"><img class="aligncenter size-full wp-image-798" alt="Capture" src="http://tostring.it/wp-content/uploads/2013/06/Capture.jpg" width="747" height="87" /></a>
+<a href="{{ siteurl }}/assets/2013/06/Capture.jpg"><img class="aligncenter size-full wp-image-798" alt="Capture" src="{{ siteurl }}/assets/2013/06/Capture.jpg" width="747" height="87" /></a>
 
 Now change the Castle code like this:
 

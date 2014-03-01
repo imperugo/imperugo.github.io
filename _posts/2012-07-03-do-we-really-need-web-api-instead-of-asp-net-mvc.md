@@ -37,9 +37,9 @@ With ASP.NET MVC the response will be always a JSON (in fact I specified it usin
 
 Let’s start to create a simple Web API application using the classic template, so follow the step below:
 
-<a href="http://tostring.it/wp-content/uploads/2012/07/WebAPI001.png"><img class="alignnone size-medium wp-image-578" title="WebAPI001" src="http://tostring.it/wp-content/uploads/2012/07/WebAPI001-300x179.png" alt="" width="300" height="179" /></a>
+<a href="{{ siteurl }}/assets/2012/07/WebAPI001.png"><img class="alignnone size-medium wp-image-578" title="WebAPI001" src="{{ siteurl }}/assets/2012/07/WebAPI001-300x179.png" alt="" width="300" height="179" /></a>
 
-<a href="http://tostring.it/wp-content/uploads/2012/07/WebAPI002.png"><img class="alignnone size-medium wp-image-579" title="WebAPI002" src="http://tostring.it/wp-content/uploads/2012/07/WebAPI002-300x179.png" alt="" width="300" height="179" /></a>
+<a href="{{ siteurl }}/assets/2012/07/WebAPI002.png"><img class="alignnone size-medium wp-image-579" title="WebAPI002" src="{{ siteurl }}/assets/2012/07/WebAPI002-300x179.png" alt="" width="300" height="179" /></a>
 
 Without any change you are able to run the application: try by yourself by pushing F5 and navigating with a browser to the path <em>“/api/values”</em> of your website.
 If you are doing that with Internet Explorer, probably it will ask you to download the json response, otherwise if you open the same url with Chrome you can see the response inside the browser in XML format.

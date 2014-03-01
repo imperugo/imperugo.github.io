@@ -15,7 +15,7 @@ published: true
 comments: true
 ---
 
-<a href="http://tostring.it/wp-content/uploads/2013/12/ASP.NET_Web_API_Succinctly_download.png"><img class="size-medium wp-image-847 alignleft" style="margin: 5px;" alt="ASP.NET_Web_API_Succinctly_download" src="http://tostring.it/wp-content/uploads/2013/12/ASP.NET_Web_API_Succinctly_download-290x300.png" width="290" height="300" /></a>In the past week, my friend <a title="Emanuele Del Bono's blog" href="http://ema.codiceplastico.com/" target="_blank">Emanuele Del Bono</a> (Ema for all people who know him) announced his first tech book about ASP.NET Web API.
+<a href="{{ siteurl }}/assets/2013/12/ASP.NET_Web_API_Succinctly_download.png"><img class="size-medium wp-image-847 alignleft" style="margin: 5px;" alt="ASP.NET_Web_API_Succinctly_download" src="{{ siteurl }}/assets/2013/12/ASP.NET_Web_API_Succinctly_download-290x300.png" width="290" height="300" /></a>In the past week, my friend <a title="Emanuele Del Bono's blog" href="http://ema.codiceplastico.com/" target="_blank">Emanuele Del Bono</a> (Ema for all people who know him) announced his first tech book about ASP.NET Web API.
 
 Who follow me knows that I’m a HTTP addicted, so I love everything around web development, starting from websites but also including APIs, especially if developed using WEB API (I wrote several posts about that framework).
 

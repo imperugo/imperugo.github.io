@@ -20,7 +20,7 @@ In one of the last versions of <strong>Web Essential Tools</strong>, Microsoft r
 The first step to try this cool feature is to install the Visual Studio plugin so, download it from <a title="Web Essential Tools download" href="http://visualstudiogallery.msdn.microsoft.com/07d54d12-7133-4e15-becb-6f451ea3bea6" target="_blank">here</a>
 
 After the installation Visual Studio offers you new features that are not available in the standalone version. In fact, after right clicking on a web resource (css, js, etc) in the solution explorer, you have a new “item” named Web Essential:
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/001.png"><img class="aligncenter size-medium wp-image-763" alt="001" src="http://tostring.it/wp-content/uploads/2013/01/001-300x179.png" width="300" height="179" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/001.png"><img class="aligncenter size-medium wp-image-763" alt="001" src="{{ siteurl }}/assets/2013/01/001-300x179.png" width="300" height="179" /></a></p>
 &nbsp;
 
 What I love most in this extension is the easy way to create the combined and minified resources (really, I’m not in love with the web optimization packages included in ASP.NET MVC 4).
@@ -36,15 +36,15 @@ Source Map is a cool feature, actually supported just by Google Chrome, that all
 I think that feature is a killer feature for frontend developers because some errors happened in production and, in some cases, you are not able to reproduce them during the tests.
 
 The first things is to enable that features in chrome, so:
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/002.png"><img class="aligncenter size-medium wp-image-768" alt="002" src="http://tostring.it/wp-content/uploads/2013/01/002-300x179.png" width="300" height="179" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/002.png"><img class="aligncenter size-medium wp-image-768" alt="002" src="{{ siteurl }}/assets/2013/01/002-300x179.png" width="300" height="179" /></a></p>
 &nbsp;
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/003.png"><img class="aligncenter size-medium wp-image-769" alt="003" src="http://tostring.it/wp-content/uploads/2013/01/003-300x179.png" width="300" height="179" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/003.png"><img class="aligncenter size-medium wp-image-769" alt="003" src="{{ siteurl }}/assets/2013/01/003-300x179.png" width="300" height="179" /></a></p>
 &nbsp;
 
 From now, everything is easier, select your javascript files, right click and, from WebEssential Items, select “<strong>Create Javascript Bundle File</strong>”.
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/004.png"><img class="aligncenter size-medium wp-image-770" alt="004" src="http://tostring.it/wp-content/uploads/2013/01/004-300x187.png" width="300" height="187" /></a></p>
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/005.png"><img class="aligncenter size-medium wp-image-771" alt="005" src="http://tostring.it/wp-content/uploads/2013/01/005-300x179.png" width="300" height="179" /></a></p>
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/006.png"><img class="aligncenter size-medium wp-image-772" alt="006" src="http://tostring.it/wp-content/uploads/2013/01/006-300x179.png" width="300" height="179" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/004.png"><img class="aligncenter size-medium wp-image-770" alt="004" src="{{ siteurl }}/assets/2013/01/004-300x187.png" width="300" height="187" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/005.png"><img class="aligncenter size-medium wp-image-771" alt="005" src="{{ siteurl }}/assets/2013/01/005-300x179.png" width="300" height="179" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/006.png"><img class="aligncenter size-medium wp-image-772" alt="006" src="{{ siteurl }}/assets/2013/01/006-300x179.png" width="300" height="179" /></a></p>
 &nbsp;
 
 Drag you bundle into your page, MyExampleJavascriptBundle.min.js in my example, and everything is ready.
@@ -52,7 +52,7 @@ Drag you bundle into your page, MyExampleJavascriptBundle.min.js in my example, 
 From now, every time you change and save the files you selected for the bundle, Visual Studio will automatically update it; it means that minified and source map will always be up to date with the original resources without doing anything special (How f..ing cool is that?).
 
 As you can see in the image below there are more files that I’ve included in my page (see previous screenshots).
-<p style="text-align: center;"><a href="http://tostring.it/wp-content/uploads/2013/01/007.png"><img class="aligncenter size-medium wp-image-773" alt="007" src="http://tostring.it/wp-content/uploads/2013/01/007-300x179.png" width="300" height="179" /></a></p>
+<p style="text-align: center;"><a href="{{ siteurl }}/assets/2013/01/007.png"><img class="aligncenter size-medium wp-image-773" alt="007" src="{{ siteurl }}/assets/2013/01/007-300x179.png" width="300" height="179" /></a></p>
 In fact, I didn’t added the files 001.js and 002.js but only the MyExampleJavascriptBundle.min.js.
 
 How is it possible? The reason is really simple; inside the MyExampleJavascriptBundle.min.js, Visual Studio added a line with the path of Source Map that includes the original not combined files.

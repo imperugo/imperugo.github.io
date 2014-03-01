@@ -24,7 +24,7 @@ For the NHibernate users it reminds me a little the <em>Future</em> command, wit
 
 Let’s see my domain:
 
-<a href="http://tostring.it/wp-content/uploads/2012/11/domain.png"><img class="aligncenter size-medium wp-image-749" title="domain" alt="" src="http://tostring.it/wp-content/uploads/2012/11/domain-300x284.png" width="300" height="284" /></a>
+<a href="{{ siteurl }}/assets/2012/11/domain.png"><img class="aligncenter size-medium wp-image-749" title="domain" alt="" src="{{ siteurl }}/assets/2012/11/domain-300x284.png" width="300" height="284" /></a>
 
 It seems more complex that it really is. There is a <strong>Post</strong> class and <strong>ItemComments</strong>. The first one includes all you need to have in the aggregate view; the second one, combined with the first one, has all you need to show in the detail view or admin area (in the most blog enginea you don’t need to show the comments in the main page, otherwise you need in the permalink).
 
