@@ -1,82 +1,89 @@
 <div class="container">
-		<div class="clearfix">
-			<div class="footer-widget">
-				<div id="search-2" class="fwidget widget_search">
-					<form role="search" method="get" id="searchform" class="searchform" action="http://www.google.com/search">
-						<div>
-							<label class="screen-reader-text" for="q">Search for:</label>
-							<input type="text" value="" name="q">
-							<input type="hidden" name="sitesearch" value="tostring.it">
-							<input type="submit" id="searchsubmit" value="Search">
-						</div>
-					</form>
-				</div> <!-- end .fwidget -->
-
-				<div id="recent-posts-2" class="fwidget widget_recent_entries">
-					<h4 class="widgettitle">Recent Posts</h4>
-					<ul>
-						{% for post in site.posts limit: 5%}
-							<li>
-								<a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}C</a>
-							</li>
-						{% endfor %}	
-					</ul>
-			</div> <!-- end .fwidget -->
-
-		</div> <!-- end .footer-widget -->
-			
+	<div class="clearfix">
 		<div class="footer-widget">
-			<div id="archives-2" class="fwidget widget_archive">
-				<h4 class="widgettitle">Archives</h4>
+			<div id="search-2" class="fwidget widget_search">
+				<form role="search" method="get" id="searchform" class="searchform" action="http://www.google.com/search">
+					<div>
+						<label class="screen-reader-text" for="q">Search for:</label>
+						<input type="text" value="" name="q">
+						<input type="hidden" name="sitesearch" value="tostring.it">
+						<input type="submit" id="searchsubmit" value="Search"></div>
+				</form>
+			</div>
+			<!-- end .fwidget -->
+
+			<div id="recent-posts-2" class="fwidget widget_recent_entries">
+				<h4 class="widgettitle">Recent Posts</h4>
 				<ul>
-					
-					{% for post in site.posts %}
-
-					    {% capture day %}{{ post.date | date: '%m%Y' }}{% endcapture %}
-					    {% capture nday %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
-
-					    {% if day != nday %}
-					    	<li><a href="#">{{ post.date | date: "%B %Y" }}</a></li>
-					        <h5 class="date"></h5>
-					    {% endif %}
-
+					{% for post in site.posts limit: 5%}
+					<li>
+						<a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}C</a>
+					</li>
 					{% endfor %}
 				</ul>
-			</div> <!-- end .fwidget -->
+			</div>
+			<!-- end .fwidget -->
 
-		</div> <!-- end .footer-widget -->
+		</div>
+		<!-- end .footer-widget -->
 
-		<div class="footer-widget last"><div id="categories-2" class="fwidget widget_categories"><h4 class="widgettitle">Categories</h4>		<ul>
-	<li class="cat-item cat-item-2"><a href="http://tostring.it/category/dotnet/" title="View all posts filed under .NET">.NET</a>
-</li>
-	<li class="cat-item cat-item-8"><a href="http://tostring.it/category/webdev/aspnetmvc/" title="View all posts filed under aspnetmvc">aspnetmvc</a>
-</li>
-	<li class="cat-item cat-item-3"><a href="http://tostring.it/category/azure/" title="View all posts filed under Azure">Azure</a>
-</li>
-	<li class="cat-item cat-item-4"><a href="http://tostring.it/category/events/" title="View all posts filed under Events">Events</a>
-</li>
-	<li class="cat-item cat-item-5"><a href="http://tostring.it/category/linkflood/" title="Starting from the Dev news to Tech news, this is the right place to keep updated! Most news come from my twitter account (@imperugo)">Linkflood</a>
-</li>
-	<li class="cat-item cat-item-6"><a href="http://tostring.it/category/various/" title="View all posts filed under Various">Various</a>
-</li>
-	<li class="cat-item cat-item-10"><a href="http://tostring.it/category/webdev/webapi-webdev/" title="View all posts filed under WebAPI">WebAPI</a>
-</li>
-	<li class="cat-item cat-item-7"><a href="http://tostring.it/category/webdev/" title="View all posts filed under WebDev">WebDev</a>
-</li>
-		</ul>
-</div> <!-- end .fwidget --><div id="meta-2" class="fwidget widget_meta"><h4 class="widgettitle">Meta</h4>			<ul>
-						<li><a href="http://tostring.it/wp-login.php">Log in</a></li>
-			<li><a href="http://feeds.feedburner.com/override/tostring/it" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://imperugo.disqus.com/latest.rss" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
-</div> <!-- end .fwidget --></div> <!-- end .footer-widget -->
-		</div> <!-- #footer-widgets -->
-
+		<div class="footer-widget last">
+			<div id="categories-2" class="fwidget widget_categories">
+				<h4 class="widgettitle">Categories</h4>
+				<ul>
+					<li class="cat-item cat-item-2">
+						<a href="http://tostring.it/category/dotnet/" title="View all posts filed under .NET">.NET</a>
+					</li>
+					<li class="cat-item cat-item-8">
+						<a href="http://tostring.it/category/webdev/aspnetmvc/" title="View all posts filed under aspnetmvc">aspnetmvc</a>
+					</li>
+					<li class="cat-item cat-item-3">
+						<a href="http://tostring.it/category/azure/" title="View all posts filed under Azure">Azure</a>
+					</li>
+					<li class="cat-item cat-item-4">
+						<a href="http://tostring.it/category/events/" title="View all posts filed under Events">Events</a>
+					</li>
+					<li class="cat-item cat-item-5">
+						<a href="http://tostring.it/category/linkflood/" title="Starting from the Dev news to Tech news, this is the right place to keep updated! Most news come from my twitter account (@imperugo)">Linkflood</a>
+					</li>
+					<li class="cat-item cat-item-6">
+						<a href="http://tostring.it/category/various/" title="View all posts filed under Various">Various</a>
+					</li>
+					<li class="cat-item cat-item-10">
+						<a href="http://tostring.it/category/webdev/webapi-webdev/" title="View all posts filed under WebAPI">WebAPI</a>
+					</li>
+					<li class="cat-item cat-item-7">
+						<a href="http://tostring.it/category/webdev/" title="View all posts filed under WebDev">WebDev</a>
+					</li>
+				</ul>
+			</div>
+			<!-- end .fwidget -->
+			<div id="meta-2" class="fwidget widget_meta">
+				<h4 class="widgettitle">Meta</h4>
+				<ul>
+					<li>
+						<a href="http://tostring.it/wp-login.php">contact me</a>
+					</li>
+					<li>
+						<a href="http://feeds.feedburner.com/override/tostring/it" title="Syndicate this site using RSS 2.0">
+							Entries <abbr title="Really Simple Syndication">RSS</abbr>
+						</a>
+					</li>
+					<li>
+						<a href="http://imperugo.disqus.com/latest.rss" title="The latest comments to all posts in RSS">
+							Comments <abbr title="Really Simple Syndication">RSS</abbr>
+						</a>
+					</li>
+					<li>
+						<a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
+					</li>
+				</ul>
+			</div>
+			<!-- end .fwidget -->
+		</div>
+		<!-- end .footer-widget -->
 	</div>
+	<!-- #footer-widgets -->
 
-
-
-
-
-
+</div>
 {% include disqus.html %}

@@ -7,12 +7,11 @@
 				{{ post.title }}
 				</a>
 			</h2>
+			{% include post/meta.html %}
 		</header>
 
-		{% include post/meta.html %}
-
 		<div class="entry-content clearfix">
-			<p>{{ content | excerpt }}</p>
+			{{ content | excerpt }}
 		</div>
 
 		<footer class="entry-footer">
@@ -20,3 +19,4 @@
 		</footer>
 	</div>
 </article>
+

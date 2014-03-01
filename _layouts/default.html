@@ -1,6 +1,6 @@
 {% include head.html %}
 
-{% if index %}
+{% if isHome %}
     <body class="home blog et-scroll-animations chrome et_includes_sidebar">
 {% else %}
     {% if page.id %}
@@ -8,14 +8,15 @@
     {% else %}
         <body class="page page-template-default et-scroll-animations chrome et_includes_sidebar">
     {% endif %}
-    
 {% endif %}
 
 	{% include header.html %}
-	
+
 	{{ content }}
 
-<footer id="footer" id="main-footer">{% include footer.html %}</footer>
+<footer id="footer" id="main-footer">
+    {% include footer.html %}
+</footer>
 
 <script type='text/javascript' src='/js/superfish.js?ver=1.0'></script>
 <script type='text/javascript' src='/js/waypoints.min.js?ver=1.0'></script>
@@ -32,9 +33,9 @@ var et_custom = {"mobile_nav_text":"Navigation Menu"};
 <!--  CodeProject AD  -->
 <script>
     function _dmBootstrap(file) {
-        var _dma = document.createElement('script'); 
+        var _dma = document.createElement('script');
         _dma.type = 'text/javascript';
-        _dma.async = true; 
+        _dma.async = true;
         _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
     }

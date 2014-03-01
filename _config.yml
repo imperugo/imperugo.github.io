@@ -29,7 +29,7 @@ googleplus_user: +UgoLattanzi
 facebook_user: imperugo
 
 # Disqus Comments
-disqus_short_name: it-tostring
+disqus_short_name: imperugo
 disqus_show_comment_count: true
 
 # Google Analytics
@@ -43,6 +43,6 @@ markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
 permalink: /:year/:month/:day/:title/
-paginate: 50
+paginate: 5
 paginate_path: "page/:num"
 category_dir: categories
