@@ -12,6 +12,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 It sounds like a cocktail and really it is! One of the first things I noticed in <a title="ASP.NET MVC Tags" href="http://tostring.it/tag/aspnetmvc/" target="_blank">ASP.NET MVC</a> 4 is the package Common.Logging.
 

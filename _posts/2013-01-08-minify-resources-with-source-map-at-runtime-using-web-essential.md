@@ -13,6 +13,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In one of the last versions of <strong>Web Essential Tools</strong>, Microsoft released one of my favorite features for the web development. I’m talking about the opportunity to create a bundle resource at runtime with the support of SourceMap.
 

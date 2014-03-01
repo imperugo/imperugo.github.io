@@ -12,6 +12,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 My followers know my passion to share news on twitter. Almost every day I tweet dozens and dozens info about <strong>HTML5</strong>, <strong>MVC</strong>, <strong>NodeJS</strong>, <strong>Windows 8</strong>, <strong>Mobile</strong>, <strong>Apple</strong> and so on.
 The idea is to save and categorize these information inside my blog; for this reason I’ve created a category called <a title="Linkflood" href="http://tostring.it/linkflood/">Linkflood</a> and a specific “plugin” for the digest tweets.

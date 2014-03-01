@@ -11,6 +11,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 When I used for the first time <a title="GitHub web site" href="http://github.com">GitHub</a> for Windows I was really in love with it but, if you need to use git deeply, you have to continue to use the command version.
 

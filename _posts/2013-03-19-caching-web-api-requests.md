@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 I wrote many times about <a href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">Web API</a>, so you should know about the library and the main differences between the client part of Web API and the server side; in this post I’m going to write about the client side of this cool library.
 Exactly like the “old” <em>System.Net.WebRequest</em> class, also the Web API client can manage the caching policy for all REST requests.

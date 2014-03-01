@@ -13,6 +13,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 Inside <a title="More posts about Web API" href="http://tostring.it/tag/webapi/" target="_blank"><strong>Web API</strong></a> there is a hidden gem that isn't having the right interest, the <em><strong>Self-Host</strong></em>.
 The most typical mistake is to consider Web API as part of <a title="More posts about aspnetmvc" href="http://tostring.it/tag/aspnetmvc/" target="_blank">ASP.NET MVC</a>. Really it doesn't and there aren't shared libraries between them.

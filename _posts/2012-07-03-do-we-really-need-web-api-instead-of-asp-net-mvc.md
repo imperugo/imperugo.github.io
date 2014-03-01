@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 When I tried for the first time <a href="http://tostring.it/tag/webapi/">WebAPI</a> I asked to myself if I really need it instead of <a href="http://tostring.it/tag/aspnetmvc/">ASP.NET MVC</a> because part of my own code (Controller Factory, Attributes, etc) doesn’t work as is.
 In these days I’ve started to do some experiments and, after that, I can say that we really need it for many reason, one of this is absolutely the content negotiation.

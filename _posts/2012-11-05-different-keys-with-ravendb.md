@@ -9,6 +9,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In last period, I am spending so times to learn document databases, in my case <a title="RavenDB" href="http://ravendb.net/" target="_blank"><strong>RavenDB</strong> </a>and <a title="MongoDB" href="http://www.mongodb.org/" target="_blank"><strong>MongoDB</strong></a>. To be honest I am working only on Raven right now because it is friendlier for .NET developers but I promised myself to compare some features from these two awesome database engines.
 

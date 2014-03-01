@@ -13,6 +13,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 What I really appreciate in <a title="Articles about ASP.NET MVC" href="http://tostring.it/category/webdev/aspnetmvc/" target="_blank">ASP.NET MVC</a> and <a title="Articles about Web API" href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">WebAPI</a> are the binders and its validation. It’s really cool to have a class with all parameter and, for those who have the data annotations, the automatic validation.
 

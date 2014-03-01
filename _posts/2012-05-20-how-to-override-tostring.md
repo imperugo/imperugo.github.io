@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 Finally I created my English blog. It took me almost a year to finish the setup and convince myself that I can have an English blog. This isn’t my first adventure like a blogger, my followers know my Italian blog, and now it’s time to share my passion with “non” Italian people.
 

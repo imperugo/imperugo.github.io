@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 Here we go! We have some great news about the <a href="http://webnetconf.eu/">Web.net European Conference</a> that me and <a href="http://codeclimber.net.nz/">Simone Chiaretta</a> are organizing.
 

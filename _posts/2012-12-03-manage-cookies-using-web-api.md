@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In my last project, I’ve deeply used WebApi, both for the client side and server side. In fact my application must call several REST endpoints developed with java and, after a code elaboration, I have to expose the data to other clients (javascript into an html page in this case).
 

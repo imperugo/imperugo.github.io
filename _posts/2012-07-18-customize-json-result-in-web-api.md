@@ -12,6 +12,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In my previous <a title="Do we really need Web API instead of ASP.NET MVC?" href="http://tostring.it/2012/07/03/do-we-really-need-web-api-instead-of-asp-net-mvc/" target="_blank">post</a> I wrote about <a title="More posts about Web API" href="http://tostring.it/category/webdev/web-api/" target="_blank">Web API</a> and the content negotiation. In this post I’d like to describe how it’s easy to change the Json serialization.
 

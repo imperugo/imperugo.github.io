@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 Visual Studio 2012 is absolutely the best IDE in the world and, with the latest version, it has sorted most of the big problems (from my point of view the previous version was a bit slow).
 

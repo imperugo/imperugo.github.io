@@ -12,6 +12,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In my previous <a title="Self-Host with Web API" href="http://tostring.it/2012/07/16/self-host-with-web-api/" target="_blank">post</a> I wrote about the Self-Host in <a title="More posts about Web API" href="http://tostring.it/tag/webapi/" target="_blank">Web API</a> and why this features is so cool. In this I’d like to show how easy is to create an integration test with Web API (with my base class of course :)).
 

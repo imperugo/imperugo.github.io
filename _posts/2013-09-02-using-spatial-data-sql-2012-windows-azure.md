@@ -13,6 +13,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In the last few weeks, I worked about some APIs using <a title="Web API Posts" href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">ASPNET Web Api</a> and, for the data storage, Entity Framework and Sql Server; everything hosted on <a title="Windows Azure" href="http://www.windowsazure.com/" target="_blank">Azure</a>.
 

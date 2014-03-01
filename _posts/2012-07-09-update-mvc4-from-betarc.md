@@ -11,6 +11,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 As I wrote in my first post <a title="How to override tostring.it" href="http://tostring.it/2012/05/20/how-to-override-tostring/">here</a>, I’m a web addicted and I’m absolutely in love with <a title="ASP.NET MVC" href="http://tostring.it/tag/aspnetmvc/" target="_blank">ASP.NET MVC</a>. I started to use it from the first beta and I’m using the latest release in my projects.
 

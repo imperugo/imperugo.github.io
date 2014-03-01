@@ -17,6 +17,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 In the past week, 15 august, Microsoft released an incredible number of cool stuff, starting from <strong>Windows 8</strong> and ending to <strong>Visual Studio 2012</strong> including the new <strong>ASP.NET Stack</strong>.
 

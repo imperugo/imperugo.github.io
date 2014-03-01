@@ -10,6 +10,7 @@ tags:
 status: publish
 type: post
 published: true
+comments: true
 ---
 As you probably know I’m organizing with <a title="Simone Chiaretta's blog" href="http://codeclimber.net.nz/" target="_blank">Simone Chiaretta</a> the <a title="Web European Conference" href="http://webnetconf.eu" target="_blank"><strong>Web European Conference</strong></a> in Milan.
 We opened the Call For Paper almost one month ago and we got more than 30 sessions. <strong>There are only 4 days to submit your proposals</strong>.
