@@ -27,36 +27,22 @@
 		</div>
 		<!-- end .footer-widget -->
 
-		<div class="footer-widget last">
+		<div class="footer-widget">
 			<div id="categories-2" class="fwidget widget_categories">
 				<h4 class="widgettitle">Categories</h4>
 				<ul>
-					<li class="cat-item cat-item-2">
-						<a href="http://tostring.it/category/dotnet/" title="View all posts filed under .NET">.NET</a>
+					{% for category in site.categories %}
+					<li class="cat-item">
+						<a href="/categories#{{ category[0] }}" title="View all posts filed under {{ category[0] }}">{{ category[0] }}</a>
 					</li>
-					<li class="cat-item cat-item-8">
-						<a href="http://tostring.it/category/webdev/aspnetmvc/" title="View all posts filed under aspnetmvc">aspnetmvc</a>
-					</li>
-					<li class="cat-item cat-item-3">
-						<a href="http://tostring.it/category/azure/" title="View all posts filed under Azure">Azure</a>
-					</li>
-					<li class="cat-item cat-item-4">
-						<a href="http://tostring.it/category/events/" title="View all posts filed under Events">Events</a>
-					</li>
-					<li class="cat-item cat-item-5">
-						<a href="http://tostring.it/category/linkflood/" title="Starting from the Dev news to Tech news, this is the right place to keep updated! Most news come from my twitter account (@imperugo)">Linkflood</a>
-					</li>
-					<li class="cat-item cat-item-6">
-						<a href="http://tostring.it/category/various/" title="View all posts filed under Various">Various</a>
-					</li>
-					<li class="cat-item cat-item-10">
-						<a href="http://tostring.it/category/webdev/webapi-webdev/" title="View all posts filed under WebAPI">WebAPI</a>
-					</li>
-					<li class="cat-item cat-item-7">
-						<a href="http://tostring.it/category/webdev/" title="View all posts filed under WebDev">WebDev</a>
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
+		</div>
+		<!-- end .footer-widget -->
+
+		<div class="footer-widget last">
+
 			<!-- end .fwidget -->
 			<div id="meta-2" class="fwidget widget_meta">
 				<h4 class="widgettitle">Meta</h4>
@@ -70,8 +56,8 @@
 						</a>
 					</li>
 					<li>
-						<a href="http://imperugo.disqus.com/latest.rss" title="The latest comments to all posts in RSS">
-							Comments <abbr title="Really Simple Syndication">RSS</abbr>
+						<a href="{{siteurl}}tags" title="Tag Cloud">
+							Tag Cloud <abbr title="The Tag">Tags</abbr>
 						</a>
 					</li>
 					<li>
