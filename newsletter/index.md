@@ -7,7 +7,7 @@ status: publish
 type: page
 published: true
 ---
-<strong><a href="http://override.tostring.it/wp-content/uploads/2012/05/newsletter.jpg"><img class="alignnone  wp-image-103" title="newsletter" src="http://override.tostring.it/wp-content/uploads/2012/05/newsletter-150x150.jpg" alt="" width="100" height="100" /></a></strong>
+<strong><a href="{{siteurl}}/assets/2012/05/newsletter.jpg"><img class="alignnone  wp-image-103" title="newsletter" src="{{siteurl}}/assets/2012/05/newsletter-150x150.jpg" alt="" width="100" height="100" /></a></strong>
 
 <strong>Are you a web enthusiast?</strong>
 
