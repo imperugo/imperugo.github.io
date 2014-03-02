@@ -16,7 +16,7 @@ type: post
 published: true
 comments: true
 ---
-In my last project, with my team, we chose to use <a title="Compass CSS" href="http://compass-style.org/" target="_blank">Compass</a> with <a title="Sass Css" href="http://sass-lang.com/" target="_blank">SASS</a> as <strong>CSS Authoring Framework</strong>.  Initially we was unsecure about that, the choice was very hard, the classic CSS allows you to find several guys who know it and it doesn’t require compilation unlike with Sass and <a title="Less Css" href="http://lesscss.org/" target="_blank">Less</a>.
+<span style="line-height: 1.5em;">In my last project, with my team, we chose to use <a title="Compass CSS" href="http://compass-style.org/" target="_blank">Compass</a> with <a title="Sass Css" href="http://sass-lang.com/" target="_blank">SASS</a> as <strong>CSS Authoring Framework</strong>.  Initially we was unsecure about that, the choice was very hard, the classic CSS allows you to find several guys who know it and it doesn’t require compilation unlike with Sass and <a title="Less Css" href="http://lesscss.org/" target="_blank">Less</a></span>.
 
 I’m not a front end developer so my part in this adventure is to manage the project and to make easy the integration of Less/Sass with an ASP.NET MVC application.
 

@@ -12,7 +12,7 @@ type: post
 published: true
 comments: true
 ---
-In my last project, I’ve deeply used WebApi, both for the client side and server side. In fact my application must call several REST endpoints developed with java and, after a code elaboration, I have to expose the data to other clients (javascript into an html page in this case).
+<span style="line-height: 1.5em;">In my last project, I’ve deeply used WebApi, both for the client side and server side. In fact my application must call several REST endpoints developed with java and, after a code elaboration, I have to expose the data to other clients (javascript into an html page in this case)</span>.
 
 One of the pillars request by the Java services (really is not a technology request but just from the implementation made by the external company) is to read all cookies from the response and then send them back to the next requests (like a proxy).
 

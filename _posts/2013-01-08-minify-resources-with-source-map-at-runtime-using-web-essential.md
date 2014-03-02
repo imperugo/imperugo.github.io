@@ -15,7 +15,7 @@ type: post
 published: true
 comments: true
 ---
-In one of the last versions of <strong>Web Essential Tools</strong>, Microsoft released one of my favorite features for the web development. I’m talking about the opportunity to create a bundle resource at runtime with the support of SourceMap.
+<span style="line-height: 1.5em;">In one of the last versions of <strong>Web Essential Tools</strong>, Microsoft released one of my favorite features for the web development. I’m talking about the opportunity to create a bundle resource at runtime with the support of SourceMap</span>.
 
 The first step to try this cool feature is to install the Visual Studio plugin so, download it from <a title="Web Essential Tools download" href="http://visualstudiogallery.msdn.microsoft.com/07d54d12-7133-4e15-becb-6f451ea3bea6" target="_blank">here</a>
 

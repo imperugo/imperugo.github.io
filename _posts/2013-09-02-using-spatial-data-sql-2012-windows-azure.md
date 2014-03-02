@@ -15,7 +15,7 @@ type: post
 published: true
 comments: true
 ---
-In the last few weeks, I worked about some APIs using <a title="Web API Posts" href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">ASPNET Web Api</a> and, for the data storage, Entity Framework and Sql Server; everything hosted on <a title="Windows Azure" href="http://www.windowsazure.com/" target="_blank">Azure</a>.
+<span style="line-height: 1.5em;">In the last few weeks, I worked about some APIs using <a title="Web API Posts" href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">ASPNET Web Api</a> and, for the data storage, Entity Framework and Sql Server; everything hosted on <a title="Windows Azure" href="http://www.windowsazure.com/" target="_blank">Azure</a></span>.
 
 Nothing sensational! make a rest call, read the data and return a json. The only new thing (for me) was the <a title="Spatial Data Wiki" href="http://en.wikipedia.org/wiki/Spatial_database" target="_blank">Spatial Data</a>.
 

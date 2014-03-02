@@ -12,7 +12,7 @@ type: post
 published: true
 comments: true
 ---
-Visual Studio 2012 is absolutely the best IDE in the world and, with the latest version, it has sorted most of the big problems (from my point of view the previous version was a bit slow).
+<span style="line-height: 1.5em;">Visual Studio 2012 is absolutely the best IDE in the world and, with the latest version, it has sorted most of the big problems (from my point of view the previous version was a bit slow)</span>.
 
 I'm not a big fan of extensions because they often make Visual Studio unstable and/or slow, but I'll make an exception because it this case it's incredibly cool!
 <h3><strong>Resharper 7</strong></h3>

@@ -11,7 +11,7 @@ type: post
 published: true
 comments: true
 ---
-In last period, I am spending so times to learn document databases, in my case <a title="RavenDB" href="http://ravendb.net/" target="_blank"><strong>RavenDB</strong> </a>and <a title="MongoDB" href="http://www.mongodb.org/" target="_blank"><strong>MongoDB</strong></a>. To be honest I am working only on Raven right now because it is friendlier for .NET developers but I promised myself to compare some features from these two awesome database engines.
+<span style="line-height: 1.5em;">In last period, I am spending so times to learn document databases, in my case <a title="RavenDB" href="http://ravendb.net/" target="_blank"><strong>RavenDB</strong> </a>and <a title="MongoDB" href="http://www.mongodb.org/" target="_blank"><strong>MongoDB</strong></a>. To be honest I am working only on Raven right now because it is friendlier for .NET developers but I promised myself to compare some features from these two awesome database engines</span>.
 
 One of the big difficult I found, is to create the right model. I said big because I’m used to design the model for relation database and here is really different. For example we do not have the join and we also need to denormalize the references (<a href="http://ravendb.net/docs/faq/denormalized-references">http://ravendb.net/docs/faq/denormalized-references</a>).
 

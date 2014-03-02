@@ -19,7 +19,7 @@ type: post
 published: true
 comments: true
 ---
-In the past week, 15 august, Microsoft released an incredible number of cool stuff, starting from <strong>Windows 8</strong> and ending to <strong>Visual Studio 2012</strong> including the new <strong>ASP.NET Stack</strong>.
+<span style="line-height: 1.5em;">In the past week, 15 august, Microsoft released an incredible number of cool stuff, starting from <strong>Windows 8</strong> and ending to <strong>Visual Studio 2012</strong> including the new <strong>ASP.NET Stack</strong></span>.
 
 The version 4 of ASP.NET MVC introduces several cool features; most of them was available with the Beta and RC versions (Web API, Bundling, Mobile Projects Templates, etc.), but the <strong>RTM is not a “fixed version” of the RC</strong>, it has other interesting things.
 

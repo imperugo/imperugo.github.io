@@ -15,7 +15,7 @@ type: post
 published: true
 comments: true
 ---
-What I really appreciate in <a title="Articles about ASP.NET MVC" href="http://tostring.it/category/webdev/aspnetmvc/" target="_blank">ASP.NET MVC</a> and <a title="Articles about Web API" href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">WebAPI</a> are the binders and its validation. It’s really cool to have a class with all parameter and, for those who have the data annotations, the automatic validation.
+<span style="line-height: 1.5em;">What I really appreciate in <a title="Articles about ASP.NET MVC" href="http://tostring.it/category/webdev/aspnetmvc/" target="_blank">ASP.NET MVC</a> and <a title="Articles about Web API" href="http://tostring.it/category/webdev/webapi-webdev/" target="_blank">WebAPI</a> are the binders and its validation. It’s really cool to have a class with all parameter and, for those who have the data annotations, the automatic validation.</span>
 
 In this article, I’m going to “speak” about the validation, probably one of the most boring stuff a developer needs do during the programming.
 
