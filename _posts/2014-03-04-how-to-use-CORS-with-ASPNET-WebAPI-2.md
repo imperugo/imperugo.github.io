@@ -25,7 +25,7 @@ Otherwise, if you need to send lot of information we can't use this way, so the 
 
 Basically CORS communication allow you to overtake the problem by defining some rules that makes the request more "secure".
 Of course the first thing we need is a browser that support CORS: fortunately all the latest browsers support it.
-Anyway, we have to consider that, looking at the real world, there are several clients that are still using Internet Explorer 8 which, among other things, doesn't support CORS. 
+Anyway, we have to consider that, looking at the real world, there are several clients that are still using Internet Explorer 8 which, among other things, doesn't support CORS.
 
 The following table ([http://caniuse.com/cors](source)) shows which browsers offer CORS support.
 
@@ -58,7 +58,7 @@ Next, it's time to edit the file with the API configuration, "WebApiConfig.cs" i
 {% raw %}
 <div class="nuget-badge">
     <code>PM&gt; Install-Package Microsoft.AspNet.WebApi.Cors</code>
-</div> 
+</div>
 {% endraw %}
 
 Once all the "ingredients" are ready, it's time to enable CORS:
@@ -86,7 +86,7 @@ Javascript Code:
 
 {% gist  9308342 javascriptCall.js %}
 
-If you did everything right, you can to deploy our apps (server and client) to test them. 
+If you did everything right, you can to deploy our apps (server and client) to test them.
 
 
 ![image]({{ siteurl }}/assets/2014/03/cors-client.jpg)
