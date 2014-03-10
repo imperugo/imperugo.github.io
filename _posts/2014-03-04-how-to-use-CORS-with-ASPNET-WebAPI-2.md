@@ -29,7 +29,7 @@ Anyway, we have to consider that, looking at the real world, there are several c
 
 The following table ([http://caniuse.com/cors](source)) shows which browsers offer CORS support.
 
-![CORS SUPPORT TABLE]({{ siteurl }}/assets/2014/03/cors.jpg)
+![CORS SUPPORT TABLE]({{ site.url }}/assets/2014/03/cors.jpg)
 
 > there are several workaround that allows you to use CORS with IE8/9 but there are some limitations with the VERBS (more info [here](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx))
 
@@ -89,12 +89,12 @@ Javascript Code:
 If you did everything right, you can to deploy our apps (server and client) to test them.
 
 
-![image]({{ siteurl }}/assets/2014/03/cors-client.jpg)
+![image]({{ site.url }}/assets/2014/03/cors-client.jpg)
 
 When you click on the "Test It now" button the result should look like this:
 
 
-![image]({{ siteurl }}/assets/2014/03/cors-client-show-response.jpg)
+![image]({{ site.url }}/assets/2014/03/cors-client-show-response.jpg)
 
 Otherwise if something goes wrong, check the point above.
 
@@ -111,15 +111,15 @@ If both keys have the same values, you have the data, otherwise you'll get an er
 
 The screenshot below shows the headers:
 
-![image]({{ siteurl }}/assets/2014/03/cors-client-show-response-headers.jpg)
+![image]({{ site.url }}/assets/2014/03/cors-client-show-response-headers.jpg)
 
 Here is, instead, the classic error in case the HEADERS doesn't match:
 
-![image]({{ siteurl }}/assets/2014/03/cors-client-show-response-error.jpg)
+![image]({{ site.url }}/assets/2014/03/cors-client-show-response-error.jpg)
 
 &nbsp;
 
 ## Conclusions
 For me that I love to sperate the application using an API layer, CORS is absolutely cool. The onyl downside is that it's not supported by all the browser. Let's just hope that hope that all the IE8/9 installations will be replaced soon :-)
 
-The demo is available [here]({{ siteurl }}/assets/2014/03//sample.zip)
+The demo is available [here]({{ site.url }}/assets/2014/03//sample.zip)
