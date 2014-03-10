@@ -23,7 +23,7 @@ What Posh-Git gives you is really simple:
 
 And below a screenshot
 
-<a href="{{ siteurl }}/assets/2012/07/1.png"><img class="size-medium wp-image-672 alignnone" title="1" src="{{ siteurl }}/assets/2012/07/1-300x124.png" alt="" width="300" height="124" /></a>
+<a href="{{ site.url }}/assets/2012/07/1.png"><img class="size-medium wp-image-672 alignnone" title="1" src="{{ site.url }}/assets/2012/07/1-300x124.png" alt="" width="300" height="124" /></a>
 
 GitHub for Windows deploys Git-Posh for you but it doesn’t install it. The same happens for Git (it uses a portable version of git).
 
@@ -40,6 +40,6 @@ If you like it there are few simple steps to enable it in Console2:
 </ul>
 That’s all and the result is this :
 
-<a href="{{ siteurl }}/assets/2012/07/2.png"><img class="size-medium wp-image-673 alignnone" title="2" src="{{ siteurl }}/assets/2012/07/2-300x211.png" alt="" width="300" height="211" /></a>
+<a href="{{ site.url }}/assets/2012/07/2.png"><img class="size-medium wp-image-673 alignnone" title="2" src="{{ site.url }}/assets/2012/07/2-300x211.png" alt="" width="300" height="211" /></a>
 
 Now it is perfect!

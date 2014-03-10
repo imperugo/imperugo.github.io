@@ -18,12 +18,12 @@ One of the pillars request by the Java services (really is not a technology requ
 
 To make more clear where my app is, I realized the following chart:
 
-<a href="{{ siteurl }}/assets/2012/12/webapi-chart.png"><img class="aligncenter size-medium wp-image-757" title="webapi chart" alt="" src="{{ siteurl }}/assets/2012/12/webapi-chart-270x300.png" width="270" height="300" /></a>
+<a href="{{ site.url }}/assets/2012/12/webapi-chart.png"><img class="aligncenter size-medium wp-image-757" title="webapi chart" alt="" src="{{ site.url }}/assets/2012/12/webapi-chart-270x300.png" width="270" height="300" /></a>
 
 As you can see the communication between my application and the Java Rest endpoint is based on the client library released with Web API.
 In fact,<strong> Web API is more than a service library used just to expose data</strong>; it includes a client library that makes very easy to execute a REST call, so let’s start to install the client package named “Microsoft ASP.NET Web API Client Libraries” from NuGet!
 
-<a href="{{ siteurl }}/assets/2012/12/webpi-nuget.png"><img class="aligncenter size-medium wp-image-758" title="webpi nuget" alt="" src="{{ siteurl }}/assets/2012/12/webpi-nuget-300x44.png" width="300" height="44" /></a>
+<a href="{{ site.url }}/assets/2012/12/webpi-nuget.png"><img class="aligncenter size-medium wp-image-758" title="webpi nuget" alt="" src="{{ site.url }}/assets/2012/12/webpi-nuget-300x44.png" width="300" height="44" /></a>
 
 From now on, if you need to create a web request, you should do something like in the code below:
 

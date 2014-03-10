@@ -48,7 +48,7 @@ The last thing to do is to render the partial view into another site, so you hav
 
 In the screenshot below you can see how a client site (not the site that hosts the controller) shows the partial.
 
-<a href="{{ siteurl }}/assets/2014/01/JavascriptResult.jpg"><img class="alignnone size-medium wp-image-869" alt="JavascriptResult" src="{{ siteurl }}/assets/2014/01/JavascriptResult-300x158.jpg" width="300" height="158" /></a>
+<a href="{{ site.url }}/assets/2014/01/JavascriptResult.jpg"><img class="alignnone size-medium wp-image-869" alt="JavascriptResult" src="{{ site.url }}/assets/2014/01/JavascriptResult-300x158.jpg" width="300" height="158" /></a>
 
 &nbsp;
 

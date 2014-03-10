@@ -18,7 +18,7 @@ comments: true
 Inside <a title="More posts about Web API" href="http://tostring.it/tag/webapi/" target="_blank"><strong>Web API</strong></a> there is a hidden gem that isn't having the right interest, the <em><strong>Self-Host</strong></em>.
 The most typical mistake is to consider Web API as part of <a title="More posts about aspnetmvc" href="http://tostring.it/tag/aspnetmvc/" target="_blank">ASP.NET MVC</a>. Really it doesn't and there aren't shared libraries between them.
 
-<a href="{{ siteurl }}/assets/2012/07/twitter.jpg"><img class="aligncenter size-full wp-image-614" title="twitter" src="{{ siteurl }}/assets/2012/07/twitter.jpg" alt="" width="320" height="250" /></a>
+<a href="{{ site.url }}/assets/2012/07/twitter.jpg"><img class="aligncenter size-full wp-image-614" title="twitter" src="{{ site.url }}/assets/2012/07/twitter.jpg" alt="" width="320" height="250" /></a>
 
 &nbsp;
 
@@ -36,7 +36,7 @@ The answer is really simple; you can “start” the application without use <em
 Like previous, the answer is really simple. We need to create a console application and a few lines of code.
 The first step is to create new project from Visual Studio, choose Console Application and then install the Web API package:
 
-<a href="{{ siteurl }}/assets/2012/07/Capture.jpg"><img class="aligncenter size-full wp-image-616" title="Capture" src="{{ siteurl }}/assets/2012/07/Capture.jpg" alt="" width="754" height="85" /></a>
+<a href="{{ site.url }}/assets/2012/07/Capture.jpg"><img class="aligncenter size-full wp-image-616" title="Capture" src="{{ site.url }}/assets/2012/07/Capture.jpg" alt="" width="754" height="85" /></a>
 
 Now, as for the web application, we have to create a folder for our controllers and put inside the classic ValuesController:
 <pre class="brush: csharp">public class ValuesController : ApiController

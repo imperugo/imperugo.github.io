@@ -24,7 +24,7 @@ Really I did the same thing in Dexter as you can see <a href="http://dexterbloge
 
 If you like that approach, whether or not you're using ASP.NET MVC, you have to install the package running that command:
 
-<a href="{{ siteurl }}/assets/2012/07/common-logging-package.jpg"><img class="alignnone size-full wp-image-602" title="common-logging-package" src="{{ siteurl }}/assets/2012/07/common-logging-package.jpg" alt="" width="752" height="86" /></a>
+<a href="{{ site.url }}/assets/2012/07/common-logging-package.jpg"><img class="alignnone size-full wp-image-602" title="common-logging-package" src="{{ site.url }}/assets/2012/07/common-logging-package.jpg" alt="" width="752" height="86" /></a>
 
 and, in the “host” project you have to reference the concrete implementation you prefer:
 <ul>
