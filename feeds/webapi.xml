@@ -17,7 +17,7 @@ title : RSS Feed
         <title>{{ site.title }}</title>
         <description>{{ site.title }} - {{ site.author.name }}</description>
         <link>{{ site.url }}</link>
-        <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+        <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <ttl>1800</ttl>
         <language>en-US</language>
@@ -30,7 +30,7 @@ title : RSS Feed
                 <description>{{ post.content | xml_escape }}</description>
                 <link>{{ site.url }}{{ post.url }}</link>
                 <guid>{{ site.url }}{{ post.id }}</guid>
-                <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+                <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
                 {% for category in post.categories %}
                         <category><![CDATA[{{category}}]]></category>
                 {% endfor %}
