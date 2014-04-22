@@ -11,7 +11,7 @@ tags:
 - paris
 ---
 
-![ncraf]({{ site.url }}/assets/2014/04/ncraft.png)
+![ncraf]({{ site.url }}/assets/2014/04/ncraft.jpg)
 
 Recently I've been writing and reading lots of articles/tweets about [OWIN](http://owin.org/) and its implementation [Katana](https://katanaproject.codeplex.com/).
 
