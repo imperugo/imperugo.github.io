@@ -3,6 +3,7 @@ layout: post
 title: "Owin, Katana and NCrafts"
 description: "Owin Succinctly and NCrafts in Paris"
 date: 2014-04-22 01:00:00.000000000 +01:00
+comments: true
 categories:
 - Events
 tags:
