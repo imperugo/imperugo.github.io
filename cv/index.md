@@ -91,7 +91,7 @@ Consultant and trainer for many IT Italian companies.</td>
 </tr>
 <tr>
 <td valign="top" width="147">English</td>
-<td valign="top" width="539"><strong>Good level, both written and spoken</strong> <br/> 2003 course and certification released by London Frances King School <br/> 2009 course and certification released by InLingua Milano2009 course by GoFluent</td>
+<td valign="top" width="539"><strong>Good level, both written and spoken</strong> <br/> 2003 course and certification released by London Frances King School <br/> 2009 course and certification released by InLingua Milano <br/> 2009 course by GoFluent</td>
 </tr>
 <tr>
 <td valign="top" width="147">Other information</td>
