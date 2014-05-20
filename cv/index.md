@@ -68,7 +68,7 @@ Development and customization of the MTV platform, with the purpose of creating 
 Startup projet to adopt Team Foundation Server to manage the entire MTV development cycle. Creation of custom work item according to the MTV internal processes and development of user controls to store documents to support the integration with Windows Sharepoint Services. Development of procedures to manage automatic builds using Team Foundation Server.
 
 Trainer for the internal MTV staff to introduce the new development, testing and source control environment.
-<br/>
+<br/><br/>
 <strong>Technical Manager MTV Italy </strong>- MTV (Italy) - september 2006 - february 2010
 Technical manager of the MTV Italy developer division, specifically for the intranet and internet area.
 <br /><br />
@@ -91,7 +91,7 @@ Consultant and trainer for many IT Italian companies.</td>
 </tr>
 <tr>
 <td valign="top" width="147">English</td>
-<td valign="top" width="539"><strong>Good level, both written and spoken</strong> - 2003 course and certification released by London Frances King School2009 course and certification released by InLingua Milano2009 course by GoFluent</td>
+<td valign="top" width="539"><strong>Good level, both written and spoken</strong> <br/> 2003 course and certification released by London Frances King School <br/> 2009 course and certification released by InLingua Milano2009 course by GoFluent</td>
 </tr>
 <tr>
 <td valign="top" width="147">Other information</td>
