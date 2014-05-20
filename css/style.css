@@ -188,7 +188,7 @@ body, input, textarea, select { font-family: 'Open Sans', Arial, sans-serif; }
 				#top-menu a:hover { color: rgba(255, 255, 255, 0.9); }
 				#top-menu li.current-menu-item > a, .et_mobile_menu li.current-menu-item > a { color: #7fcbc8; }
 		#et-social-icons { float: right; padding-top: 8px; margin-right: 62px; }
-			#et-social-icons a { padding-left: 11px; }
+			#et-social-icons a { padding-left: 2px; text-decoration: none;}
 .entry { padding: 110px 0 105px; background-repeat: no-repeat; background-position: top center; -moz-background-size: cover; -webkit-background-size: cover; background-size: cover; position: relative; }
 	.entry header h1, .entry header h2, .entry p.meta-info { text-align: center; }
 	.entry header h1, .entry header h2 { font-weight: 100; font-size: 60px; padding-bottom: 21px; }
