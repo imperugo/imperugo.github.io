@@ -44,7 +44,9 @@ Lives in <a title="Milan's map" href=" http://s.tostring.it/NmFFRH ">Milan (MI)<
 <td valign="top" width="147"><strong>Projects</strong></td>
 <td valign="top" width="539"><strong>Web Net Conference
 </strong>Founder, with <a title="Simone Chiaretta's blog" href="http://codeclimber.net.nz/" target="_blank">Simone Chiaretta</a>, of <a title="Web.net European Conference" href="http://www.webnetconf.eu" target="_blank">Webnet European Conference</a>. It’s a conference totally based on the latest web technologies.
-<strong></strong><strong>Dexter Blog Engine</strong>Founder and main developer of a new blog engine mainly based on Microsoft technologies, like ASP.NET MVC, NHibernate, CastleProject, Log4Net and Lucene.Net.<strong></td>
+<strong></strong>
+<br /><br />
+<strong>Dexter Blog Engine</strong>Founder and main developer of a new blog engine mainly based on Microsoft technologies, like ASP.NET MVC, NHibernate, CastleProject, Log4Net and Lucene.Net.<strong></td>
 </tr>
 <tr>
 <td valign="top" width="147"><strong>Conferences</strong></td>
@@ -89,11 +91,11 @@ Consultant and trainer for many IT Italian companies.</td>
 </tr>
 <tr>
 <td valign="top" width="147">English</td>
-<td valign="top" width="539"><strong>Good level, both written and spoken</strong>2003 course and certification released by London Frances King School2009 course and certification released by InLingua Milano2009 course by GoFluent</td>
+<td valign="top" width="539"><strong>Good level, both written and spoken</strong> - 2003 course and certification released by London Frances King School2009 course and certification released by InLingua Milano2009 course by GoFluent</td>
 </tr>
 <tr>
 <td valign="top" width="147">Other information</td>
-<td valign="bottom" width="539">Deeply involved in the main Italian communities: since 2006 to 2009 I’ve contributed as content manager and technical contributor for ASPItalia.Personal blog with technical articles and personal researches and projects presentations (<a href="http://www.tostring.it/">www.tostring.it</a>)Strong passion for service - oriented applications with scalability and performance tuning requirements, Silverlight, RIA Services and ALM (Application Lifecycle Management).</td>
+<td valign="bottom" width="539">Deeply involved in the main Italian communities: since 2006 to 2009 I’ve contributed as content manager and technical contributor for ASPItalia.Personal blog with technical articles and personal researches and projects presentations (<a href="http://www.tostring.it/">www.tostring.it</a>) Strong passion for service - oriented applications with scalability and performance tuning requirements, Silverlight, RIA Services and ALM (Application Lifecycle Management).</td>
 </tr>
 <tr>
 <td valign="top" width="147">Hobbies</td>
