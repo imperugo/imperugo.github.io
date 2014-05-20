@@ -16,5 +16,7 @@ published: true
 This is the right place for you: subscribe to my newsletter and you will receive directly in your mailbox all the latest and coolest news from the web world!
 
 Don’t worry, I won’t spam your mailbox: the newsletter is aperiodic and you won’t receive more than one mail per week!
+{% raw %}
 <p class="tagssingle"><a href="http://tinyletter.com/imperugo" target="_blank">Subscribe!</a></p>
 &nbsp;
+{% endraw %}

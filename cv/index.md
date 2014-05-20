@@ -7,6 +7,7 @@ status: publish
 type: page
 published: true
 ---
+{% raw %}
 <div align="center">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tbody>
@@ -101,3 +102,4 @@ Consultant and trainer for many IT Italian companies.</td>
 </tbody>
 </table>
 </div>
+{% endraw %}
