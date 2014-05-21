@@ -80,7 +80,7 @@ If I convinced you to use Github, below some advice:
 - To render the **emoji** (the point above is mandatory) remember the [right syntax](http://www.emoji-cheat-sheet.com/);
 - Be careful with the redirect if you change the url permalink (take a look [here](https://help.github.com/articles/redirects-on-github-pages)).
 - If [Atom](http://www.atom.io) is your favorite Markdown editor, install [this](https://github.com/arcath/jekyll-atom) package;
-- Good free editor for windows available [here](http://www.markdownpad.com/);
+- Good free editor for Windows available [here](http://www.markdownpad.com/);
 - If you wanna create your custom skin, I suggest to start with **Jekyll Bootstrap** available [here](http://jekyllbootstrap.com/).
 
 > If you want something with more features, but you like the speed and the idea of static files, take a look to [Octopress](http://octopress.org/).
