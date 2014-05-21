@@ -16,7 +16,7 @@ tags:
 - dexter
 ---
 
-In the latest year I used [Wordpress](http://wordpress.org/) for my blog, but really I never liked it. I'm not in love with Wordpress and there are several reason that I try to explain here:
+In the latest year I used [Wordpress](http://wordpress.org/) for my blog, but I never really liked it. I'm not in love with Wordpress and there are several reason that I try to explain here:
 
 - Maintenance;
 - Hosting;
