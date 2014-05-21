@@ -2,7 +2,7 @@
 layout: post
 title: "Bye bye Wordpress, welcome Github pages"
 description: "Moving your blog from Wordpress to Jekyll hosted by Github Pages"
-date: 2014-05-20
+date: 2014-05-21
 categories:
 - Various
 tags:
@@ -14,7 +14,7 @@ tags:
 - dexter
 ---
 
-In the latest year I used Wordpress for my blog, but really I never liked it. There are several reason that I try to explain here:
+In the latest year I used [Wordpress](http://wordpress.org/) for my blog, but really I never liked it. I'm not in love with Wordpress and there are several reason that I try to explain here:
 
 - Maintenance;
 - Hosting;
@@ -24,10 +24,10 @@ In the latest year I used Wordpress for my blog, but really I never liked it. Th
 - Performance;
 
 I'm not saying that Wordpress is not good, I'm saying that it doesn't match my requirements.
-From my point of view (now) a blog engine is something where I can write in an easy way.
+From my point of view (now) a blog engine is something where I can write a post in an easy way.
 
 Moreover, in the past years I created a blog engine (never completed) based on .NET technologies, its name is **Dexter** and it's available on Github [here](https://github.com/imperugo/Dexter-Blog-Engine).
-IMHO it was better than Wordpress, but with many of the problems mentioned above (my mistake).
+IMHO it is/was better than Wordpress, but with many of the problems mentioned above (my mistake).
 
 Some weeks ago, [David Ebbo](https://twitter.com/davidebbo) synthesised in this [post](http://blog.davidebbo.com/2014/01/moving-to-github-pages.html)  my idea of blog engine (**for a nerd of course**)
 
@@ -49,7 +49,7 @@ Moreover there is another cool advantage to moving your blog to Jekyll, and it's
 
 Github offers for all its users the opportunity to have a free hosting for static files creating a repository named yourgithubusername.github.io.
 
-Once you have created the repository it's just necessary to push your static files into it and navitate to http://yourgithubusername.github.io
+Once you have created the repository it's just necessary to push your static files into it and navigate to http://yourgithubusername.github.io
 
 That's all!
 
@@ -64,14 +64,15 @@ To be synthetic:
 - Write the post;
 - Push on github repo
 
+Github will compile the static files for you.
 Do you wanna know how fast & reliable is Github with Jekyll?
-Take a look to this report (remember that my skin is not optimized, lot of requests):
+Take a look to this report (remember that my skin is not optimised, lot of requests):
 
 ![image]({{ site.url }}/assets/2014/05/Pingdom-Report.png)
 
 If I convinced you to use Github, below some advice:
 
-- To migrate your posts use [this](http://import.jekyllrb.com/docs/home/) (it supports several sources like wordpress, xml, rss and so on);
+- To migrate your posts use [this](http://import.jekyllrb.com/docs/home/) (it supports several sources like Wordpress, xml, rss and so on);
 - If you add the license on github, you can also create/modify/delete posts directly for Github website, so you don't have to setup your environment. Read [this](https://github.com/blog/1327-creating-files-on-github) post;
 - Enable some cool Gems like I did [here](https://github.com/imperugo/imperugo.github.io/blob/master/_config.yml#L48-L52);
 - To render the **emoji** (the point above is mandatory) remember the [right syntax](http://www.emoji-cheat-sheet.com/);
