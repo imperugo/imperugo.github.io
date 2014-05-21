@@ -3,6 +3,8 @@ layout: post
 title: "Bye bye Wordpress, welcome Github pages"
 description: "Moving your blog from Wordpress to Jekyll hosted by Github Pages"
 date: 2014-05-21
+published: true
+comments: true
 categories:
 - Various
 tags:
