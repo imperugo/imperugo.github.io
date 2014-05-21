@@ -16,7 +16,7 @@ tags:
 - dexter
 ---
 
-In the latest year I used [Wordpress](http://wordpress.org/) for my blog, but I never really liked it. I'm not in love with Wordpress and there are several reason that I try to explain here:
+During the last year I used [Wordpress](http://wordpress.org/) for my blog, but I never really liked it. I'm not in love with Wordpress and there are several reason that I try to explain here:
 
 - Maintenance;
 - Hosting;
@@ -47,7 +47,7 @@ Basically it's built on ruby and it generates static files (simple .html files) 
 
 Of course you can't do some stuff like comments and search, but this is not a problem because **there are several external services that offer for free search and comments ([Facebook](https://developers.facebook.com/docs/plugins/comments), [Google](https://www.google.com/cse/) and [Disqus](http://disqus.com/) in my case).**
 
-Moreover there is another cool advantage to moving your blog to Jekyll, and it's [Github Pages](https://pages.github.com/).
+Moreover there is another cool advantage of moving your blog to Jekyll, and it's [Github Pages](https://pages.github.com/).
 
 Github offers for all its users the opportunity to have a free hosting for static files creating a repository named yourgithubusername.github.io.
 
