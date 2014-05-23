@@ -8,7 +8,7 @@ type: page
 url: /about-me/
 published: true
 ---
-<img style="padding: 10px;" alt="Ugo Lattanzi" src="{{ site.url }}/assets/2012/04/io.jpg" align="left" /> I'm a programmer specialized in enterprise application development using Microsoft tools and languages, with focus in web applications, service oriented applications and, generally, in all the environments where scalability is a top priority.
+<img style="padding: 10px;" alt="Ugo Lattanzi" src="{{site.url}}/assets/2012/04/io.jpg" align="left" /> I'm a programmer specialized in enterprise application development using Microsoft tools and languages, with focus in web applications, service oriented applications and, generally, in all the environments where scalability is a top priority.
 
 Thanks to the experience earned in the latest years, I'm now focused on technologies like ASP.NET MVC, Windows Communications Foundations, Azure, Nhibernate and HTML5.
 
