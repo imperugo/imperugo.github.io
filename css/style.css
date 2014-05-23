@@ -65,7 +65,6 @@ h6 { font-size: 14px; }
 p { padding-bottom: 10px; line-height: 26px; }
 strong { font-weight: bold; }
 cite, em, i { font-style: italic; }
-pre, code { font-family: Courier New, monospace; margin-bottom: 10px; }
 ins { text-decoration: none; }
 sup, sub { height: 0; line-height: 1; position: relative; vertical-align: baseline; }
 sup { bottom: 0.8em; }
