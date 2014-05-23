@@ -39,7 +39,7 @@ google_analytics_domain: tostring.it
 #
 # Jekyll Settings
 #
-markdown: redcarpet-pygments
+markdown: redcarpet
 permalink: /:year/:month/:day/:title/
 paginate: 5
 paginate_path: "page/:num"
