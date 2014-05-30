@@ -38,47 +38,57 @@ The first step is to create new project from Visual Studio, choose Console Appli
 
 <a href="{{ site.url }}/assets/2012/07/Capture.jpg"><img class="aligncenter size-full wp-image-616" title="Capture" src="{{ site.url }}/assets/2012/07/Capture.jpg" alt="" width="754" height="85" /></a>
 
-Now, as for the web application, we have to create a folder for our controllers and put inside the classic ValuesController:
-<pre class="brush: csharp">public class ValuesController : ApiController
+Now, as for the web application, we have to create a folder for our controllers and put inside the classic ```ValuesController```:
+
+```csharp
+public class ValuesController : ApiController
 {
-  public IEnumerable&lt;string&gt; Get()
+  public IEnumerable<string> Get()
   {
     return new[]
              {
-               &quot;http://tostring.it&quot;,
-             &quot;http://imperugo.tostring.it&quot;,
-             &quot;http://twitter.com/imperugo&quot;,
-             &quot;http://www.linkedin.com/in/imperugo&quot;
+               "http://tostring.it",
+             "http://imperugo.tostring.it",
+             "http://twitter.com/imperugo",
+             "http://www.linkedin.com/in/imperugo"
              };
   }
-}</pre>
+}
+```
+
 Right now we have to create only the host for the server, so:
-<pre class="brush: csharp">using System;
+
+```csharp
+using System;
 using System.Web.Http;
 using System.Web.Http.SelfHost;
 
+
 namespace imperugo.webapi.selfhost
 {
-	internal class Program
-	{
-		private static void Main(string[] args)
-		{
-			var config = new HttpSelfHostConfiguration(&quot;http://localhost:12345&quot;);
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            var config = new HttpSelfHostConfiguration("http://localhost:12345");
 
-			config.Routes.MapHttpRoute(&quot;Default&quot;, &quot;{controller}&quot;, new {controller = &quot;Home&quot;});
+        config.Routes.MapHttpRoute(&quot;Default&quot;, &quot;{controller}&quot;, new {controller = &quot;Home&quot;});
 
-			// Create server
-			var server = new HttpSelfHostServer(config);
+        // Create server
+        var server = new HttpSelfHostServer(config);
 
-			// Start the server
-			server.OpenAsync().Wait();
+        // Start the server
+        server.OpenAsync().Wait();
 
-			Console.WriteLine(&quot;WebServer Started&quot;);
-			Console.WriteLine(&quot;Press enter to exit&quot;);
-			Console.ReadLine();
-		}
-	}
-}</pre>
+        Console.WriteLine(&quot;WebServer Started&quot;);
+        Console.WriteLine(&quot;Press enter to exit&quot;);
+        Console.ReadLine();
+    }
+}
+
+}
+```
+
 Absolutely easy and fun.
 
 You can download this sample cloning my spike repository from github  <a href=" http://s.tostring.it/Q1wt6U " target="_blank">http://s.tostring.it/Q1wt6U </a>

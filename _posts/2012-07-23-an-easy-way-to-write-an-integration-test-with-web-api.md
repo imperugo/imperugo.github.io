@@ -33,16 +33,94 @@ The problem of the integration test is the repetitiveness code, in fact you have
 For this reason I created a base class that helps us for this job and the result is pretty awesome.
 In this example I want to test the Action below:
 
-{% gist 7786536 gistfile1.cs %}
-
+```csharp
+public class ValuesController : ApiController
+{
+  public IEnumerable<string> Get()
+  {
+    return new[]
+             {
+               "http://tostring.it",
+             "http://imperugo.tostring.it",
+             "http://twitter.com/imperugo",
+             "http://www.linkedin.com/in/imperugo"
+             };
+  }
+}
+```
 And the unit test should be like that:
 
-{% gist 7786536 gistfile2.cs %}
+```csharp
+[Fact]
+public void ValueController_WithGetMethos_ShouldReturnValidData()
+{
+  HttpSelfHostConfiguration configuration = new HttpSelfHostConfiguration("http://localhost:8080");
+  configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
+  configuration.Services.Replace(typeof(IAssembliesResolver), new WebApiClassBase.TestAssemblyResolver(typeof(ValuesController)));
+  configuration.Routes.MapHttpRoute("Default", "{controller}", new { controller = "Home" });
+
+  HttpSelfHostServer server = new HttpSelfHostServer(configuration);
+  try
+  {
+    server.OpenAsync().Wait();
+
+    var request = new HttpRequestMessage();
+
+    request.RequestUri = new Uri("http://localhost:8080");
+
+    request.Method = HttpMethod.Get;
+
+    var client = new HttpClient(server);
+    using (HttpResponseMessage response = client.SendAsync(request).Result)
+    {
+      response.Should().Not.Be.Null();
+      response.IsSuccessStatusCode.Should().Be.True();
+
+      string[] result = response.Content.ReadAsAsync<string[]>().Result;
+
+      result.Length.Should().Be.EqualTo(4);
+      result[0].Should().Be.EqualTo("http://tostring.it");
+      result[1].Should().Be.EqualTo("http://imperugo.tostring.it");
+      result[2].Should().Be.EqualTo("http://twitter.com/imperugo");
+      result[3].Should().Be.EqualTo("http://www.linkedin.com/in/imperugo");
+    }
+  }
+  finally
+  {
+    configuration.Dispose();
+    server.Dispose();
+  }
+}
+```
 
 This code has several problems; the code is not so easy to read, not maintainable, it’s repetitive, etc.
 I wrote a base class that reduce and improve the test dramatically and the result is this:
 
-{% gist 7786536 gistfile3cs %}
+```csharp
+public class ValuesControllerTest : WebApiClassBase
+{
+  public ValuesControllerTest() : base("localhost", 8080, typeof (ValuesController)) { }
+
+  [Fact]
+  public void ValueController_WithGetMethos_ShouldReturnValidData()
+  {
+    base.Start();
+
+    var response = base.CreateRequest("/Values", HttpMethod.Get);
+
+    response.Should().Not.Be.Null();
+    response.IsSuccessStatusCode.Should().Be.True();
+
+    string[] result = response.Content.ReadAsAsync<string[]>().Result;
+
+    result.Length.Should().Be.EqualTo(4);
+    result[0].Should().Be.EqualTo("http://tostring.it");
+    result[1].Should().Be.EqualTo("http://imperugo.tostring.it");
+    result[2].Should().Be.EqualTo("http://twitter.com/imperugo");
+    result[3].Should().Be.EqualTo("http://www.linkedin.com/in/imperugo");
+  }
+}
+```
 
 I replicated the same test but in a more elegant way. The only important things to remember are in the constructors:
 The first parameter is the host, the second one the port and the last one is the type of the controller to test.

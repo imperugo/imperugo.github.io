@@ -24,7 +24,23 @@ My first question was something like - “<strong>Which is the best way to integ
 
 If you choose Less everything is easy, you can install “dotless” from nuget and create that bundle (this example is for MVC 4) transformation:
 
-{% gist 7786552 gistfile1.cs %}
+```csharp
+public class LessTransform : IBundleTransform
+{
+  public void Process(BundleContext context, BundleResponse response)
+  {
+    response.Content = dotless.Core.Less.Parse(response.Content);
+    response.ContentType = "text/css";
+  }
+}
+
+var myBundle = new StyleBundle("~/Content/css")
+                  .Include("~/Content/site.css")
+                  .Include("~/Content/Scss1.less");
+
+myBundle.Transforms.Add(new LessTransform());
+myBundle.Transforms.Add(new CssMinify());
+```
 
 About Compass? …. mmmmm What is Compass? :)
 
@@ -47,7 +63,20 @@ Using ruby and MS-Build together of course. If you want to do the same, follow t
 </ul>
 Under Project section add the follows code:
 
-{% gist 7786552 gistfile2.xml %}
+```xml
+<Target Name="AfterCompile" Condition=" '$(Configuration)' == 'Release' ">
+  <Exec Command="compass compile --output-style compressed --force" />
+  <ItemGroup>
+    <Content Include="Styles\*.css" />
+  </ItemGroup>
+</Target>
+<Target Name="AfterCompile" Condition=" '$(Configuration)' == 'Debug' ">
+  <Exec Command="compass compile" />
+  <ItemGroup>
+    <Content Include="Styles\*.css" />
+  </ItemGroup>
+</Target>
+```
 
 <ul>
 	<li>Right click on the project for the last time and push “Reload Project”;</li>
@@ -58,6 +87,28 @@ The first part of the code (debug condition) just create a css file, the second 
 Moreover if you need to customize the compilation path and other stuff you can add a file config.rb into your project root and ruby will use that configuration for Compass.
 My file looks like that:
 
-{% gist 7786552 gistfile3.rb %}
+```rb
+# Require any additional compass plugins here.
+
+# NORMALIZE: https://github.com/jzorn/compass-normalize-plugin
+#require "normalize"
+
+# set environment
+environment = :development
+
+# Set this to the root of your project when deployed:
+http_path = '/'
+
+css_dir = "Styles/Shared"
+sass_dir = "Styles/SCSS"
+fonts_dir = "Styles/fonts"
+images_dir = "Images"
+javascripts_dir = "Scripts"
+
+# Set image path only
+http_images_path = (environment == :production) ? 'http://tostring.it/' + images_dir : '/' + images_dir
+
+output_style = (environment == :production) ? :compressed : :expanded
+```
 
 Amazing! You have the power of Compass inside a .NET application without using command line for compiling.

@@ -27,7 +27,13 @@ In fact,<strong> Web API is more than a service library used just to expose data
 
 From now on, if you need to create a web request, you should do something like in the code below:
 
-{% gist 7786454 gistfile1.cs %}
+```csharp
+HttpClient client = new HttpClient();
+
+HttpResponseMessage response = await client.GetAsync(requestUrl);
+
+//response contains all you need
+```
 
 My problem was to manage the cookie from the response, since I needed to read the cookies and then store them somewhere for the next request.
 Obviously, the example above is really simple and it’s not enough for me because I need to read all the cookies and then send them to the browser.
@@ -35,7 +41,20 @@ Obviously, the example above is really simple and it’s not enough for me becau
 Fortunately, there is an easy way to read the cookies from an Http Response using Web Api client library.
 The first thing to do is to create an instance of <em>HttpClientHandler</em>, inizialize the<em> CookieContainer</em> collection and then use it the HttpClient Constructor:
 
-{% gist 7786454 gistfile2.cs %}
+```csharp
+HttpClientHandler handler = new HttpClientHandler
+                              {
+                                UseCookies = true,
+                                UseDefaultCredentials = true,
+                                CookieContainer = new CookieContainer()
+                              };
+
+HttpClient client = new HttpClient(handler);
+
+HttpResponseMessage response = await client.GetAsync(requestUrl);
+
+// hanlder.CookieContainer contains your cookies
+```
 
 Now, after the request, the <em>CookieContainer</em> should contain the correct cookies.  Now we need to manage the cookie’s type, since we have two different kind of responses: one for ASP.NET MVC and one for Web API.
 
@@ -50,10 +69,22 @@ Three different classes, the first one comes from the client and the others for 
 For this reason, I created a Cookie manager class that moves the data from a cookie class to another one.
 To use the cookie in ASP.NET MVC is really simple, we just need to use the HttpContext (Request or response, depends if you need to add or read a cookie) like the code below:
 
-{% gist 7786454 gistfile3.cs %}
+```csharp
+//reading
+HttpContext.Request.Cookies["cookieName"];
+
+//writing
+HttpContext.Response.Cookies.Add(new HttpCookie("cookieName"));
+```
 
 For the Web API the approach is different. In fact, into the controller, there isn’t the HttpContext class like into MVC, so we need to manage the data using the HttpHeader like this:
 
-{% gist 7786454 gistfile4.cs %}
+```csharp
+//reading
+var cookies = actionContext.Request.Headers.GetCookies();
+
+/adding
+response.Headers.AddCookies(cookies);
+```
 
 Now I’m able to read cookies from everywhere and my last goal is to find a valid entry point where to manage the cookie read/write for MVC and Web API (easy ActionInvoker J)

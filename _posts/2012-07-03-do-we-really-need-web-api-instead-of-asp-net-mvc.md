@@ -16,14 +16,19 @@ When I tried for the first time <a href="http://tostring.it/tag/webapi/">WebAPI<
 In these days I’ve started to do some experiments and, after that, I can say that we really need it for many reason, one of this is absolutely the content negotiation.
 
 Take a look at the two code blocks below:
-<pre class="brush: csharp; gutter: true">public IEnumerable&lt;string&gt; Get() {
-  return new string[] { &quot;value1&quot;, &quot;value2&quot; };
+
+```csharp
+public IEnumerable<string> Get() {
+  return new string[] { "value1", "value2" };
 }
+
 
 [AcceptVerbs(HttpVerbs.Get)]
 public ActionResult Get() {
-  return Json(new string[] {&quot;value1&quot;, &quot;value2&quot;}, JsonRequestBehavior.AllowGet);
-}</pre>
+  return Json(new string[] {"value1", "value2"}, JsonRequestBehavior.AllowGet);
+}
+```
+
 As you can see these two code blocks are really similar except for two things:
 <ul>
 	<li>The attribute <em>AcceptVerbs</em>;</li>

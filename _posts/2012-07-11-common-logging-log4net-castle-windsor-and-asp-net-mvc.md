@@ -34,25 +34,34 @@ and, in the “host” project you have to reference the concrete implementation
 	<li><strong>Enterprise Library</strong> (<a href="http://nuget.org/packages/Common.Logging.EntLib">http://nuget.org/packages/Common.Logging.EntLib</a>);</li>
 </ul>
 From now, everywhere you want to log something, you have to create the logger and then use it:
-<pre class="brush: csharp">using Common.Logging;
+```csharp
+using Common.Logging;
 ...
 ILog log = LogManager.GetCurrentClassLogger();
-log.Debug(&quot;hello world&quot;);</pre>
+log.Debug("hello world");
+```
 The problem of this code is the repetitiveness. In every class you have to create the logger before use it. Ok it could be static but is already boring.
 Fortunately ASP.NET MVC has a good architecture and allows us to use the dependency injection (DI from now), so we can inject the logger into the constructor of our controllers:
-<pre class="brush: csharp">public class HomeController : ControllerBase {
-  ILog logger;
-  public HomeController(ILog logger){
-    this.logger = logger;
-  }
-}</pre>
+
+```csharp
+public class HomeController : ControllerBase {
+	ILog logger;
+	public HomeController(ILog logger){
+		this.logger = logger;
+	}
+}
+```
+
 The next step I want to analyze in this post is the registration of ILog. Typically, in the most DI frameworks for a registration, want the interface, the implementation and the lifecycle, so something like this:
-<pre class="brush: csharp">public class DiRegister{
+```csharp
+public class DiRegister{
   public void Register(){
     //.....
     container.Register(typeof(ILog), LogManager.GetCurrentClassLogger(), LifeCycle.Singleton);
   }
-}</pre>
+}
+```
+
 The problem of that approach is in <em>LogManager.GetCurrentClassLogger()</em>.This method returns an instance of <em>ILog</em> for the current class, which is the class where you are registering your dependency: for this reason, this is a wrong behavior.
 
 <strong>What does it mean?</strong>
@@ -61,14 +70,17 @@ It’s simple. If you got an error inside the <em>HomeController</em> and you ca
 The class LogManager has <em>LogManager.GetLogger()</em> method that accept also the logger name. You have to create a class that retrieves the correct name (<em>HomeController</em> in our example) and injects the Logger using the right name.
 
 With Castle Windsor you have to create and register a SubDependencyResolver (you can do the same with the most DI frameworks) implementing the interface ISubDependencyResolver like in the code below:
-<pre class="brush: csharp">public class LoggerSubDependencyResolver : ISubDependencyResolver
+
+```csharp
+public class LoggerSubDependencyResolver : ISubDependencyResolver
 {
   public bool CanResolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model,DependencyModel dependency)
   {
     return dependency.TargetType == typeof (ILog);
   }
 
-  public object Resolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model,DependencyModel dependency)
+
+public object Resolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model,DependencyModel dependency)
   {
     if (CanResolve(context, contextHandlerResolver, model, dependency))
     {
@@ -79,9 +91,15 @@ With Castle Windsor you have to create and register a SubDependencyResolver (you
     }
     return null;
   }
-}</pre>
+}
+```
+
 Now you have to register your SubDependencyResolver in Castle Container and test it:
-<pre class="brush: csharp">container.Kernel.Resolver.AddSubResolver(new LoggerSubDependencyResolver());</pre>
+
+```csharp
+container.Kernel.Resolver.AddSubResolver(new LoggerSubDependencyResolver());
+```
+
 Summarizing, you can inject a Log without dependencies, only using NuGet and few c# code lines.
 No Dependency, No new() keyword.
 

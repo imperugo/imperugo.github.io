@@ -2,14 +2,15 @@ pre {
   counter-reset: line-numbering;
   border: solid 1px #d9d9d9;
   border-radius: 0;
-  background: #F8F8FF;
+  background: #F5F5F5;
   padding: 0;
-  line-height: 15px;
+  line-height: 20px;
   margin-bottom: 30px;
   white-space: pre;
   overflow-x: auto;
   word-break: inherit;
   word-wrap: inherit;
+  padding:10px;
 }
 
 pre, code { font-family: Courier New, monospace; margin-bottom: 10px; }

@@ -31,17 +31,86 @@ It seems more complex that it really is. There is a <strong>Post</strong> class 
 The only common thing between them is the property CommentsId into Post class (It’s called Id in ItemComments). With it, you can easily load both documents in the same time.
 Let’s see how to use it:
 
-{% gist 7795099 gistfile1.cs %}
+```csharp
+Post item = new Post()
+//populate the properties with your values
+
+this.Session.Store(item);
+
+ItemComments comments = new ItemComments
+                          {
+                            Approved = new List<Comment>(),
+                            Pending = new List<Comment>(),
+                            Spam = new List<Comment>(),
+                            Item = new ItemReference
+                                     {
+                                       Id = post.Id,
+                                       Status = post.Status,
+                                       ItemPublishedAt = post.PublishAt
+                                     }
+                          };
+
+this.Session.Store(comments);
+post.CommentsId = comments.Id;
+
+this.Session.SaveChanges();
+
+//To read both with only one request:
+
+Post post = this.Session
+        .Include<Post>(x => x.CommentsId)
+        .Load(id);
+
+ItemComments comments = this.Session.Load<ItemComments>(post.CommentsId);
+```
 
 As you see in the diagram, the key for the Post is a simple integer but in the ItemComments it is a string. That is mandatory if you want to use the <strong>Include</strong> because in the string there is all Raven needs to load the document (the ID and the type, in this case ItemComments/12345 where 12345 is the id).
 
 Different CLR types for the key means to extend the base class for all entities. Typically I have a base class (EntityBase in this model) that includes the ID, Creation Date and a calculate property to check the status of the entity.
 
-{% gist 7795099 gistfile2.cs %}
+```csharp
+public class EntityBase<T>
+{
+  #region Public Properties
+
+  public DateTimeOffset CreatedAt { get; set; }
+
+  public T Id { get; set; }
+
+  public bool IsTransient
+  {
+    get
+    {
+      return this.Id == 0;
+    }
+  }
+
+  #endregion
+}
+```
 
 The property IsTransient could be helpful to understand if you have to execute some path or not.
 Using a generic CLR type for the ID the base class must be extended like this:
 
-{% gist 7795099 gistfile3.cs %}
+```csharp
+public class EntityBase<T>
+{
+  #region Public Properties
+
+  public DateTimeOffset CreatedAt { get; set; }
+
+  public T Id { get; set; }
+
+  public bool IsTransient
+  {
+    get
+    {
+      return EqualityComparer<T>.Default.Equals(Id, default(T));
+    }
+  }
+
+  #endregion
+}
+```
 
 Now you can still use a base class with the same features having fun with RavenDB.

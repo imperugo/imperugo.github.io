@@ -26,41 +26,110 @@ I’m doing that because I’m in a test project and I’d like to see the respo
 
 NOTE: All code in this post,except the last one, must be located into the global.asax.cs
 
-{% gist 7786526 gistfile1.cs %}
+```csharp
+var formatters = GlobalConfiguration.Configuration.Formatters;
+
+formatters.Remove(formatters.XmlFormatter);
+```
 
 Now we can start change the setting for all Json responses accessing to <em><strong>GlobalConfiguration.Configuration.Formatters.JsonFormatter</strong></em>.
 
 In the following examples I’ll use always the class below:
 
-{% gist 7786526 gistfile2.cs %}
+```csharp
+public class User
+{
+  public string Firstname { get; set; }
+  public string Lastname { get; set; }
+  public string Username { get; set; }
+  public DateTime Birthdate { get; set; }
+  public Uri Website { get; set; }
+  public int Age { get; set; }
+  public double Salary { get; set; }
+
+  [JsonIgnore]
+  public string IgnoreProperty { get; set; }
+}
+```
 
 <strong>How can we indent the json response?</strong>
 
-{% gist 7786526 gistfile3.cs %}
+```csharp
+var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+json.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+```
 
 <strong>How can we change the case in the response?</strong>
 
-{% gist 7786526 gistfile4.cs %}
+```csharp
+var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+```
 
 <strong>How can we manage the null in the response?</strong>
 
-{% gist 7786526 gistfile5.cs %}
+```csharp
+var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+json.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+```
 
 <strong>How can we change the DateTime format?</strong>
 
-{% gist 7786526 gistfile6.cs %}
+```csharp
+var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+json.SerializerSettings.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.MicrosoftDateFormat;
+```
 
 <strong>How can we change the TimeZone format?</strong>
 
-{% gist 7786526 gistfile7.cs %}
+```csharp
+var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+json.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc;
+```
 
 <strong>How can we change the Culture of the serializer?</strong>
 
-{% gist 7786526 gistfile8.cs %}
+```csharp
+var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+json.SerializerSettings.Culture = new CultureInfo("it-IT");
+```
 
 Another cool feature of Web API is to opportunity to override the configuration for a single response.
 You can use all of the previous setting directly in the single action like explained in the code below:
 
-{% gist 7786526 gistfile9.cs %}
+```csharp
+public HttpResponseMessage Get(){
+  IList<User> result = new List<User>();
+  result.Add(new User
+               {
+                 Age = 34,
+                 Birthdate = DateTime.Now,
+                 Firstname = "Ugo",
+                 Lastname = "Lattanzi",
+                 IgnoreProperty = "This text should not appear in the reponse",
+                 Salary = 1000,
+                 Username = "imperugo",
+                 Website = new Uri("http://www.tostring.it")
+               });
+
+  var formatter = new JsonMediaTypeFormatter();
+  var json =formatter.SerializerSettings;
+
+  json.DateFormatHandling = Newtonsoft.Json.DateFormatHandling.MicrosoftDateFormat;
+  json.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc;
+  json.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+  json.Formatting = Newtonsoft.Json.Formatting.Indented;
+  json.ContractResolver = new CamelCasePropertyNamesContractResolver();
+  json.Culture = new CultureInfo("it-IT");
+
+  return Request.CreateResponse(HttpStatusCode.OK, result, formatter);
+}
+```
 
 Such as ASP.NET MVC, Web API are really flexible ... and ROCKS!

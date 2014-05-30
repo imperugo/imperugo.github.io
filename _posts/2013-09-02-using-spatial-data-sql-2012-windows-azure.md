@@ -26,8 +26,9 @@ Such as all posts by Rick, also this one is awesome. It explains very well all y
 <strong>So, where is the reason of this post?</strong> The deploy.
 In my local environment, I was able to execute all Spatial Queries but, in the production environment, Iwas getting this strange message “The method or operation is not implemented.” In this line of code:
 
-{% gist 7794955 gistfile1.cs %}
-
+```csharp
+DbGeography.PointFromText(text, 4326);
+```
 Keep looking on Google I found the reason. DefaultSpatialServices in Entity Framework are using SqlGeography and SqlGeometry types as backing types. These are a part of Microsoft.SqlServer.Types.dll that is not included in the .NET Framework.
 
 On my local installation it works because I've installed SQL Server and it register that assembly into the GAC (Global Assembly Cache) during the setup procedure. Fortunately Azure Web Site and Cloud Service don't have Sql Server installed so the assembly is missing.

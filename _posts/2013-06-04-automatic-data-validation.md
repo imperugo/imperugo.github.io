@@ -21,7 +21,36 @@ In this article, I’m going to “speak” about the validation, probably one o
 
 That’s what I mean with “boring stuff”
 
-{% gist 7786470 gistfile1.cs %}
+```csharp
+public class UserService
+{
+  public void CreateUser(string username, string email, string website)
+  {
+    if(string.IsNullOrEmpty(username))
+    {
+      throw new ArgumentException("The username must contain a valida value");
+    }
+
+    if(string.IsNullOrEmpty(email))
+    {
+      throw new ArgumentException("The email must contain a valida value");
+    }
+
+    if(!Regex.IsMatch(email,"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"))
+    {
+      throw new ArgumentException("The specified email is not valid.");
+    }
+
+   if(!string.IsNullOrEmpty(website) && !Regex.IsMatch(website,"^http(s)?://([\w-]+.)+[\w-]+(/[\w- ./?%&=])?$"))
+   {
+     throw new ArgumentException("The specified website is not valid.");
+   }
+
+   //DO YOUR CODE
+
+  }
+}
+```
 
 As you can see in the method above there are four parameters and <strong>I need to validate three of them before starting to do anything</strong> (in the example website is validated only if it has a value).
 Probably you, and also me, wrote this code thousand and thousand times …. ok It’s time to remove that.
@@ -39,32 +68,126 @@ The first thing to do is to understand how to run manually the validation: <stro
 Now <strong>we have to create a container class for all the parameters and to add the Data Annotations</strong>. That’s important because we can’t use the Data Annotations directly on the parameter.
 If you did everything correct, your class now should looks like this:
 
-{% gist 7786470 gistfile2.cs %}
+```csharp
+public class CreateUserRequest
+{
+  [Required]
+  public string Username { get; set; }
+
+  [Required]
+  [EmailAddress]
+  public string Email { get; set; }
+
+  [Url]
+  public string Website { get; set; }
+}
+```
 
 Because a method could have more than one parameter, and we don’t really need to validate all of these, it could be important to tell to the validation service (our interceptor) what needs to be validated and what doesn’t.
 For this reason I’ve created a custom attribute, <strong>ValidateAttribute</strong>:
 
-{% gist 7786470 gistfile3.cs %}
+```csharp
+[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = true)]
+public class ValidateAttribute : Attribute
+{
+}
+```
 
 No comments for this code, <strong>it is used only like a marker</strong>.
 
 Now change the signature of your method using the attribute and the input class like this:
 
-{% gist 7786470 gistfile4.cs %}
+```csharp
+public class UserService
+{
+  public void CreateUser([Validate] CreateUserRequest request)
+  {
+    //DO SOMETHING
+  }
+}
+```
 
 Good, everything is ready except for the interceptor, it’s time to create it:
 
-{% gist 7786470 gistfile5.cs %}
+```csharp
+public class ValidationInterceptor : IInterceptor
+{
+  private readonly IObjectValidator validator;
+
+  public ValidationInterceptor() : this(new DataAnnotationsValidator())
+  {
+  }
+
+  public ValidationInterceptor(IObjectValidator validator)
+  {
+    this.validator = validator;
+  }
+
+  public void Intercept(IInvocation invocation)
+  {
+    ParameterInfo[] parameters = invocation.Method.GetParameters();
+    for (int index = 0; index < parameters.Length; index++)
+    {
+      ParameterInfo paramInfo = parameters[index];
+      object[] attributes = paramInfo.GetCustomAttributes(typeof(ValidateAttribute), false);
+
+      if (attributes.Length == 0)
+      {
+        continue;
+      }
+
+      this.validator.Validate(invocation.Arguments[index]);
+    }
+
+    invocation.Proceed();
+  }
+}
+```
 
 The interceptor logic is really simple. <strong>It iterates all parameters and, only for these who have my custom attribute, it calls the Validate method</strong>.
 
 To use an interceptor is important to register it and add to your service:
 
-{% gist 7786470 gistfile6.cs %}
+```csharp
+IWindsorContainer container = new WindsorContainer();
+
+container.Register(Component.For<IInterceptor>().ImplementedBy<ValidationInterceptor>());
+
+container.Register(Component.For<UserService>()
+                  .ImplementedBy<UserService>()
+                  .Interceptors<ValidationInterceptor>());
+```
 
 That’s all, run the this code to have the validation:
 
-{% gist 7786470 gistfile7.cs %}
+```csharp
+private static void Main(string[] args)
+{
+  IWindsorContainer container = new WindsorContainer();
+
+  container.InizializeAttributeValidation();
+
+  container.Register(Component.For<IUserService>()
+                    .ImplementedBy<UserService>()
+                    .EnableValidation());
+
+  IUserService userService = container.Resolve<IUserService>();
+
+  try
+  {
+    userService.CreateUser(new CreateUserRequest());
+  }
+  catch (ImperugoValidatorException e)
+  {
+    //Validation exception
+    Console.WriteLine(e.Message);
+  }
+  finally
+  {
+    Console.ReadLine();
+  }
+}
+```
 
 <strong>From now, every time you call the method CreateUser (resolved by Castle), the validation will be automatically raised and, for the parameter with a wrong value, an ImperugoValidationExcpetion will throw, you can catch them and choose how to show the message.</strong>
 
@@ -81,7 +204,15 @@ The first thing to do is to install the package (Castle in this case):
 
 Now change the Castle code like this:
 
-{% gist 7786470 gistfile8.cs %}
+```csharp
+IWindsorContainer container = new WindsorContainer();
+
+container.InizializeAttributeValidation();
+
+container.Register(Component.For<UserService>()
+                  .ImplementedBy<UserService>()
+                  .EnableValidation());
+```
 
 If you use a different Framework and you like this validation, fork the repo <a title="Imperugo Validation repository" href="https://github.com/imperugo/Imperugo.Validation" target="_blank">here</a>, add the new Framework, and create a “<strong>pull request</strong>”.
 

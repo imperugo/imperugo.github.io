@@ -49,7 +49,19 @@ Once the project has been created, it's important to enable CORS for our "**trus
 
 If you used the default Visual Studio 2013 template, your Global.asax.cs should look like this:
 
-{% gist  9308342 global.asax.cs %}
+```csharp
+public class WebApiApplication : System.Web.HttpApplication
+{
+    protected void Application_Start()
+    {
+        AreaRegistration.RegisterAllAreas();
+        GlobalConfiguration.Configure(WebApiConfig.Register);
+        FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
+        BundleConfig.RegisterBundles(BundleTable.Bundles);
+    }
+}
+```
 
 Next, it's time to edit the file with the API configuration, "WebApiConfig.cs" into "App_Start".
 
@@ -63,11 +75,51 @@ Next, it's time to edit the file with the API configuration, "WebApiConfig.cs" i
 
 Once all the "ingredients" are ready, it's time to enable CORS:
 
-{% gist  9308342 WebApiConfig.cs %}
+```csharp
+using System.Web.Http;
+
+namespace imperugo.webapi.cors.server
+{
+    public static class WebApiConfig
+    {
+        public static void Register(HttpConfiguration config)
+        {
+            // Web API configuration and services
+            config.EnableCors();
+
+            // Web API routes
+            config.MapHttpAttributeRoutes();
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+        }
+    }
+}
+```
 
 Our API Controller looks like this:
 
-{% gist  9308342 ValueController.cs %}
+```csharp
+using System.Collections.Generic;
+using System.Web.Http;
+using System.Web.Http.Cors;
+
+namespace imperugo.webapi.cors.server.Controllers
+{
+    [EnableCors(origins: "http://imperclient.azurewebsites.net", headers: "*", methods: "*")]
+    public class ValuesController : ApiController
+    {
+        // GET api/values/5
+        public string Get()
+        {
+            return "This is my controller response";
+        }
+    }
+}
+```
 
 The most important part of this code is **EnableCors** method and the namesake attribute (included the VERBS, Domain and HEADERS)
 
@@ -80,11 +132,36 @@ The code we'll see for the client is just plain Javascript, so you can use a sim
 
 The HTML Code:
 
-{% gist  9308342 clientPage.html %}
+```html
+<div class="jumbotron">
+    <h2>Test CORS (Cross-origin resource sharing)</h2>
+    <p class="lead">
+        <a href="#" class="btn btn-primary btn-large" id="testButton">Test it now&raquo;</a></p>
+    <p>
+    <p id="response">
+        NoResponse
+    </p>
+</div>
+```
 
 Javascript Code:
 
-{% gist  9308342 javascriptCall.js %}
+```javascript
+<script language="javascript">
+    var feedbackArea = $('#response');
+    $('#testButton')
+        .click(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://imperdemo.azurewebsites.net/api/values'
+            }).done(function (data) {
+                feedbackArea.html(data);
+            }).error(function (jqXHR, textStatus, errorThrown) {
+                feedbackArea.html(jqXHR.responseText || textStatus);
+            });
+    });
+</script>
+```
 
 If you did everything right, you can to deploy our apps (server and client) to test them.
 

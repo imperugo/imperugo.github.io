@@ -27,6 +27,15 @@ Default cache policy (from MSDN)
 <blockquote>Satisfies a request for a resource either by using the cached copy of the resource or by sending a request for the resource to the server. The action taken is determined by the current cache policy and the age of the content in the cache. This is the cache level that should be used by most applications.</blockquote>
 To change the cache policy we need to do something like that:
 
-{% gist 7786489 gistfile1.cs %}
+```csharp
+using (WebRequestHandler handler = new WebRequestHandler())
+{
+  handler.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.BypassCache);
 
+  using (HttpClient client = new HttpClient(handler))
+  {
+    response = await client.GetAsync("http://www.mysite.com/api/something/");
+  }
+}
+```
 As you can see is really simple and really important so, be careful using the right Header values in your response J
