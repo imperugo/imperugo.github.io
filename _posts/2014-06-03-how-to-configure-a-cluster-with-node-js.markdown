@@ -2,6 +2,13 @@
 layout: post
 title: "How to configure a cluster with Node Js"
 date: 2014-06-03
+comments: true
+categories:
+- NodeJs
+tags:
+- node
+- nodejs
+- cluster
 ---
 
 In the last period I'm working a lot with [Node JS](http://nodejs.org/) and, for a developer like me who loves C# and .NET, I'm still not sure I really love Node :confused:
