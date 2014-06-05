@@ -291,7 +291,7 @@ body, input, textarea, select { font-family: 'Open Sans', Arial, sans-serif; }
 	.entry-content tr th, .entry-content thead th { color: #555; font-weight: bold; padding: 9px 24px; }
 	.entry-content tr td { border-top: 1px solid #eee; padding: 6px 24px; }
 
-.et-additional-content .entry-content { margin-bottom: 85px; }
+.et-additional-content .entry-content { margin-bottom: 50px; }
 .page .entry { padding-bottom: 35px; }
 
 .et-author { position: absolute; left: 0; bottom: -25px; width: 100%; text-align: center; z-index: 10; }
@@ -623,6 +623,32 @@ p#et-search-title span { background-position: 0 10px; }
 		.comment-author .reply-container, .comment_area:before { display: none; }
 		.comment-bottom { display: block; margin: 23px 0 0; }
 		.comment-body { margin-bottom: 30px; }
+}
+
+#page-navigation {
+	padding-bottom : 25px;
+	padding-top : 25px;
+}
+
+.related {
+	padding-bottom : 25px;
+	line-height : 22px;
+	border-bottom: 1px solid #ededed;
+}
+
+.related h2 {
+	margin-bottom : 10px;
+}
+
+.related a {
+	background: url(/images/sitemap-page.png) no-repeat left center;
+	padding: 4px 0px 4px 19px;
+	color: #464646;
+}
+
+.related a:hover {
+	color: #000;
+	text-decoration : none;
 }
 
 .nuget-badge code {

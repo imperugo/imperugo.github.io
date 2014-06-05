@@ -1,0 +1,70 @@
+{% assign categories_list = page.categories | sort %}
+{% assign max_count = 5 %}
+{% assign count = 1 %}
+{% assign relatedExist = false %}
+
+{% for post in site.posts %}
+  {% assign index_post = forloop.index %}
+  {% assign post_categories = post.categories | sort %}
+     {% if count <= max_count %}
+       {% if categories_list == post_categories %}
+         {% if post.title != page.title %}
+         {% assign relatedExist = true %}
+         {% assign count = count | plus:'1' %}
+         {% endif %}
+       {% else %}
+        {% for cat in post_categories %}
+          {% if cat == categories_list[forloop.index0] %}
+            {% assign relatedExist = true %}
+            {% assign count = count | plus:'1' %}
+          {% endif %}
+        {% endfor %}
+       {% endif %}
+     {% endif %}
+{% endfor %}
+
+
+{% if relatedExist == true %}
+
+{% assign categories_list = page.categories | sort %}
+{% assign max_count = 5 %}
+{% assign count = 1 %}
+
+<div class="container related">
+  <strong>
+    <h2>
+      Related posts
+    </h2>
+  </strong>
+  <ul>
+    {% for post in site.posts %}
+      {% assign index_post = forloop.index %}
+      {% assign post_categories = post.categories | sort %}
+         {% if count <= max_count %}
+           {% if categories_list == post_categories %}
+             {% if post.title != page.title %}
+             <li>
+               <a data-event-label="Post"
+                   data-event-category="Related"
+                   href="{{ site.url}}{{ post.url }}">{{ post.title }}</a>
+             </li>
+             {% assign count = count | plus:'1' %}
+             {% endif %}
+           {% else %}
+            {% for cat in post_categories %}
+              {% if cat == categories_list[forloop.index0] %}
+                 <li>
+                   <a data-event-label="Post"
+                       data-event-category="Related"
+                       href="{{ site.url}}{{ post.url }}">{{ post.title }}</a>
+                 </li>
+                {% assign count = count | plus:'1' %}
+              {% endif %}
+            {% endfor %}
+           {% endif %}
+         {% endif %}
+    {% endfor %}
+  </ul>
+</div> <!-- .container -->
+
+{% endif %}

@@ -48,18 +48,20 @@ single: true
         {{ content | excerpt }}
     </div> <!-- .entry-content -->
 
-    <div id="page-navigation" class="container">
-        <div class="previous">
-            {% if page.previous.url %}
-                    <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
-            {% endif %}
-        </div>
+    {% include post/related_posts.html %}
 
-        <div class="next">
-            {% if page.next.url %}
-                   <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &raquo; </a>
-            {% endif %}
-        </div>
+    <div id="page-navigation" class="container">
+        {% if page.previous.url %}
+          <div class="previous">
+                      <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+          </div>
+        {% endif %}
+
+        {% if page.next.url %}
+          <div class="next">
+                     <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &raquo; </a>
+          </div>
+        {% endif %}
     </div>
 
     {% if site.disqus_short_name and page.comments == true %}
