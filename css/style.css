@@ -625,7 +625,6 @@ p#et-search-title span { background-position: 0 10px; }
 		.comment-body { margin-bottom: 30px; }
 }
 
-
 .nuget-badge code {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -641,4 +640,12 @@ p#et-search-title span { background-position: 0 10px; }
     padding: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.next{
+	float:right;
+}
+
+.previous{
+	float:left;
 }

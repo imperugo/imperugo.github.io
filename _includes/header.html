@@ -3,24 +3,24 @@
 		<a href="/">
 			<img src="/images/logazzo2.png" alt="Home Page" id="logo" />
 		</a>
-		
+
 		{% include navigation.html %}
 
 		<div id="et-social-icons">
 			{% if site.googleplus_user %}
-				<a href="https://plus.google.com/{{ site.googleplus_user }}/" target="_blank">
+				<a data-event-label="Google+" data-event-category="Social" href="https://plus.google.com/{{ site.googleplus_user }}/" target="_blank">
 					<img src="/images/google.png" alt="Google Plus" />
 				</a>
 			{% endif %}
 
 			{% if site.facebook_user %}
-				<a href="https://www.facebook.com/{{ site.facebook_user }}" target="_blank">
+				<a data-event-label="Facebook" data-event-category="Social" href="https://www.facebook.com/{{ site.facebook_user }}" target="_blank">
 					<img src="/images/facebook.png" alt="Facebook" />
 				</a>
 			{% endif %}
 
 			{% if site.twitter_user %}
-				<a href="http://twitter.com/{{ site.twitter_user }}" target="_blank">
+				<a data-event-label="Twitter" data-event-category="Social" href="http://twitter.com/{{ site.twitter_user }}" target="_blank">
 					<img src="/images/twitter.png" alt="Twitter" />
 				</a>
 			{% endif %}
