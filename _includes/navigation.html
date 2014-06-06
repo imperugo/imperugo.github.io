@@ -1,27 +1,33 @@
 <nav id="top-menu">
 	<ul id="menu-primary" class="nav">
 		<li class="menu-item">
-			<a href="/about-me/" >
+			<a data-event-label="AboutMe" data-event-category="Menu" href="/about-me/" >
 				About me
 			</a>
 		</li>
 		<li class="menu-item">
-			<a href="/cv/" >
+			<a data-event-label="CV" data-event-category="Menu" href="/cv/" >
 				CV
 			</a>
 		</li>
-		<li class="menu-item">
-			<a href="/newsletter/" >
-				Newsletter
+		<li class="menu-item menu-item-has-children">
+			<a data-event-label="Archive" data-event-category="Menu" href="/archive/" >
+				Resources
 			</a>
+			<ul class="sub-menu">
+				<li class="menu-item"><a data-event-label="Archive" data-event-category="Menu" href="/archive/">Archive</a></li>
+				<li class="menu-item"><a data-event-label="Categories" data-event-category="Menu" href="/categories/">Categories</a></li>
+				<li class="menu-item"><a data-event-label="Tags" data-event-category="Menu" href="/tags/">Tags</a></li>
+				<li class="menu-item"><a data-event-label="Newsletter" data-event-category="Menu" href="/newsletter/">Newsletter</a></li>
+			</ul>
 		</li>
 		<li class="menu-item">
-			<a href="/contact/" >
+			<a data-event-label="Contact" data-event-category="Menu" href="/contact/" >
 				Contact
 			</a>
 		</li>
 		<li class="menu-item">
-			<a href="http://feeds.feedburner.com/override/tostring/it" >
+			<a data-event-label="Rss" data-event-category="Menu" href="http://feeds.feedburner.com/override/tostring/it" >
 				Rss
 			</a>
 		</li>
