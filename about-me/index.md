@@ -1,8 +1,6 @@
 ---
 layout: page
 title: About me
-categories: []
-tags: []
 status: publish
 type: page
 url: /about-me/

@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Webnet Conference
-categories: []
-tags: []
 status: publish
 type: page
 published: true

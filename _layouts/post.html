@@ -48,6 +48,12 @@ single: true
         {{ content | excerpt }}
     </div> <!-- .entry-content -->
 
+    <div class="container">
+      <div class="tags">
+      	{% include post/tags.html %}
+      </div>
+    </div>
+
     {% include post/related_posts.html %}
 
     <div id="page-navigation" class="container">

@@ -1,12 +1,12 @@
 {% if post.tags %}
 	{% for tag in post.tags %}
-  	<a href="/tags#{{ tag }}" title="">{{ tag }}</a>
+  	<a data-event-label="{{ tag }}" data-event-category="Tag" href="/tags#{{ tag }}" title="">{{ tag }}</a> +
 	{% endfor %}
 {% endif %}
 
 
 {% if page.tags %}
 	{% for tag in page.tags %}
-	  <a href="/tag#{{ tag }}" title="">{{ tag }}</a>
+	  <a data-event-label="{{ tag }}" data-event-category="Tag" href="/tag#{{ tag }}" title="">{{ tag }}</a> -
 	{% endfor %}
 {% endif %}

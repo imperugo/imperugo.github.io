@@ -6,6 +6,15 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', '{{ site.google_analytics_tracking_id }}', '{{ site.google_analytics_domain }}');
+
+  var gsref = document.referrer ;
+  if (~gsref.indexOf('://www.google.')) {
+  	if (gsref.indexOf('?') ==-1) {
+  		gsref = document.referrer + '?q=';
+  		ga('set', 'referrer', gsref);
+  	}
+  }
+
   ga('send', 'pageview');
 </script>
 {% endif %}

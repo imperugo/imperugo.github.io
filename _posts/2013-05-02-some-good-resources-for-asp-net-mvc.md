@@ -3,7 +3,8 @@ layout: post
 title: Some good resources for ASP.NET MVC
 categories:
 - aspnetmvc
-tags: []
+tags:
+- aspnetmvc
 status: publish
 type: post
 published: true

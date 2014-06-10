@@ -1,8 +1,6 @@
 ---
 layout: page
 title: CV
-categories: []
-tags: []
 status: publish
 type: page
 published: true

@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Newsletter
-categories: []
-tags: []
 status: publish
 type: page
 published: true

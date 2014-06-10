@@ -55,7 +55,7 @@ a:hover { text-decoration: underline; }
 br.clear { margin: 0px; padding: 0px; }
 
 h1, h2, h3, h4, h5, h6 { padding-bottom: 5px; line-height: 1em; font-weight: normal; }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #6ba7a5; }
 h1 { font-size: 30px; }
 h2 { font-size: 24px; }
 h3 { font-size: 22px; }
@@ -632,6 +632,7 @@ p#et-search-title span { background-position: 0 10px; }
 
 .related {
 	padding-bottom : 25px;
+	padding-top: 25px;
 	line-height : 22px;
 	border-bottom: 1px solid #ededed;
 }
@@ -649,6 +650,23 @@ p#et-search-title span { background-position: 0 10px; }
 .related a:hover {
 	color: #000;
 	text-decoration : none;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/font/fontawesome-webfont.eot");
+  src: url("/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),url("/font/fontawesome-webfont.woff") format("woff"),url("/font/fontawesome-webfont.ttf") format("truetype"),url("/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),url("/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container .tags:before {
+	color: #ccc;
+  font: 1.3em FontAwesome;
+  left: 0;
+	line-height : 25px;
+  margin-right: 5px;
+	content: "\f02c";
 }
 
 .nuget-badge code {
