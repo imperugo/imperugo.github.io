@@ -12,6 +12,17 @@
 		  ga('send', 'event', eventCategory, 'click', $(this).attr('data-event-label'),1);
 		});
 
+		$('a').each(function() {
+		   var a = new RegExp('/' + window.location.host + '/');
+		   if(!a.test(this.href)) {
+		       $(this).click(function(event) {
+		           event.preventDefault();
+		           event.stopPropagation();
+		           window.open(this.href, '_blank');
+		       });
+		   }
+		});
+
 		var $et_top_menu   = $( 'ul.nav' ),
 			$comment_form  = $( '#commentform' );
 
