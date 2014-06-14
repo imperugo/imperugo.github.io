@@ -35,10 +35,12 @@ tags:
 ---
 
 The idea of this post is born talking with my colleague Antonio about the frameworks a .NET web developer should know (from my point of view of course). That's funny because the list is very long and I asked myself if there is something wrong with my idea of .NET web developer or something else.
+From my point of view (and also for my company) there are two kind of web developers, Back End (server side code) and Front End (javascript, css and HTML).
+Unfortunately, in Italy, these figures matches in only one person and the quality of the product obviously falls.
 
-Here is my list:
+<br/>
 
-Of course in the first position there are the Microsoft web Stack
+##**Back End Developer**
 
 <br/>
 
@@ -56,8 +58,8 @@ Of course there are few things I don't like of it (first of all System.Web), but
 ######Website: *[http://www.asp.net/web-api](http://www.asp.net/web-api)*<br/>
 ######Source code: *[http://aspnetwebstack.codeplex.com/](http://aspnetwebstack.codeplex.com/)*<br/>
 
-ASP.NET Web API probably  is the best solution if you know ASP.NET MVC and you don't have time to learn something else like NancyFx, NodeJs and so on;
-The approach is very similar to MVC (Controller + Action). Fortunately it doesn't have the dependency to System.Web but it's a Framework totally separate from MVC and sometime you have to replicate the same code on MVC and Web API.
+ASP.NET Web API is probably the best solution if you know ASP.NET MVC and you don't have time to learn something else like NancyFx, NodeJs and so on;
+The approach is very similar to MVC (Controller + Action). Fortunately it doesn't have the dependency to System.Web but it's a Framework totally separate from MVC and sometime you have to duplicate the same code on MVC and Web API because the same interface/class has a different namespace.
 
 <br/>
 
@@ -65,7 +67,7 @@ The approach is very similar to MVC (Controller + Action). Fortunately it doesn'
 ######Website: *[http://www.asp.net/signalr](http://www.asp.net/signalr)*<br/>
 ######Source code: *[https://github.com/SignalR/SignalR](https://github.com/SignalR/SignalR)*<br/>
 
-I'm not sure if exist another Framework for real time applications in .NET but surely SignalR it is the most famous and used. Build by the same team of ASP.NET MVC / Web API it offers several clients (iOS and Android with [Xamarin](http://xamarin.com/), Windows 8 and Windows Phone) and finally it supports old browsers (with fallback of course forever-frame, polling and son on).
+I'm not sure if exist another Framework for real time applications in .NET world but surely SignalR it is the most famous and used. Build by the same team of ASP.NET MVC / Web API it offers several clients (iOS and Android with [Xamarin](http://xamarin.com/), Windows 8 and Windows Phone) and finally it supports old browsers (with fallback of course forever-frame, polling and son on).
 
 <br/>
 
@@ -73,7 +75,7 @@ I'm not sure if exist another Framework for real time applications in .NET but s
 ######Website: *[http://nancyfx.org/](http://nancyfx.org/)*<br/>
 ######Source code: *[https://github.com/NancyFx/Nancy](https://github.com/NancyFx/Nancy)*<br/>
 
-Nancy is a lightweight framework for building HTTP based services on .Net and [Mono](http://mono-project.com/) (yes it runs on linux and OSX). The main difference between Nancy and Web API is the routing approach. It uses lambdas to identify relative paths and arguments.
+Nancy is a lightweight framework for building HTTP based services on .Net and [Mono](http://mono-project.com/) (yes it runs on linux and OSX). The main difference between Nancy and Web API is the routing approach. It uses lambdas to identify relative paths and arguments. Really helpful if you can't deploy on a Windows Server.
 
 <br/>
 
@@ -90,7 +92,7 @@ Like many frameworks in the .NET world, this is a porting of a Java Framework ([
 ######Website: *[http://www.castleproject.org/](http://www.castleproject.org/)*<br/>
 ######Source code: *[https://github.com/castleproject/Windsor](https://github.com/castleproject/Windsor)*<br/>
 
-Propably is the first package I add in a new project. I'm really a Dependency Injection addicted and Castle Windsor fits very well with my needs. It's fast, easy to use, all needed lifecycle and offers lot of extension point (Interceptor, custom lifecycle, factories and so on).
+Probably the first package I add in a new project. I'm really a Dependency Injection addicted and Castle Windsor fits very well with my needs. It's fast, easy to use, all needed lifecycle and offers lot of extension point (Interceptor, custom lifecycle, factories and so on).
 
 <br/>
 
@@ -106,7 +108,7 @@ In my Italian blog I [wrote](http://imperugo.tostring.it/archive/2011/10/25/domi
 ######Website: *[https://servicestack.net/](https://servicestack.net/)*<br/>
 ######Source code: *[https://github.com/ServiceStack](https://github.com/ServiceStack)*<br/>
 
-Really an interesting set of Frameworks. It contains a JSon serializer, ORM, Redis client and Service Clients. This set of Frameworks matches perfectly with those who are obsessed with performance. The payoff of the Framework is "Simplicity at Speed". [Here](http://www.slideshare.net/newmovie/what-istheservicestack-14819151?ref=https://servicestack.net/features) a good presentation about ServiceStack and performances in .NET application
+Really an interesting set of Frameworks. It contains a Json serializer, ORM, Redis client and Service Clients. This set of Frameworks matches perfectly with those who are obsessed with performance. The tagline of the Framework is "Simplicity at Speed". [Here](http://www.slideshare.net/newmovie/what-istheservicestack-14819151?ref=https://servicestack.net/features) a good presentation about ServiceStack and performances in .NET application
 
 <br/>
 
@@ -114,7 +116,7 @@ Really an interesting set of Frameworks. It contains a JSon serializer, ORM, Red
 ######Website: *[http://www.quartz-scheduler.net/](http://www.quartz-scheduler.net/)*<br/>
 ######Source code: *[https://github.com/quartznet/quartznet](https://github.com/quartznet/quartznet)*<br/>
 
-Quartz.NET is a job scheduling system for small or large applications. Like Commong Logging also this, is a porting from a Java project ([here](http://quartz-scheduler.org/) more info). It offers several ways to run a job, from cron pattern to special calendar, or whatever you like. The nice thing is you can have a storage for your jobs (configurable SQL, Mongo, MySql .....) very useful for scalable applications.
+Quartz.NET is a job scheduling system for small or large applications. Like Commong Logging also this, is a porting from a Java project ([here](http://quartz-scheduler.org/) more info). It offers several ways to run a job, from Cron pattern to special calendar, or whatever you like. The nice thing is you can have a storage for your jobs (configurable SQL, Mongo, MySql .....) very useful for scalable applications.
 
 <br/>
 
@@ -129,7 +131,7 @@ Caching is really important, specially if you application must answer to lot of 
 ######Website: *[http://redis.io/](http://redis.io/)*<br/>
 ######Source code: *[https://github.com/antirez/redis](https://github.com/antirez/redis)*<br/>
 
-Redis is an open source caching Framework that offers an advanced Dictionary (key/value) storage. Recently it's available (as preview) also on Windows Azure ([here](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/) a good article explains how to use redis with MVC and Azure). The most interesting thing about that is absolutely the performance. He's really really fast and also available on distributed infrastructures. If you go in a multi-server application probably is the best soltuion.
+Redis is an open source caching Framework that offers an advanced Dictionary (key/value) storage. Recently it's available (as preview) also on Windows Azure ([here](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/) a good article explains how to use redis with MVC and Azure). The most interesting thing about that is absolutely the performance. He's really really fast and also available on distributed infrastructures. If you go in a multi-server application probably is the best solution.
 
 <br/>
 
@@ -151,6 +153,8 @@ It's a framework that helps developers to do Test-Driven Development by automati
 ######Source code: *[http://sharptestex.codeplex.com/](http://sharptestex.codeplex.com/)*<br/>
 
 It's a library born to wrap all testing framework using a fluent syntax. Usually I don't change often the testing framework but sometime I need to copy part or my code to an existing application that uses NUnit or MS-Test. In this case the only thing to do is change the Testing attribute in the test class.
+
+##**Front End Developer**
 
 ###**Saas**###
 ######Website: *[http://sass-lang.com/](http://sass-lang.com/)*<br/>
