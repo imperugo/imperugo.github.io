@@ -1,0 +1,16 @@
+<div class="container related">
+    <strong>
+        <h2>
+            Recent posts
+        </h2>
+    </strong>
+    <ul>
+        {% for post in site.posts limit: 5%}
+        <li>
+            <a data-event-label="Post"
+               data-event-category="Recent" 
+               href="{{ site.production_url }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

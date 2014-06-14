@@ -17,7 +17,7 @@
 				<ul>
 					{% for post in site.posts limit: 5%}
 					<li>
-						<a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}C</a>
+						<a data-event-label="Footer" data-event-category="Recent" href="{{ site.production_url }}{{ post.url }}">{{ post.title }}C</a>
 					</li>
 					{% endfor %}
 				</ul>
@@ -33,13 +33,14 @@
 				<ul>
 					{% for category in site.categories %}
 					<li class="cat-item">
-						<a href="/categories#{{ category[0] }}" title="View all posts filed under {{ category[0] }}">{{ category[0] }}</a>
+						<a data-event-label="Footer" data-event-category="Category" href="/categories#{{ category[0] }}" title="View all posts filed under {{ category[0] }}">{{ category[0] }}</a>
 					</li>
 					{% endfor %}
 				</ul>
 			</div>
 		</div>
 		<!-- end .footer-widget -->
+
 
 		<div class="footer-widget last">
 
@@ -48,21 +49,48 @@
 				<h4 class="widgettitle">Meta</h4>
 				<ul>
 					<li>
-						<a href="http://feeds.feedburner.com/override/tostring/it" title="Syndicate this site using RSS 2.0">
+						<a data-event-label="Footer" data-event-category="Rss" href="http://feeds.feedburner.com/override/tostring/it" title="Syndicate this site using RSS 2.0">
 							Entries <abbr title="Really Simple Syndication">RSS</abbr>
 						</a>
 					</li>
 					<li>
-						<a href="{{site.url}}/tags" title="Tag Cloud">
+						<a data-event-label="Footer" data-event-category="Tags" href="{{site.url}}/tags" title="Tag Cloud">
 							Tag Cloud <abbr title="The Tag">Tags</abbr>
 						</a>
 					</li>
 					<li>
-						<a href="https://pages.github.com/" title="Powered by Github Pages.">Github Pages</a>
+						<a data-event-label="Footer" data-event-category="GithubPages" href="https://pages.github.com/" title="Powered by Github Pages.">Powered by Github Pages.</a>
 					</li>
 				</ul>
 			</div>
 			<!-- end .fwidget -->
+
+			<div id="categories-2" class="fwidget widget_categories">
+				<h4 class="widgettitle">Blog roll</h4>
+				<ul>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://www.hanselman.com/blog/">Scott Hanselman</a>
+					</li>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://www.strathweb.com/">Filip W</a>
+					</li>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://codeclimber.net.nz/">Simone Chiaretta</a>
+					</li>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://www.tugberkugurlu.com/">Tugberg Ugurlu</a>
+					</li>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://byterot.blogspot.it/">Aliostad</a>
+					</li>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://byterot.blogspot.it/">Aliostad</a>
+					</li>
+					<li class="cat-item">
+						<a data-event-label="Footer" data-event-category="Blogroll" href="http://bitoftech.net/">Taiseer Joudeh</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<!-- end .footer-widget -->
 	</div>
