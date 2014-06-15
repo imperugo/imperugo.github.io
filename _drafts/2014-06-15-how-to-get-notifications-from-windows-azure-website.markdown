@@ -19,7 +19,7 @@ The Azure team works very well and I love to deploy my web sites using Github (t
 The problem about this approach is that I need to be notified when someone of the team deploy something, especially if the deploy fails.
 Unfortunately right now Windows Azure doesn't send you any notification about a deploy procedure, so you have to remind yourself to go in the administration portal and check the deploy status (see the image below).
 
-![Windows Azure Management Portal]({{ site.url }}/Assets/2014/06/windows-azure-management-portal.png)
+![Windows Azure Management Portal]({{ site.url }}/assets/2014/06/windows-azure-management-portal.png)
 
 [Zapier](https://zapier.com) is the solution to this problem. It allows you to select from many sources, to select an event and to attach an action. 
 In my case it means something like "For each failed Azure Website deploy call my phone and read me the report" (You can get a email, sms or whatever you want).
@@ -28,14 +28,14 @@ Here the workflow to configure Zapier:
 
 **Select the services** ([here](https://zapier.com/zapbook/) the complete list of the available services)
 
-![Windows Azure Management Portal]({{ site.url }}/Assets/2014/06/Zapier-Trigger.png)
+![Windows Azure Management Portal]({{ site.url }}/assets/2014/06/Zapier-Trigger.png)
 
 **Write your condition**
 
-![Windows Azure Management Portal]({{ site.url }}/Assets/2014/06/Zapier-Trigger-Options1.png)
+![Windows Azure Management Portal]({{ site.url }}/assets/2014/06/Zapier-Trigger-Options1.png)
 
 **Compose the message**
 
-![Windows Azure Management Portal]({{ site.url }}/Assets/2014/06/Zapier-Trigger-Options.png)
+![Windows Azure Management Portal]({{ site.url }}/assets/2014/06/Zapier-Trigger-Options.png)
 
 How f...ing cool is that?
