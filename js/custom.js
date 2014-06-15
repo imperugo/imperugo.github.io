@@ -1,17 +1,6 @@
 (function($){
 	$(document).ready( function(){
 
-		// $('a[data-event-label]').on('click', function() {
-
-		// 	var eventCategory = $(this).attr("data-event-category");
-
-		// 	if(!eventCategory){
-		// 		eventCategory = 'Uncategorized';
-		// 	}
-
-		//   ga('send', 'event', eventCategory, 'click', $(this).attr('data-event-label'),1);
-		// });
-
 		$('a[data-event-label]').mousedown(function() {
 
 			var eventCategory = $(this).attr("data-event-category");
