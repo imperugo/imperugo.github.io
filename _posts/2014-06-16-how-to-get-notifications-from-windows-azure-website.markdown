@@ -1,7 +1,8 @@
 ---
 layout: post
 title: How to get notifications from a Windows Azure website
-date: 2014-06-15 18:37:42
+date: 2014-06-16 18:37:42
+description: "Get up to date with Windows Azure and Zapier. In this post we'll see how to get notification from your client application using a third party service."
 categories:
 - azure
 tags:

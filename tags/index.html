@@ -5,7 +5,7 @@ title: Tag cloud
 
 <div id='tag_cloud'>
 	{% for tag in site.tags %}
-		<a href="/tag#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+		<a data-event-label="{{ tag[0] }}" data-event-category="Tag" href="/tag#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
 	{% endfor %}
 </div>
 

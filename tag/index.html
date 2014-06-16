@@ -10,7 +10,7 @@ title: Tags
 		<ul>
 			{% for post in tag[1] %}
 				<li>
-					<a href="{{ post.url | remove:'.html' }}">{{ post.title }} - (<time>{{ post.date | date_to_string }}</time>)</a>
+					<a data-event-label="Post" data-event-category="Tag" href="{{ post.url | remove:'.html' }}">{{ post.title }} - (<time>{{ post.date | date_to_string }}</time>)</a>
 				</li>
 			{% endfor %}
 		</ul>
