@@ -5,6 +5,7 @@ description: "Moving your blog from Wordpress to Jekyll hosted by Github Pages"
 date: 2014-05-21
 published: true
 comments: true
+imagePath: /assets/2014/05/Pingdom-Report.png
 categories:
 - Various
 tags:

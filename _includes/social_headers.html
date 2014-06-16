@@ -1,0 +1,34 @@
+<!-- Apple Touch Icons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/images/social/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/images/social/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/images/socialapple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/images/social/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/images/social/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/images/social/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/images/social/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/images/social/apple-touch-icon-152x152.png" />
+<!-- Windows 8 Tile Icons -->
+<meta name="msapplication-square70x70logo" content="/images/social/smalltile.png" />
+<meta name="msapplication-square150x150logo" content="/images/social/mediumtile.png" />
+<meta name="msapplication-square310x310logo" content="/images/social/largetile.png" />
+
+<!-- Facebook Graph -->
+<meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %}{{ site.description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+{% if page.imagePath %}
+	<meta property="og:url" content="{{ site.url }}{{ page.imagePath }}" />
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@imperugo">
+<meta name="twitter:title" content="{% if page.title %} {{ page.title }} | {% endif %}{{ site.description }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:creator" content="@imperugo">
+<meta name="twitter:domain" content="http://tostring.it">
+{% if page.imagePath %}
+	<meta name="twitter:image:src" content="{{ site.url }}{{ page.imagePath }}">
+{% endif %}
+

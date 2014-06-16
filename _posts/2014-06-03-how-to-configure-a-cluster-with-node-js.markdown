@@ -4,6 +4,7 @@ title: "How to configure a cluster with Node Js"
 description: "This tutorial explains how to have an instance of node for each CPU, thereby taking advantage of the recent hardware."
 date: 2014-06-03
 comments: true
+imagePath: /assets/2014/06/NodeCluster.png
 categories:
 - NodeJs
 tags:
