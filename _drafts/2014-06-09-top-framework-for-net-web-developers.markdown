@@ -153,12 +153,16 @@ It's a framework that helps developers to do Test-Driven Development by automati
 ######Source code: *[http://sharptestex.codeplex.com/](http://sharptestex.codeplex.com/)*<br/>
 
 It's a library born to wrap all testing framework using a fluent syntax. Usually I don't change often the testing framework but sometime I need to copy part or my code to an existing application that uses NUnit or MS-Test. In this case the only thing to do is change the Testing attribute in the test class.
-
+<br /><br />
 ##**Front End Developer**
-
-###**Saas**###
+<br />
+###**Sass**###
 ######Website: *[http://sass-lang.com/](http://sass-lang.com/)*<br/>
 ######Source code: *[https://github.com/sass/sass](https://github.com/sass/sass)*<br/>
+
+Sass (Syntactically Awesome Style Sheets) is an extension to CSS. It is CSS as it should have been. Its key features are the ability to use variables, nesting, mixins and loops within your code. This means you can code more quickly and keep your code neat, tidy and easy to maintain. The Sass or SCSS code you write is then compiled in to standard CSS as browsers can't (yet) understand Sass / SCSS.
+
+Also take a look at [Compass](http://compass-style.org/), it is a great framework for Sass that contains loads of reusable mixins... no more memorising vendor prefixes and obscure pre-spec CSS3 styles!
 
 <br/>
 
@@ -166,10 +170,14 @@ It's a library born to wrap all testing framework using a fluent syntax. Usually
 ######Website: *[http://getbootstrap.com/](http://getbootstrap.com/)*<br/>
 ######Source code: *[https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)*<br/>
 
+Created by the guys at Twitter, Bootstrap gives you a massive selection of reusable, robust and attractive styles for your everyday styling needs. It includes a responsive, mobile-first grid system, basic typography styles, styles for common elements such as buttons and form inputs and lots more. Bootstrap is perfect for rapid prototyping but don't use it for everything otherwise we'll end up with all sites looking the same!
+
 <br/>
 
 ###**Bower**###
 ######Website: *[http://bower.io/](http://bower.io/)*<br/>
+
+Bower is a front-end package management tool, you use it to speed up your dev workflow. It allows you to simply install packages and their dependencies in your project using the command-line. No more Googling for the latest version of jQuery, downloading it, unzipping it, copying it into your project etc... just: `$ bower install jquery`
 
 <br/>
 
@@ -177,11 +185,15 @@ It's a library born to wrap all testing framework using a fluent syntax. Usually
 ######Website: *[http://gruntjs.com/](http://gruntjs.com/)*<br/>
 ######Source code: *[https://github.com/gruntjs/](https://github.com/gruntjs/)*<br/>
 
+Like Bower, Grunt is another dev tool that can be run from the command-line. It is a JavaScript task runner which allows you to automate pretty much anything... minification, unit testing, compiling of Sass, code linting, image compression, launching a node server, creation of documentation, whatever you like. There are many, many Grunt Plugins available which do the most common tasks so it is easy to get started.
+
 <br/>
 
 ###**Yeoman**###
 ######Website: *[http://yeoman.io/](http://yeoman.io/)*<br/>
 ######Source code: *[https://github.com/yeoman/yeoman](https://github.com/yeoman/yeoman)*<br/>
+
+Yeoman makes using Grunt and Bower even easier. It allows you to scaffold out a project very quickly using a "Generator". The Generator will create a bare-bones (boilerplate) project architecture, with certain libraries, frameworks, Grunt tasks and Bower dependencies pre-installed. Different Generators are available for different projects. For example if you are starting a new AngularJS app, you would use the Angular Generator and run `$ yo angular` and it will set up the architecture, along with basic units tests, install AngularJS and Bootstrap (if you want it).
 
 <br/>
 
@@ -189,14 +201,22 @@ It's a library born to wrap all testing framework using a fluent syntax. Usually
 ######Website: *[https://angularjs.org/](https://angularjs.org/)*<br/>
 ######Source code: *[https://github.com/angular/angular.js](https://github.com/angular/angular.js)*<br/>
 
+AngularJS is an open-source MVC JavaScript framework created by Google - it allows you to very quickly extend HTML's capabilities and create powerful, highly testable web applications. Angular includes two-way declarative data-binding which greatly simplifies complex application development as much of the DOM manipulation is handled automatically by the framework. It is (fairly) well documented and there is an active support community on Stack Overflow.
+
 <br/>
 
 ###**Karma**###
 ######Website: *[http://karma-runner.github.io/](http://karma-runner.github.io/)*<br/>
 ######Source code: *[https://github.com/karma-runner/karma/](https://github.com/karma-runner/karma/)*<br/>
 
+Karma (formerly Testacular) is a framework agnostic test runner. You write your unit tests alongside your application code and you can automatically test your code as you develop. Karma allows you to test your code in real browsers on real devices or in PhantomJS. It is definitely worth watching the introduction video from creator Vojta Jína.
+
 <br/>
 
 ###**Jasmine**###
 ######Website: *[http://jasmine.github.io/](http://jasmine.github.io/)*<br/>
 ######Source code: *[https://github.com/pivotal/jasmine](https://github.com/pivotal/jasmine)*<br/>
+
+Jasmine is a framework for testing JavaScript code. You can use Jasmine to write your unit tests and then run them using Karma. The syntax of Jasmine is very clear and easy to understand, yet powerful.
+
+If you want to take things further take a look at [Jest](http://facebook.github.io/jest/) (by Facebook), it is built on top of Jasmine, and adds some additional levels to Jasmine's feature-set.
