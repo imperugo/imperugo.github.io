@@ -12,9 +12,9 @@ tags:
 - logging
 ---
 
-As I wrote in my previous post [here](http://tostring.it/2014/06/03/how-to-configure-a-cluster-with-node-js/), Node Js is becoming a part of my dev life. Today I'm gonna write about logging. 
+As I wrote in my previous post [here](http://tostring.it/2014/06/03/how-to-configure-a-cluster-with-node-js/), [Node Js](http://localhost:4000/tag/#nodejs) is becoming a part of my dev life and today I'm gonna write about logging. 
 
-Every good application must have a good logging and NodeJs, as all Frameworks, offers several ways to log information.
+Every good application must have a good logging and NodeJs, as all Frameworks, offers several ways to save information.
 
 Unfortunately the most used is the classic ```console.log``` method that's a quick a dirty solution. For all people like me that usually use a robust Framework like [Log4Net](http://logging.apache.org/log4net/) or [NLog](http://nlog-project.org/), ```console.log``` doesn't fit so well with my requirements.
 
@@ -23,7 +23,7 @@ All these Frameworks offer the opportunity to add more than one Appender to the 
 
 ##What's an appender?
 
-Basically It's a simple way to have more than one output during logging. To be clearer let's try to think about an application where you want to see your logging in the console, but also in a file or [Raygun](https://raygun.io/).
+Basically It's a simple way to have more than one output during logging. To be clearer let's try to think about an application where you want to see your logging in the console, but also in a file or an external service like [Raygun](https://raygun.io/).
 
 In my [Node sample repository](https://github.com/imperugo/NodeJs-Sample) I created a demo of a simple web page (using [Express](http://expressjs.com/)) configuring the web server with the most needed middleware and some log.
 
