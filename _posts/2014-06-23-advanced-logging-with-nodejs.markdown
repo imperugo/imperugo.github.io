@@ -2,8 +2,9 @@
 layout: post
 title: "Advanced logging with NodeJs"
 date: 2014-06-23
-description: "Advanced logging using NodeJS and Winston logging."
+description: "Advanced logging using NodeJS and Winston logging to have differents appenders, colored console and other cool features"
 comments: true
+imagePath: /assets/2014/06/Node-Consolelog-colored.png
 categories:
 - NodeJs
 tags:
