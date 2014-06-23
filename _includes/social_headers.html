@@ -1,5 +1,5 @@
 <!-- Apple Touch Icons -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="/images/social/apple-touch-icon.png" />
 <link rel="apple-touch-icon" sizes="57x57" href="/images/social/apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon" sizes="72x72" href="/images/social/apple-touch-icon-72x72.png" />
 <link rel="apple-touch-icon" sizes="114x114" href="/images/socialapple-touch-icon-114x114.png" />
@@ -15,11 +15,10 @@
 
 <!-- Facebook Graph -->
 <meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %}{{ site.description }}" />
-<meta property="og:type" content="blog" />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-{% if page.imagePath %}
-	<meta property="og:image" content="{{ site.url }}{{ page.imagePath }}" />
-{% endif %}
+{% if page.description %}<meta property="og:description" content="{{ page.description }}">{% endif %}
+{% if page.imagePath %}<meta property="og:image" content="{{ site.url }}{{ page.imagePath }}" />{% endif %}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +27,5 @@
 <meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:creator" content="@imperugo">
 <meta name="twitter:domain" content="http://tostring.it">
-{% if page.imagePath %}
-	<meta name="twitter:image:src" content="{{ site.url }}{{ page.imagePath }}">
-{% endif %}
+{% if page.imagePath %}<meta name="twitter:image:src" content="{{ site.url }}{{ page.imagePath }}">{% endif %}
 

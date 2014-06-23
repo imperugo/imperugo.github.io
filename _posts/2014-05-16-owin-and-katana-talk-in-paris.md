@@ -30,6 +30,6 @@ As usual the slides are available on Slideshare [here](http://www.slideshare.net
 
 <iframe src="http://www.slideshare.net/slideshow/embed_code/34793423" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
-Finally I've to say thanks to all the people who come to the conference, and a special thanks to [Rui](https://twitter.com/rhwy), [ncrafts](http://www.ncraft.io) conference was amazing!
+Finally I've to say thanks to all the people who come to the conference, and a special thanks to [Rui](https://twitter.com/rhwy), [ncrafts](http://ncrafts.io) conference was amazing!
 
 Hope to see you next year!
