@@ -13,7 +13,7 @@ tags:
 - winston
 ---
 
-As I wrote in my previous post [here](http://tostring.it/2014/06/03/how-to-configure-a-cluster-with-node-js/), [Node Js](http://localhost:4000/tag/#nodejs) is becoming a part of my dev life and today I'm gonna write about logging. 
+As I wrote in my previous post [here](http://tostring.it/2014/06/03/how-to-configure-a-cluster-with-node-js/), [Node Js]({{ site.url }}/tag/#nodejs) is becoming a part of my dev life and today I'm gonna write about logging. 
 
 Every good application must have a good logging and NodeJs, as all Frameworks, offers several ways to save information.
 
