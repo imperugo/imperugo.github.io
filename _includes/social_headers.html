@@ -15,10 +15,10 @@
 
 <!-- Facebook Graph -->
 <meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %}{{ site.description }}" />
-<meta property="og:type" content="article" />
+<meta property="og:type" content="blog" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 {% if page.imagePath %}
-	<meta property="og:url" content="{{ site.url }}{{ page.imagePath }}" />
+	<meta property="og:image" content="{{ site.url }}{{ page.imagePath }}" />
 {% endif %}
 
 <!-- Twitter Card -->
