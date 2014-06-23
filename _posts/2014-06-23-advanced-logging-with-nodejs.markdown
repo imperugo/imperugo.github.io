@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Advanced logging with NodeJs"
-date: 2014-06-11
+date: 2014-06-23
 description: "Advanced logging using NodeJS and Winston logging."
 comments: true
 categories:
@@ -10,13 +10,14 @@ tags:
 - node
 - nodejs
 - logging
+- winston
 ---
 
 As I wrote in my previous post [here](http://tostring.it/2014/06/03/how-to-configure-a-cluster-with-node-js/), [Node Js](http://localhost:4000/tag/#nodejs) is becoming a part of my dev life and today I'm gonna write about logging. 
 
 Every good application must have a good logging and NodeJs, as all Frameworks, offers several ways to save information.
 
-Unfortunately the most used is the classic ```console.log``` method that's a quick a dirty solution. For all people like me that usually use a robust Framework like [Log4Net](http://logging.apache.org/log4net/) or [NLog](http://nlog-project.org/), ```console.log``` doesn't fit so well with my requirements.
+Unfortunately the most used is the classic ```console.log``` method that's a quick and dirty solution. For all people like me that usually use a robust Framework like [Log4Net](http://logging.apache.org/log4net/) or [NLog](http://nlog-project.org/), ```console.log``` doesn't fit so well with my requirements.
 
 All these Frameworks offer the opportunity to add more than one Appender to the same logger instance.
 
@@ -25,7 +26,7 @@ All these Frameworks offer the opportunity to add more than one Appender to the 
 
 Basically It's a simple way to have more than one output during logging. To be clearer let's try to think about an application where you want to see your logging in the console, but also in a file or an external service like [Raygun](https://raygun.io/).
 
-In my [Node sample repository](https://github.com/imperugo/NodeJs-Sample) I created a demo of a simple web page (using [Express](http://expressjs.com/)) configuring the web server with the most needed middleware and some log.
+In my [Node sample repository](https://github.com/imperugo/NodeJs-Sample) I created a demo of a simple web page (using [Express](http://expressjs.com/)) configuring the web server with the most needed middleware and some logs.
 
 The result of the log is this:
 
@@ -34,7 +35,7 @@ The result of the log is this:
 As you can see there are just few lines of log but, when you do something more complex, the number of lines could be a lot and difficult to read.
 The problem here is that lot of them are only debug log but some of them could be errors. Using the same color is difficult to understand what is the error and what is not.
 
-A good solution is to use a logging framework that helps us to log into the console using different colors (red for errors, yellow for warning and so on) and, in production, switch the log to a file or database.
+A good solution is to use a logging framework that helps us to log into the console using different colors (red for errors, yellow for warnings and so on) and, in production, switch the log to a file or database.
 
 [Winston](https://github.com/flatiron/winston) is the equivalent to Log4Net/Log4J/NLog in a NodeJs world. It offers the opportunity to use the Appenders and, in our case, colored console.
 
@@ -42,7 +43,7 @@ A good solution is to use a logging framework that helps us to log into the cons
 npm install winston --save
 ```
 
-now is enough to configure it. I've logger.js with its configuration
+now it's enough to configure it. I've logger.js with its configuration
 
 ```javascript
 var winston = require('winston');
@@ -93,7 +94,7 @@ I think that's absolutely more readable if you have different colors in the cons
 
 In my example, I used Express as MVC framework to render HTML. It offers the opportunity to put you log to have some info about the HTTP Requests.
 
-So, here the code:
+So, here is the code:
 
 ```javascript
 var logger = require("../utils/logger");
