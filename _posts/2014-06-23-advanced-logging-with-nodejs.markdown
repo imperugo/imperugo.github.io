@@ -111,6 +111,6 @@ The only importat thing here is the middleware, ```app.use``` where ```logger.st
 
 All my code is available on my Node Sample github repository available [here](https://github.com/imperugo/NodeJs-Sample)
 
->Express 4 moved some middleware outside of Express packages, so you have to install it manully (more ingo [here](https://github.com/senchalabs/connect#middleware)). If you are using an older version of Express my code needs some changes because of middleware.
+>Express 4 moved some middleware outside of Express packages, so you have to install it manully (more info [here](https://github.com/senchalabs/connect#middleware)). If you are using an older version of Express my code needs some changes because of middleware.
 
 
