@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Top Framework for .NET web developers"
-date: 2014-06-09
+title: Top "Must Know" Frameworks for .NET web developers
+date: 2014-06-30
 description: "A list of the best framework for a web .net developer, included front end frameworks."
 comments: true
 categories:
@@ -34,7 +34,9 @@ tags:
 - Jasmine
 ---
 
-The idea of this post is born talking with my colleague Antonio about the frameworks a .NET web developer should know (from my point of view of course). That's funny because the list is very long and I asked myself if there is something wrong with my idea of .NET web developer or something else.
+The idea of this post is born talking with my colleague Antonio about the frameworks a .NET web developer should know (from my point of view of course). 
+That's funny because the list is very long and I asked myself if there is something wrong with my idea of .NET web developer or something else.
+
 From my point of view (and also for my company) there are two kind of web developers, Back End (server side code) and Front End (javascript, css and HTML).
 Unfortunately, in Italy, these figures matches in only one person and the quality of the product obviously falls.
 
@@ -49,7 +51,7 @@ Unfortunately, in Italy, these figures matches in only one person and the qualit
 ######Source code: *[http://aspnetwebstack.codeplex.com/](http://aspnetwebstack.codeplex.com/)*<br/>
 
 Most of our application runs on top of ASP.NET MVC, so for me it's really important to know it.
-Basically I think it's a good framework lot of extensibility points, good implementation of the MVC pattern and we use it in projects with heavy traffic without particular problems.
+I think it's a good framework, with a lot of extensibility points, good implementation of the MVC pattern, and we use it in heavy traffic projects without particular problems.
 Of course there are few things I don't like of it (first of all System.Web), but fortunately the vNext will solve these "problems".
 
 <br/>
@@ -67,7 +69,7 @@ The approach is very similar to MVC (Controller + Action). Fortunately it doesn'
 ######Website: *[http://www.asp.net/signalr](http://www.asp.net/signalr)*<br/>
 ######Source code: *[https://github.com/SignalR/SignalR](https://github.com/SignalR/SignalR)*<br/>
 
-I'm not sure if exist another Framework for real time applications in .NET world but surely SignalR it is the most famous and used. Build by the same team of ASP.NET MVC / Web API it offers several clients (iOS and Android with [Xamarin](http://xamarin.com/), Windows 8 and Windows Phone) and finally it supports old browsers (with fallback of course forever-frame, polling and son on).
+I'm not sure if an another Framework for real time applications exists in .NET world, but surely SignalR it is the most famous and used. Build by the same team of ASP.NET MVC / Web API it offers several clients (iOS and Android with [Xamarin](http://xamarin.com/), Windows 8 and Windows Phone) and finally it supports old browsers (with fallback of course forever-frame, polling and son on).
 
 <br/>
 
@@ -83,7 +85,7 @@ Nancy is a lightweight framework for building HTTP based services on .Net and [M
 ######Website: *[http://netcommon.sourceforge.net/](http://netcommon.sourceforge.net/)*<br/>
 ######Source code: *[https://github.com/net-commons/common-logging](https://github.com/net-commons/common-logging)*<br/>
 
-I really like this library. Often I need to deploy my code side by side with another application or I've to use a specific logging framework. Common Logging is the perfect solution. basically it is an abstraction between different logging implementations like [Log4net](http://logging.apache.org/log4net/), [NLog](http://nlog-project.org/), [Enterprise library](http://msdn.microsoft.com/en-us/library/ff648951.aspx) or whatever you want (write your custom bridge).
+I really like this library. When I need to deploy my code side by side with another application or I have to use a specific logging framework, Common Logging is the perfect solution. It is an abstraction of different logging implementations like [Log4net](http://logging.apache.org/log4net/), [NLog](http://nlog-project.org/), [Enterprise library](http://msdn.microsoft.com/en-us/library/ff648951.aspx) or whatever you want (you can write your custom bridge).
 Like many frameworks in the .NET world, this is a porting of a Java Framework ([here](http://commons.apache.org/proper/commons-logging/) more info). Really useful!
 
 <br/>
@@ -108,7 +110,7 @@ In my Italian blog I [wrote](http://imperugo.tostring.it/archive/2011/10/25/domi
 ######Website: *[https://servicestack.net/](https://servicestack.net/)*<br/>
 ######Source code: *[https://github.com/ServiceStack](https://github.com/ServiceStack)*<br/>
 
-Really an interesting set of Frameworks. It contains a Json serializer, ORM, Redis client and Service Clients. This set of Frameworks matches perfectly with those who are obsessed with performance. The tagline of the Framework is "Simplicity at Speed". [Here](http://www.slideshare.net/newmovie/what-istheservicestack-14819151?ref=https://servicestack.net/features) a good presentation about ServiceStack and performances in .NET application
+An extremely interesting set of Frameworks. It contains a Json serializer, ORM, Redis client and Service Clients. This set of Frameworks matches perfectly with those who are obsessed with performance. The tagline of the Framework is "Simplicity at Speed". [Here](http://www.slideshare.net/newmovie/what-istheservicestack-14819151?ref=https://servicestack.net/features) a good presentation about ServiceStack and performances in .NET application
 
 <br/>
 
@@ -116,7 +118,7 @@ Really an interesting set of Frameworks. It contains a Json serializer, ORM, Red
 ######Website: *[http://www.quartz-scheduler.net/](http://www.quartz-scheduler.net/)*<br/>
 ######Source code: *[https://github.com/quartznet/quartznet](https://github.com/quartznet/quartznet)*<br/>
 
-Quartz.NET is a job scheduling system for small or large applications. Like Commong Logging also this, is a porting from a Java project ([here](http://quartz-scheduler.org/) more info). It offers several ways to run a job, from Cron pattern to special calendar, or whatever you like. The nice thing is you can have a storage for your jobs (configurable SQL, Mongo, MySql .....) very useful for scalable applications.
+Quartz.NET is a job scheduling system for small or large applications. Like Common Logging, this is a porting from a Java project ([here](http://quartz-scheduler.org/) more info). It offers several ways to run a job, from Cron pattern to special calendar, or whatever you like. The nice thing is you can have a storage for your jobs (configurable SQL, Mongo, MySql .....) very useful for scalable applications.
 
 <br/>
 
@@ -131,14 +133,14 @@ Caching is really important, specially if you application must answer to lot of 
 ######Website: *[http://redis.io/](http://redis.io/)*<br/>
 ######Source code: *[https://github.com/antirez/redis](https://github.com/antirez/redis)*<br/>
 
-Redis is an open source caching Framework that offers an advanced Dictionary (key/value) storage. Recently it's available (as preview) also on Windows Azure ([here](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/) a good article explains how to use redis with MVC and Azure). The most interesting thing about that is absolutely the performance. He's really really fast and also available on distributed infrastructures. If you go in a multi-server application probably is the best solution.
+Redis is an open source caching Framework that offers an advanced Dictionary (key/value) storage. Recently it's available (as preview) also on Windows Azure ([here](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/) a good article explains how to use redis with MVC and Azure). The Performance of this Framework are great: it is very fast, and it also available on distributed infrastructures. If you go in a multi-server application, probably it is the best solution.
 
 <br/>
 
 ###**XUnit**###
 ######Source code: *[https://github.com/xunit/xunit](https://github.com/xunit/xunit)*<br/>
 
-Probably is the most active testing framework for .NET applications. It's used on lot of the Frameworks mentioned in this post (included MS Stack). It has support for [Resharper](http://www.jetbrains.com/resharper/), [CodeRush](https://www.devexpress.com/Products/CodeRush/) Test Runner and [Xamarin](xamarin.com) Test Runner.
+This is the most active testing framework for .NET applications. It's used on lot of the Frameworks mentioned in this post (MS Stack included). It has support for [Resharper](http://www.jetbrains.com/resharper/), [CodeRush](https://www.devexpress.com/Products/CodeRush/) Test Runner and [Xamarin](xamarin.com) Test Runner.
 
 <br/>
 
@@ -154,7 +156,9 @@ It's a framework that helps developers to do Test-Driven Development by automati
 
 It's a library born to wrap all testing framework using a fluent syntax. Usually I don't change often the testing framework but sometime I need to copy part or my code to an existing application that uses NUnit or MS-Test. In this case the only thing to do is change the Testing attribute in the test class.
 <br /><br />
+
 ##**Front End Developer**
+
 <br />
 ###**Sass**###
 ######Website: *[http://sass-lang.com/](http://sass-lang.com/)*<br/>
@@ -220,3 +224,11 @@ Karma (formerly Testacular) is a framework agnostic test runner. You write your 
 Jasmine is a framework for testing JavaScript code. You can use Jasmine to write your unit tests and then run them using Karma. The syntax of Jasmine is very clear and easy to understand, yet powerful.
 
 If you want to take things further take a look at [Jest](http://facebook.github.io/jest/) (by Facebook), it is built on top of Jasmine, and adds some additional levels to Jasmine's feature-set.
+
+<br/>
+
+##**Conclusion**
+
+It's an hard life for our developers.
+
+>Thanks to my friend [Daniel Crisp](https://twitter.com/danielcrisp82) for the support in this post
