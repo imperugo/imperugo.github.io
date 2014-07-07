@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Run NodeJs on Microsoft Azure"
+title: "Run NodeJs on IIS"
 date: 2014-07-08
-description: "How to run NodeJs on Microsoft Azure"
+description: "How to run NodeJs on IIS"
 comments: true
 categories:
 - NodeJs
@@ -12,8 +12,8 @@ tags:
 - iis
 ---
 
-Microsoft Azure offers the opportunity to use your favorite programming language and deploy it. 
-Yesterday I spent some times to understand a problem during a deploy of a NodeJs application, to be quickly my code was a simple web application built on top of Express and the code was something like this:
+Yesterday I spent some time to understand a problem with [Node Js](http://tostring.it/tag/#nodejs) application on [Microsoft Azure](http://tostring.it/tag/#azure).
+Too be quick, my code was a simple web application built on top of [Express](http://expressjs.com/) and the code was something like this:
 
 ```javascript
 var express = require("express");
@@ -30,7 +30,7 @@ app.listen(port, function() {
 
 Running locally the code works very well and also if you run it on your servers but not on Microsoft Azure Websites. But Why?
 
-Adding some log I identified the problem on the port environment, basically it was not a number but a string (to be precise it was **\\\\.\\pipe\\e289ed7e-b57b-46bb-8bba-ad8cd1f1529c**) and consequently converting it to a number produced a *NaN* value.
+Adding some log I identified the problem on the port environment, basically process.env.port returns a string instead of a number (to be precise it was **\\\\.\\pipe\\e289ed7e-b57b-46bb-8bba-ad8cd1f1529c**) and consequently converting it to a number produced a *NaN* value.
 
 The solution is easy, do not try to convert it to a number but pass it as is to node:
 
@@ -43,7 +43,7 @@ app.listen(port, function() {
 });
 ```
 
-The reason is that Node is mapped under IIS using [IISNode](https://github.com/tjanczuk/iisnode) with a wildcard on an HTTP Handler, all using named pipe to be faster as dimostrated in the web.config below:
+The reason is that Node is not running on its process like on local machine (```node app.js``` to be clear), but is mapped under IIS using [IISNode](https://github.com/tjanczuk/iisnode) with a wildcard on an HTTP Handler and not on a normal process like my developer machine (```node app.js``` to be clear)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -73,7 +73,9 @@ The reason is that Node is mapped under IIS using [IISNode](https://github.com/t
  </configuration>
 ```
 
-To ahve a confirm, I wrote to [David Ebbo](http://blog.davidebbo.com/) via twitter:
+To have a confirm, I wrote to [David Ebbo](http://blog.davidebbo.com/) via twitter getting this answer:
 
-![Confirmation](/assets/07/NodeJs-IIS.png)
+![Confirmation]({{ site.url }}/assets/2014/07/NodeJs-IIS.png)
+
+Unfortunately (or not), right now there is no way to run Node outside of IIS on Azure Websites but maybe it's not a problem, it works :smirk:
 

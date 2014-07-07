@@ -5,11 +5,9 @@ categories:
 - .NET
 - Azure
 tags:
-- Azure
-- Deploy
-- Entity Framework
-- Spatial Data
-- Spatial Query
+- azure
+- deploy
+- entity framework
 status: publish
 type: post
 published: true
