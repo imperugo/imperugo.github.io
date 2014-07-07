@@ -2,7 +2,8 @@
 layout: post
 title: "Run NodeJs on IIS"
 date: 2014-07-08
-description: "How to run NodeJs on IIS"
+description: "How to run NodeJs on IIS and check the port environment gettinga guid instead of a port number"
+imagePath: /assets/2014/07/NodeJs-IIS.png
 comments: true
 categories:
 - NodeJs
@@ -43,7 +44,7 @@ app.listen(port, function() {
 });
 ```
 
-The reason is that Node is not running on its process like on local machine (```node app.js``` to be clear), but is mapped under IIS using [IISNode](https://github.com/tjanczuk/iisnode) with a wildcard on an HTTP Handler and not on a normal process like my developer machine (```node app.js``` to be clear)
+The reason is that Node is not running on its process like on local machine (```node app.js``` to be clear), but is mapped under IIS using [IISNode](https://github.com/tjanczuk/iisnode) with a wildcard on an HTTP Handler using [named pipe](http://en.wikipedia.org/wiki/Named_pipe)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
