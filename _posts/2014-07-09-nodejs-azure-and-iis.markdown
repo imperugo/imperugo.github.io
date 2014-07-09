@@ -29,10 +29,9 @@ app.listen(port, function() {
 });
 ```
 
-Running locally the code works very well both if you run it on your dev environment or a server. Unfortunately it doesn't if you try to run it on Microsoft Azure Website. But Why?
+Running locally the code works very well both if you run it on your dev environment or a server. Unfortunately it doesn't work if you try to run it on Microsoft Azure Website. But Why?
 
-Adding some log I identified the problem on the port environment, basically process.env.port returns a string instead of a number (to be precise it was **\\\\.\\pipe\\e289ed7e-b57b-46bb-8bba-ad8cd1f1529c**) and consequently converting it to a number produced a *NaN* value.
-
+Adding some log I identified the problem on the port environment, basically process.env.port returns a string instead of a number (to be precise it was **\\\\.\\pipe\\e289ed7e-b57b-46bb-8bba-ad8cd1f1529c**) f
 The solution is easy, do not try to convert it to a number but pass it as is to node:
 
 ```javascript
@@ -44,7 +43,7 @@ app.listen(port, function() {
 });
 ```
 
-The reason is that Node is not running on its process like on local machine (```node app.js``` to be clear), but is mapped under IIS using [IISNode](https://github.com/tjanczuk/iisnode) with a wildcard on an HTTP Handler using [named pipe](http://en.wikipedia.org/wiki/Named_pipe)
+The reason is that Node is not running on its process like on local machine (```node app.js``` to be clear), but it's mapped under IIS using [IISNode](https://github.com/tjanczuk/iisnode) with a wildcard on an HTTP Handler using [named pipe](http://en.wikipedia.org/wiki/Named_pipe)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,7 +73,7 @@ The reason is that Node is not running on its process like on local machine (```
  </configuration>
 ```
 
-To have a confirm, I wrote to [David Ebbo](http://blog.davidebbo.com/) via twitter getting this answer:
+For confirmation, I wrote to [David Ebbo](http://blog.davidebbo.com/) via twitter getting this answer:
 
 ![Confirmation]({{ site.url }}/assets/2014/07/NodeJs-IIS.png)
 
