@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Run NodeJs on IIS"
-date: 2014-07-08
+title: "NodeJs, Azure and IIS"
+date: 2014-07-09
 description: "How to run NodeJs on IIS and check the port environment gettinga guid instead of a port number"
 imagePath: /assets/2014/07/NodeJs-IIS.png
 comments: true
@@ -13,8 +13,8 @@ tags:
 - iis
 ---
 
-Yesterday I spent some time to understand a problem with [Node Js](http://tostring.it/tag/#nodejs) application on [Microsoft Azure](http://tostring.it/tag/#azure).
-Too be quick, my code was a simple web application built on top of [Express](http://expressjs.com/) and the code was something like this:
+Yesterday I spent some time to understand a problem with a [Node Js](http://tostring.it/tag/#nodejs) application on [Microsoft Azure](http://tostring.it/tag/#azure).
+To be quick, my code was a simple web application built on top of [Express](http://expressjs.com/) and the code was something like this:
 
 ```javascript
 var express = require("express");
@@ -29,7 +29,7 @@ app.listen(port, function() {
 });
 ```
 
-Running locally the code works very well and also if you run it on your servers but not on Microsoft Azure Websites. But Why?
+Running locally the code works very well both if you run it on your dev environment or a server. Unfortunately it doesn't if you try to run it on Microsoft Azure Website. But Why?
 
 Adding some log I identified the problem on the port environment, basically process.env.port returns a string instead of a number (to be precise it was **\\\\.\\pipe\\e289ed7e-b57b-46bb-8bba-ad8cd1f1529c**) and consequently converting it to a number produced a *NaN* value.
 
