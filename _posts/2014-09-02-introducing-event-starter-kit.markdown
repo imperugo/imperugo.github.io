@@ -24,7 +24,7 @@ One month ago we announced ([here](http://blog.webnextconf.eu/2014/07/28/announc
 
 We tried this year to replicate the conference but we got some problems with the venue. This time it seems it's going better; we don't have the venue confirmed yet, but we have good feeling about that.
 
-Anyway, with the conference an important Open Source project was born, we ([Simone](climber.net.nz) and I) called it **[Event Starter Kit](https://github.com/imperugo/Event-Starter-Kit)** (ESK).
+Anyway, with the conference an important Open Source project was born, we ([Simone](climber.net.nz) and I) called it **[Event Starter Kit](https://github.com/Event-Starter-Kit)** (ESK).
 
 The idea is to create something that helps people to organise a conference with a small effort. In our case, the conference is a tech one, but of course, you can use ESK for all kind of conferences.
 
