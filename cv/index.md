@@ -24,7 +24,13 @@ Lives in <a title="Milan's map" href=" http://s.tostring.it/NmFFRH ">Milan (MI)<
 </tr>
 <tr>
 <td valign="top" width="147"><strong>Certifications</strong></td>
-<td valign="top" width="539"><strong>Microsoft MCP</strong>(Designing &amp; Developing Web Applications using Microsoft .NET Framewrok 4.0)</td>
+<td valign="top" width="539">
+		<ul>
+			<li>Designing &amp; Developing Web Applications using Microsoft .NET Framewrok 4.0</li>
+			<li>Using Azure for Application Development</li>
+			<li>Using Azure for Data Analytics and Data Platform Solutions</li>
+		</ul>
+</td>
 </tr>
 <tr>
 <td valign="top" width="147"></td>
