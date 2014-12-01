@@ -9,7 +9,6 @@ encoding: utf-8
 lang: en-US
 excerpt_separator: ""   # Workaround for http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
 highlighter: pygments
 version: 1.1.1
 
