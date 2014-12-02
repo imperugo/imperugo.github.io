@@ -3,7 +3,7 @@ layout: post
 title: NodeJs for .NET Developers talk during Codemotion in Milan
 published: True
 comments: true
-date: 2014-11-30
+date: 2014-12-02
 categories:
 - Events
 tags:
@@ -12,9 +12,9 @@ tags:
 - Events
 ---
 
-It’s been a while since my last blog post; Unfortunately I’ve been very busy in the latest months for some important deliveries for the company I'm working for.
+It’s been a while since my last blog post; Unfortunately I’ve been very busy in the latest months for due to some important deliveries for the company I'm working for.
 
-During the past two days one of my favorite conference, Codemotion, has been in Milan and fortunately I had a talk about NodeJS for .NET Web Developers.
+During the past two days one of my favorite conference, Codemotion, has been in Milan and fortunately I had a talk about **NodeJS for .NET Web Developers**.
 
 The code used for the demo is available on github [here](https://github.com/imperugo/Codemotion---Milan-2014) (the most important demo is the Sample 004) and the slides are available on Slideshare and below:
 
@@ -22,6 +22,6 @@ The code used for the demo is available on github [here](https://github.com/impe
 
 I had a good feeling about the talk, the room was full of people, lot of questions and feedback.
 It means there is interest about Node from .NET people.
-[Emanuele Bartolesi](http://www.emanuelebartolesi.com/) and I are creating a porting of .NET MVC Template to NodeJs. The idea is to create a copy of the same template using the same database but with two different technologies. The scope is to show the differences between Node and .NET.
+[Emanuele Bartolesi](http://www.emanuelebartolesi.com/) and I are creating a porting of .NET MVC Template to NodeJs. The idea is to create a copy of the same template using the same database but with two different technologies. The purpose is to show the differences between Node and .NET.
 
 So stay tuned and star the repo [here](https://github.com/imperugo/NodeJs-for-.Net-Developers)
