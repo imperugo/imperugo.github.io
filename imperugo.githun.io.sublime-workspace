@@ -11,25 +11,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "---\nlayout: post\ntitle: NodeJs for .NET Developers talk during Codemotion in Milan\npublished: True\ncomments: true\ndate: 2014-12-02\ncategories:\n- Events\ntags:\n- Codemotion\n- NodeJs\n- Events\n---\n\nIt’s been a while since my last blog post; Unfortunately I’ve been very busy in the latest months for due to some important deliveries for the company I'm working for.\n\nDuring the past two days one of my favorite conference, Codemotion, has been in Milan and fortunately I had a talk about NodeJS for .NET Web Developers.\n\nThe code used for the demo is available on github [here](https://github.com/imperugo/Codemotion---Milan-2014) (the most important demo is the Sample 004) and the slides are available on Slideshare and below:\n\n<iframe src=\"//www.slideshare.net/slideshow/embed_code/42176713\" width=\"425\" height=\"355\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"//www.slideshare.net/imperugo/nodejs-for-net-web-developers\" title=\"Nodejs for .NET web developers\" target=\"_blank\">Nodejs for .NET web developers</a> </strong> from <strong><a href=\"//www.slideshare.net/imperugo\" target=\"_blank\">Ugo Lattanzi</a></strong> </div>\n\nI had a good feeling about the talk, the room was full of people, lot of questions and feedback.\nIt means there is interest about Node from .NET people.\n[Emanuele Bartolesi](http://www.emanuelebartolesi.com/) and I are creating a porting of .NET MVC Template to NodeJs. The idea is to create a copy of the same template using the same database but with two different technologies. The purpose is to show the differences between Node and .NET.\n\nSo stay tuned and star the repo [here](https://github.com/imperugo/NodeJs-for-.Net-Developers)",
-			"file": "_drafts/2014-12-02-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 1844,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_posts/2014-12-02-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
-			"settings":
-			{
-				"buffer_size": 1883,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -38,12 +19,20 @@
 		"selected_items":
 		[
 			[
-				"remove",
-				"Package Control: Remove Package"
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
 			],
 			[
 				"new dra",
 				"Jekyll: New draft"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
 			],
 			[
 				"new d",
@@ -92,10 +81,6 @@
 			[
 				"comem",
 				"Toggle Comment"
-			],
-			[
-				"prett",
-				"HTMLPrettify"
 			],
 			[
 				"update",
@@ -262,10 +247,6 @@
 				"Jekyll: New draft"
 			],
 			[
-				"pretty",
-				"HTMLPrettify"
-			],
-			[
 				"upgra",
 				"Package Control: Upgrade/Overwrite All Packages"
 			],
@@ -380,6 +361,11 @@
 	],
 	"file_history":
 	[
+		"/Users/imperugo/Desktop/getcarswithauction",
+		"/Users/imperugo/Documents/Projects/imperugo.github.io/_drafts/2014-12-28-cookie-authentication-cross-application-iis-and-self-hosted.md",
+		"/Users/imperugo/Documents/Projects/imperugo.github.io/_drafts/2014-10-19-speedup-webapi-on-microsoft-azure.markdown",
+		"/Users/imperugo/Documents/Projects/imperugo.github.io/_drafts/2014-12-02-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
+		"/Users/imperugo/Documents/Projects/imperugo.github.io/_posts/2014-12-02-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
 		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/docs/TestFiles/20141003_opt.csv",
 		"/Users/imperugo/Documents/Projects/imperugo.github.io/_drafts/2014-11-30-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
 		"/Users/imperugo/Documents/Projects/imperugo.github.io/imperugo.githun.io.sublime-project",
@@ -502,16 +488,11 @@
 		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/auth/Bmw.Remarketing.Identity/Models/UserTransaction.cs",
 		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/bmw/src/Bmw.Remarketing.Data/EntityFramework/Users.Extension.cs",
 		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/bmw/src/Bmw.Remarketing.Data/Model/UserStatus.cs",
-		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/bmw/src/UpgradeLog.htm",
-		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/shared/Bmw.Core.Proxy.Commons/Cars/Responses/CarResponse.cs",
-		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/bmw/src/Bmw.Remarketing.Data/Model/CarAuction.cs",
-		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/html/node_modules/assemble/CHANGELOG",
-		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/bmw/src/Bmw.Remarketing.Castle/CastleContainer.cs",
-		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/shared/Gaia.Bmw.Castle/CastleContainer.cs"
+		"/Users/imperugo/Documents/Projects/BMW Remarketing vNext/bmw/src/UpgradeLog.htm"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -662,283 +643,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "_drafts/2014-12-02-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1844,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								130,
-								130
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content"
-							],
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								222,
-								11,
-								30,
-								17,
-								35,
-								39,
-								0,
-								0,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"is_xml": false,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Jekyll/Syntaxes/Markdown (Jekyll).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "_posts/2014-12-02-nodejs-for-net-web-developers-talk-during-codemotion-in-milan.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								188,
-								188
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								222,
-								11,
-								30,
-								17,
-								35,
-								39,
-								0,
-								0,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"is_xml": false,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Jekyll/Syntaxes/Markdown (Jekyll).tmLanguage",
-							"tabs_extra_last_activated": 1417699377.59,
-							"tabs_extra_last_activated_sheet_index": 1
-						},
-						"translation.x": 0.0,
-						"translation.y": 40.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
