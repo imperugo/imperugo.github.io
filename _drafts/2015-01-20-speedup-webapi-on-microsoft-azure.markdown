@@ -20,7 +20,7 @@ One of my favorite features of ASP.NET WebAPI is the opportunity to run your cod
   <img src="{{ site.url }}/assets/2015/01/IIS WebServer.png" style="text-align:center" />
 </p>
 
-But System.Web is really a problem and, in some cases, IIS pipeline is too complicate for a simple REST call.
+But System.Web is really a problem and, in some cases, IIS pipeline is too complicated for a simple REST call.
 
 >we fix one bug and open seven new one (unnamed Microsoft employee on System.Web)
 
@@ -42,7 +42,7 @@ To remain consistent with what is written above, we have to use the Worker Role 
   <img src="{{ site.url }}/assets/2015/01/002.png" style="text-align:center" />
 </p>
 
-Now that the Azure project and Workrole project are ready, is important to open the port 80 on the worker role (remember that by default the worker role is a close environment).
+Now that the Azure project and Workrole project are ready, It's important to open the port 80 on the worker role (remember that by default the worker role is a close environment).
 
 <p style="text-align:center">
   <img src="{{ site.url }}/assets/2015/01/003.png" style="text-align:center" />
@@ -119,7 +119,7 @@ namespace DemoWorkerRole.APIs
 
 Till now nothing special, the app is ready and we have just to configure the worker role that is the WorkerRole.cs file created by Visual Studio.
 
-What we have to do here, is read the configuration from Azure (we have to map a custom domain for example) and start the web server.
+What we have to do here, is to read the configuration from Azure (we have to map a custom domain for example) and start the web server.
 
 To do that, first add the domain on the cloud service configuration following the steps below:
 
@@ -223,7 +223,7 @@ namespace DemoWorkerRole
 }
 ```
 
-We almost done, the last step is to configure the right execution context into the ```ServiceDefinistion.csdef```
+we are almost done, the last step is to configure the right execution context into the ```ServiceDefinistion.csdef```
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
