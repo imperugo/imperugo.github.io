@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Speedup WebAPI on Microsoft Azure"
+title: "Speed up WebAPI on Microsoft Azure"
 date: "2015-01-20"
 description: "Run you API on Microsoft Azure outside of IIS improving the performance, scalability and much more"
 comments: true
-imagePath: /assets/2014/10/IIS WebServer.png.png
+imagePath: /assets/2015/01/IIS WebServer.png.png
 categories:
 - WebAPI
 tags:
@@ -17,7 +17,7 @@ tags:
 One of my favorite features of ASP.NET WebAPI is the opportunity to run your code outside Internet Information Service (IIS). I don’t have anything against IIS, in fact my tough matches with this tweet:
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/IIS WebServer.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/IIS WebServer.png" style="text-align:center" />
 </p>
 
 But System.Web is really a problem and, in some cases, IIS pipeline is too complicate for a simple REST call.
@@ -28,31 +28,31 @@ Another important thing I like is cloud computing and Microsoft Aure in this cas
 
 Azure offers different ways to host your APIs and scale them. The most common solutions are WebSites or Cloud Services.
 
-Unfortunately we can’t use Azure WebSites because everything there runs on IIS (more info [here](http://tostring.it/2014/07/09/nodejs-azure-and-iis/)) so, we have to use the Cloud Services but the question here is Web Role or Worker Role?
+Unfortunately we can’t use Azure WebSites because everything there runs on IIS (more info [here](http://tostring.it/2014/07/09/nodejs-azure-and-iis/)) so, we have to use the Cloud Services but the question here is **Web Role** or **Worker Role**?
 
 The main difference among Web Role and Worker Role is that the first one runs on IIS, the domain is configured on the webserver and the port 80 is opened by default; the second one is a process (.exe file to be clear) that runs on a “closed” environment.
 
 To remain consistent with what is written above, we have to use the Worker Role instead of the Web Role so, let’s start to create it following the steps below:
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/001.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/001.png" style="text-align:center" />
 </p>
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/002.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/002.png" style="text-align:center" />
 </p>
 
 Now that the Azure project and Workrole project are ready, is important to open the port 80 on the worker role (remember that by default the worker role is a close environment).
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/003.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/003.png" style="text-align:center" />
 </p>
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/004.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/004.png" style="text-align:center" />
 </p>
 
-Finally we have the environment ready, it’s time to install few WebAPI packages and write some code.
+Finally we have the environment ready, It’s time to install few WebAPI packages and write some code.
 
 {% raw %}
 <div class="nuget-badge">
@@ -63,11 +63,11 @@ Finally we have the environment ready, it’s time to install few WebAPI package
 Now add OWIN startup class
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/005.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/005.png" style="text-align:center" />
 </p>
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/006.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/006.png" style="text-align:center" />
 </p>
 
 and finally configure WebAPI Routing and its OWIN Middleware
@@ -124,11 +124,11 @@ What we have to do here, is read the configuration from Azure (we have to map a 
 To do that, first add the domain on the cloud service configuration following the steps below:
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/007.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/007.png" style="text-align:center" />
 </p>
 
 <p style="text-align:center">
-  <img src="{{ site.url }}/assets/2014/11/008.png" style="text-align:center" />
+  <img src="{{ site.url }}/assets/2015/01/008.png" style="text-align:center" />
 </p>
 
 finally the worker role:
@@ -245,7 +245,7 @@ We almost done, the last step is to configure the right execution context into t
 </ServiceDefinition>
 ```
 
-Here the important part is Runtime node. That part is really important because we are using the HttpListener to read the incoming message from the Web and that requires elevated privilegies.
+Here the important part is Runtime node. That part is really important because we are using the HttpListener to read the incoming message from the Web and that requires elevated privileges.
 
 Now we are up & running using WebAPi hosted on a Cloud Service without using IIS. 
 
