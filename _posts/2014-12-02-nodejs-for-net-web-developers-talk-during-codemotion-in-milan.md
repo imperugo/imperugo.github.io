@@ -22,6 +22,3 @@ The code used for the demo is available on github [here](https://github.com/impe
 
 I had a good feeling about the talk, the room was full of people, lot of questions and feedback.
 It means there is interest about Node from .NET people.
-[Emanuele Bartolesi](http://www.emanuelebartolesi.com/) and I are creating a porting of .NET MVC Template to NodeJs. The idea is to create a copy of the same template using the same database but with two different technologies. The purpose is to show the differences between Node and .NET.
-
-So stay tuned and star the repo [here](https://github.com/imperugo/NodeJs-for-.Net-Developers)
