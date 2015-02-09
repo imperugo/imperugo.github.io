@@ -64,9 +64,9 @@ Browser support:
 
 | Options      | Description |
 | ------------- |-------------|
-| DENY | Denies any resource (local or remote) from attempting to frame the resource that also supplied the X-Frame-Options header |
-| SAMEORIGIN | Allows only resources which are apart of the Same Origin Policy to frame the protected resource | 
-| ALLOW-FROM http://www.tostring.it | Allows a specified domain (with scheme) to frame the protected resource. |  
+| DENY | The page cannot be displayed in a frame, regardless of the site attempting to do so |
+| SAMEORIGIN | The page can only be displayed in a frame on the same origin as the page itself | 
+| ALLOW-FROM http://www.tostring.it | The page can only be displayed in a frame on the specified origin. |  
 
 **Example**:  
 
@@ -137,20 +137,18 @@ With the correct configuration the browser doesn't load not trusted source preve
 | Options      | Description |
 | ------------- |-------------|
 | default-src | Specify loading policy for all resources type in case one of the following directive is not defined (fallback) |
-| script-src  | Specify which scripts the page can execute |
-| object-src  | Specify from where the page can load plugins |
-| style-src  | Specify which stylesheet the user applies to the page |
-| img-src  | Specify from where the page can load images |
-| media-src | Specify from where the page can load video and audio |
-| frame-src | Specify from where the page can embed frames |
-| font-src | Specify from where the page can load fonts |
-| connect-src | Specify which URIs the page can load using script interfaces |
-| form-action | Specify which URIs can be used as the action of HTML form elements |
-| sandbox | Specifies an HTML sandbox policy that the user agent applies to the page |
-| script-nonce  | Specify script execution by requiring the presence of the specified nonce on script elements |
-| plugin-types  | Specify the set of plugins that can be invoked by the protected resource by limiting the types of resources that can be embedded |
+| script-src  | The script-src directive specifies valid sources for JavaScript |
+| object-src  | The object-src directive specifies valid sources for the ```<object>```, ```<embed>```, and ```<applet>``` elements. |
+| style-src  | The style-src directive specifies valid sources for stylesheets. |
+| img-src  | The style-src directive specifies valid sources for images and favicons. |
+| media-src | The media-src directive specifies valid sources for loading media using the ```<audio>``` and ```<video>``` elements. |
+| frame-src | The frame-src  directive specifies valid sources for web workers and nested browsing contexts loading using elements such as ```<frame>``` and ```<iframe>``` |
+| font-src | The font-src directive specifies valid sources for fonts loaded using @font-face |
+| connect-src | The connect-src directive defines valid sources for XMLHttpRequest, WebSocket, and EventSource connections |
+| form-action | The form-action  directive specifies valid endpoints for ```<form>``` submissions |
+| plugin-types  | The plugin-types directive specifies the valid plugins that the user agent may invoke. |
 | reflected-xss  | Instructs a user agent to activate or deactivate any heuristics used to filter or block reflected cross-site scripting attacks, equivalent to the effects of the non-standard X-XSS-Protection header |
-| report-uri  | Specifies a URI to which the user agent sends reports about policy violation |
+| report-uri  | The report-uri directive instructs the user agent to report attempts to violate the Content Security Policy (send json using post) |
 
 
 Example: 
