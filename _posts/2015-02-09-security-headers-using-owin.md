@@ -21,7 +21,7 @@ The site [OWASP](https://www.owasp.org/index.php/List_of_useful_HTTP_headers) ha
 
 ###**Strict-Transport-Security**
 also know as (HSTS), is an opt-in security enhancement that it's specified by a web application to enforce secure (HTTP over SSL/TLS) connections to the server preventing [downgrate attacks](http://en.wikipedia.org/wiki/Moxie_Marlinspike#Notable_research) like [Man-in-the-middle](http://en.wikipedia.org/wiki/Man-in-the-middle_attack).
-that it's specified
+
 Browser support: 
 
 | Browser      | Version |
