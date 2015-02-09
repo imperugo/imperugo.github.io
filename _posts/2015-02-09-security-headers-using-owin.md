@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Security Headers using OWIN"
-date: "2015-01-22"
-description: "Adding some security headers into our web application usin Owin middleware could be very easy."
+date: "2015-02-09"
+description: "Adding some security headers into our web application using Owin middleware could be very easy."
 comments: true
 categories:
 - OWIN
@@ -11,17 +11,17 @@ tags:
 - katana
 ---
 
-There are several ways to add security to our web application, sometime could be difficult and requires several hours but, with a good architecture, could be very easy.
+There are several ways to add security to our web application, sometime it could be difficult and requires several hours but, with a good architecture, it could be very easy
 
-What some developers don't know is that there are some very useful HTTP Headers available that help your web application to be more secure with the support ot the modern browsers.
+What some developers don't know is that there are some very useful HTTP Headers available that help your web application to be more secure with the support of the modern browsers.
 
 The site [OWASP](https://www.owasp.org/index.php/List_of_useful_HTTP_headers) has a list of the common security-related HTTP headers that every web application must have.
 
 <br />
 
 ###**Strict-Transport-Security**
-also know as (HSTS) is an opt-in security enhancement that is specified by a web application to enforces secure (HTTP over SSL/TLS) connections to the server preventing [downgrate attacks](http://en.wikipedia.org/wiki/Moxie_Marlinspike#Notable_research) like [Man-in-the-middle](http://en.wikipedia.org/wiki/Man-in-the-middle_attack).
-
+also know as (HSTS), is an opt-in security enhancement that it's specified by a web application to enforce secure (HTTP over SSL/TLS) connections to the server preventing [downgrate attacks](http://en.wikipedia.org/wiki/Moxie_Marlinspike#Notable_research) like [Man-in-the-middle](http://en.wikipedia.org/wiki/Man-in-the-middle_attack).
+that it's specified
 Browser support: 
 
 | Browser      | Version |
@@ -93,8 +93,8 @@ This HTTP Header prevents [Cross-site scripting](https://www.owasp.org/index.php
 | ------------- |-------------|
 | 0  | Disables the XSS Protections. |
 | 1  | Enables the XSS Protections. | 
-| 1; mode=block  | Enables XSS protections and prevent browser rendering if a potential XSS attack is detected | 
-| 1; report=http://site.com/report  | Available only for Chrome and WebKit allow to report the possible attack to a specific url sending data (using JSON and verb POST) | 
+| 1; mode=block  | Enables XSS protections and prevents browser rendering if a potential XSS attack is detected | 
+| 1; report=http://site.com/report  | Available only for Chrome and WebKit allows to report the possible attack to a specific url sending data (using JSON and verb POST) | 
 
 **Example**: 
 
@@ -109,7 +109,7 @@ This HTTP Header prevents the browsers from MIME-sniffing a response away from t
 
 **Options**
 
-The only option available here is only ```nosniff```
+The only option available here is ```nosniff```
 
 **Example**: 
 
@@ -120,9 +120,9 @@ X-Content-Type-Options: nosniff
 <br />
 
 ###**Content-Security-Policy**
-This HTTP Header (aka CSP) is very powerful and requires a precise tuning because we need to specify all the trusted sources for our pages like Images, Script, Fonts, and so on.
+This HTTP Header (aka CSP) is very powerful and it requires a precise tuning because we need to specify all the trusted sources for our pages like Images, Script, Fonts, and so on.
 
-With the correct configuration the browser doesn't load not trusted source preventing execution of dangerous code.
+With the correct configuration the browser doesn't load a not trusted source preventing execution of dangerous code.
 
 | Browser      | Version |
 | ------------- |-------------|
@@ -157,10 +157,10 @@ Example:
 Content-Security-Policy: default-src 'self'
 ```
 
-Not that we know all these header, let's see how to implement on our applications.
-As usual there are several ways to configure the HTTP Headers, we can do it using WebServer configuration (IIS and Apache support that) or, if we use owin, we can do it using a sample middleware without configure the webserver.
+Now that we know all these header, let's see how to implement them on our applications.
+As usual there are several ways to configure the HTTP Headers, we can do it using WebServer configuration (IIS and Apache support that) or, if we use owin, we can do it using a sample middleware without configuring the webserver.
 
-That's absolutely my favorite implementation because I can switch the webserver without configure anything (that's is one of the reason why Owin was created).
+The last one is absolutely my favorite implementation because I can switch the webserver without configuring anything (that's is one of the reason why Owin was created).
 
 Anyway let's start to add **SecurityHeadersMiddleware**
 
@@ -171,7 +171,7 @@ Anyway let's start to add **SecurityHeadersMiddleware**
 </div>
 {% endraw %}
 
-and now configure it is very easy
+and now to configure it is very easy
 
 ```csharp
 
