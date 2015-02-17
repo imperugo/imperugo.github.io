@@ -2,7 +2,7 @@
 layout: post
 title: "Redirect from http to https yes or no?"
 date: "2015-02-17"
-description: "Using the cookie authentication for ASP.NET MVC and WebAPI self hosted requires custume cookie encryption"
+description: "Is it correct to redirect a user from an unsecure connection to a secure connection? This article explain some risk about that approach"
 comments: true
 categories:
 - aspnet
