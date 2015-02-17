@@ -1,7 +1,7 @@
 ---
 layout: post
+title: "Redirect from http to https yes or no?"
 date: "2015-02-17"
-title: Redirect from http to https yes or no?
 description: "Using the cookie authentication for ASP.NET MVC and WebAPI self hosted requires custume cookie encryption"
 comments: true
 categories:
@@ -19,7 +19,7 @@ I think you did it more than one time and, looking on internet, there are severa
 If you are using OWIN it's enough to create a custom Middleware like this:
 
 
-```chsarp
+```csharp
 public class ForceHttpsMiddleware : OwinMiddleware
 {
     private readonly int port;
@@ -63,7 +63,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions
 });
 ```
 
-Here the most important part is ```CookieSecure```property. It defines that only HTTPS request can access to cookie.
+Here the most important part is ```CookieSecure``` property. It defines that only HTTPS request can access to cookie.
 To complete the security scenario, you could add also HTTP Strict Transport Security (HSTS) explained [here](http://tostring.it/2015/02/09/security-headers-using-owin/).
 
 
