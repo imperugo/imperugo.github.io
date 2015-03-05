@@ -205,6 +205,9 @@ public bool Exists(string key)
 It uses **Json.Net** (NewtonSoft), **Jil** or **Message Pack CLI** to serialize objects into a ```byte[]```.
 Anyway we'll see it with the next blog post.
 
+[**Investigating Timeout Exceptions in StackExchange.Redis for Azure Redis Cache**](http://azure.microsoft.com/blog/2015/02/10/investigating-timeout-exceptions-in-stackexchange-redis-for-azure-redis-cache/) great article about possible timeout exception problem with Redis and Azure
+
+
 #Dashboard
 
 **Azure Dashboard**
