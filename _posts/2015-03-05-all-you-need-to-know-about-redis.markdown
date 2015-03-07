@@ -77,6 +77,7 @@ namespace imperugo.blog.redis
 	class Program
 	{
 		private static ConnectionMultiplexer connectionMultiplexer;
+        private stati IDatabase database;
 
 		static void Main(string[] args)
 		{
@@ -95,6 +96,7 @@ namespace imperugo.blog.redis
 									"Azure Primary Key");
 
 			connectionMultiplexer = ConnectionMultiplexer.Connect(connectionString);
+            database = connectionMultiplexer.GetDatabase();
 		}
 	}
 }
@@ -111,19 +113,16 @@ Let's start with simple object like a string
 ```csharp
 private static bool StoreData(string key, string value)
 {
-    var database = connectionMultiplexer.GetDatabase();
     return database.StringSet(key, value);
 }
 
 private static string GetData(string key)
 {
-    var database = connectionMultiplexer.GetDatabase();
     return database.StringGet(key);
 }
 
 private static void DeleteData(string key)
 {
-    var database = connectionMultiplexer.GetDatabase();
     database.KeyDelete(key);
 }
 ```
@@ -191,7 +190,7 @@ public bool Exists(string key)
 
 [**StackExchage.Redis**](https://github.com/StackExchange/StackExchange.Redis) documentation is absolutely helpful if you choose this library as your wrapper.
 
-[**StackExchange.Redis.Extensions**](https://github.com/imperugo/StackExchange.Redis.Extensions/) is a great library that wrap the common operation needed with StackExchange.Redis (basically you don't need to serialize objects or create helpers like I explained above):
+[**StackExchange.Redis.Extensions**](https://github.com/imperugo/StackExchange.Redis.Extensions/) is a great library (and I suggest to you iit) that wrap the common operation needed with StackExchange.Redis (basically you don't need to serialize objects or create helpers like I explained above):
 
 - Add complex objects to Redis;
 - Remove an object from Redis;
