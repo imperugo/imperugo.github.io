@@ -12,7 +12,7 @@ tags:
 - cache
 ---
 
-I know, the title is a bit provocative or presumptuous if you prefer, but I think that post could be useful if you wanna approach to Redis as cache server using .NET.
+I know, the title is a bit provocative or presumptuous if you prefer, but I think this post could be useful if you wanna approach to Redis as cache server using .NET.
 For all the people who don't know what [Redis](http://redis.io/) is, let me quote that definition: 
 
 >Redis is an open source, BSD licensed, advanced key-value cache and store.
@@ -77,7 +77,7 @@ namespace imperugo.blog.redis
 	class Program
 	{
 		private static ConnectionMultiplexer connectionMultiplexer;
-        private stati IDatabase database;
+        private static IDatabase database;
 
 		static void Main(string[] args)
 		{
@@ -89,7 +89,7 @@ namespace imperugo.blog.redis
 			//use locally redis installation
 			var connectionString = string.Format("{0}:{1}", "127.0.0.1", 6379);
 
-			//use azure redi installation
+			//use azure redis installation
 			var azureConnectionString = string.Format("{0}:{1},ssl=true,password={2}",
 									"imperugo-test.redis.cache.windows.net",
 									6380,
@@ -106,7 +106,7 @@ namespace imperugo.blog.redis
 
 #Add and Retrieve cache objects
 
-StackExchange store data into Redis sending/retrieving a ```byte[]``` or so, whatever you are storing into Redis must be converted into a ```byte[]``` (string is automatically conveted by StackExchange.Redis implementation so we don't have to convert it).
+StackExchange stores data into Redis sending/retrieving a ```byte[]``` or so, whatever you are storing into Redis must be converted into a ```byte[]``` (string is automatically converted by StackExchange.Redis implementation so we don't have to do it).
 
 Let's start with simple object like a string
 
@@ -126,7 +126,7 @@ private static void DeleteData(string key)
     database.KeyDelete(key);
 }
 ```
-and now we can use that methods
+and now we can use this methods
 
 ```csharp
 static void Main(string[] args)
@@ -143,10 +143,10 @@ static void Main(string[] args)
     }
 }
 ```
-That's pretty simple but what about store complex objects?
-As I wrote above, **StackExchange.Redis** store only ```byte[]``` data so we have to serialize our complex object and convert it into a ```byte[]``` (there is an implicit conversion in case of string, for this reason we didn't converted the type ```string```to ```byte[]```)
+That's pretty simple but what about storing complex objects?
+As I wrote above, **StackExchange.Redis** stores only ```byte[]``` data so we have to serialize our complex object and convert it into a ```byte[]``` (there is an implicit conversion in case of string, for this reason we didn't convert the type ```string``` to ```byte[]```)
 
-The easiest (and probably the best) way to store complex object consists serilize the object into a string before to store the data into Redis.
+The easiest (and probably the best) way to store complex objects consists to serilize the object into a string before to store the data into Redis.
 
 Choose your favorite serialized ([NewtonSoft](http://www.newtonsoft.com/json) in my case ) and create some helpers like here
 
@@ -168,10 +168,10 @@ public T Get<T>(string key) where T : class
 
 ```
  
- Now we are able to put and retrieve complex objects into Redis, next step remove it and check if the value exists
+ Now we are able to put and retrieve complex objects into Redis, next step is to remove it and check if the value exists
  
  ```csharp
- public bool Remove(string key)
+public bool Remove(string key)
 {
     return database.KeyDelete(key);
 }
@@ -182,7 +182,7 @@ public bool Exists(string key)
 }
  ```
  
- >if you need async methods, don't worry StackExchange.Redis has an async overload almost every method
+ >if you need async methods, don't worry, StackExchange.Redis has an async overload for almost every method
  
 #Resources
 
@@ -190,13 +190,13 @@ public bool Exists(string key)
 
 [**StackExchage.Redis**](https://github.com/StackExchange/StackExchange.Redis) documentation is absolutely helpful if you choose this library as your wrapper.
 
-[**StackExchange.Redis.Extensions**](https://github.com/imperugo/StackExchange.Redis.Extensions/) is a great library (and I suggest to you iit) that wrap the common operation needed with StackExchange.Redis (basically you don't need to serialize objects or create helpers like I explained above):
+[**StackExchange.Redis.Extensions**](https://github.com/imperugo/StackExchange.Redis.Extensions/) is a great library (and I suggest to you it) that wrap the common operation needed with StackExchange.Redis (basically you don't need to serialize objects or create helpers like I explained above):
 
 - Add complex objects to Redis;
 - Remove an object from Redis;
 - Search Keys into Redis;
-- Retrieve multiple object with a single roundtrip;
-- Store multiple object with a single roundtrip;
+- Retrieve multiple objects with a single roundtrip;
+- Store multiple objects with a single roundtrip;
 - Async methods;
 - Retrieve Redis Server status;
 - Much more;
@@ -215,11 +215,11 @@ Anyway we'll see it with the next blog post.
 
 It offers basic stats but it's free when you use Redis with Microsoft Azure
 
-[**Redismin**](https://redsmin.com/)
+[**Redsmin**](https://redsmin.com/)
 
-![Redismin-Dashboard]({{ site.url }}/assets/2015/02/Redismin-Dashboard.png)
+![Redsmin-Dashboard]({{ site.url }}/assets/2015/02/Redismin-Dashboard.png)
 
-Probably the most complete dashboard for Redis, offers a set of stats about your Redis servers, supports Azure and has a good prompt allowing you to run Redis command directly on the server without use C# or any other programming language. 
+Probably the most complete dashboard for Redis, offers a set of stats about your Redis servers, supports Azure and has a good prompt allowing you to run Redis command directly on the server without using C# or any other programming language. 
 Unfortunately it is not free, [here](https://redsmin.com/plans) plans and pricing.
 
 [**Redis Desktop Manager**](http://redisdesktop.com/)
@@ -232,7 +232,7 @@ Open Source tool for Windows, Mac and Linux hosted on Github [here](https://gith
 
 ![redis-live-Dashboard]({{ site.url }}/assets/2015/02/redis-live-Dashboard.png)
 
-It's a real time dashboard for Redis written using Phyton.
+It's a real time dashboard for Redis written using Python.
 
 #Conclusions
 
