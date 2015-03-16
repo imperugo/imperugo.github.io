@@ -28,4 +28,4 @@ Here is the TOC of the book:
 The book is distributed by Syncfusion for free, you just have to register and then you’ll be able to download it both in PDF and Kindle format.
 Of course if you have feedbacks or you find something that is not clear, that sounds strange or whatever, please don't hesistate to [**contact me**](http://tostring.it/contact/)
 
-[!Owin Succinctly]({{ site.url }}/assets/2015/03/owin_Succinctly.png)
+![Owin Succinctly]({{ site.url }}/assets/2015/03/owin_Succinctly.png)
