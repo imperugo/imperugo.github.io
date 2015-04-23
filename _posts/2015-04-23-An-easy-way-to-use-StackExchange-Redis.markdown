@@ -2,7 +2,7 @@
 layout: post
 title: "An easy way to use StackExchange.Redis"
 date: "2015-04-23"
-description: "With OWIN Succinctly, you will learn how to use Microsoft’s implementation of OWIN with different frameworks, how to write custom middleware to manage requests in the OWIN pipeline, and how to provide different forms of authentication to your web app"
+description: "With StackExchange.Redis.Extension is possible to use easily some cool features of Redis, starting from storing and reading multiple object in a single roundtrip to check the server status"
 comments: true
 categories:
 - various
