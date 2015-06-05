@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CV
+title: Cookie policy
 status: publish
 type: page
 published: true
