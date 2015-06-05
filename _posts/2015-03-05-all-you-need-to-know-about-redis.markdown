@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "All you need to know about Redis"
+
+redirect_from: 
+  - /2015/03/05/all-you-need-to-know-about-redis%20copy/
+  - /2015/03/05/all-you-need-to-know-about-redis%20copy/Real%20time%20dashboard%20for%20redis 
+
 date: "2015-03-05"
 description: "A set of resource if you want to use Redis in a .NET Application."
 comments: true
