@@ -94,27 +94,7 @@
 	<!-- #footer-widgets -->
 
 </div>
-<script src="/js/cookiechoices.js?v=1"></script>
-<script>
-  
-  var callCookieLaw = function() {
-  	cookieChoices.showCookieConsentBar("Cookies help us deliver our services. By using our services, you agree to our use of cookies.",
-      'Got it', 'Learn more', 'http://tostring.it/privacy');
-  };
 
-  if (document.addEventListener) {
-    document.addEventListener('DOMContentLoaded', callCookieLaw());
-}
-else {
-    
-	document.attachEvent('onreadystatechange',
-	        function() {
-	            if (document.readyState == 'complete') {
-	                document.detachEvent('onreadystatechange', arguments.callee);
-	                callCookieLaw();
-	            }
-	        }
-	    );
-}
-</script>
+
+
 {% include disqus.html %}
