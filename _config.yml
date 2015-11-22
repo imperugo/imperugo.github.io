@@ -52,3 +52,7 @@ gems:
 - jemoji
 - jekyll-redirect-from
 - jekyll-sitemap
+- jekyll-mentions
+
+jekyll-mentions:
+  base_url: https://twitter.com
