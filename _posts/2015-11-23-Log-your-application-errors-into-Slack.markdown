@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Log your application into Slack"
+title: "Log your application errors into Slack"
 date: "2015-11-23"
-description: ""
+description: "In this post I show how to log information into Slack using Serilog."
 comments: true
 categories:
 - various
@@ -13,21 +13,21 @@ tags:
 ---
 
 In our company we use [Slack](https://slack.com/) as communication tool (probably since it was released years ago) for about everything.
-It is becoming a relly important tool because our teams are located throughout Europe with different timezones so, a good communication tools is mandatory.
-It means also the client is alway open on our computers, phones and tablets.
+It is becoming a really important tool because our teams are located throughout Europe with different timezones so, a good communication tools is mandatory.
+It means also that the client is always open on our computers, phones and tablets.
 
-We use it in different ways, to talk one to one, share funny things or for projects. Usually for a project we have more than a sigle private channels this because there are different teams for the project and because we use a channels as application alerts.
+We use it in different ways, to talk one to one, to share funny things, or for projects. Usually for a project we have more than a single private channel, because there are different teams for the project and because we use a channel as alerts application.
 
-Here an example for one of our customers:
+Here is an example about one of our customers:
 
-- bmw-ux (UX and Art stuff)
-- bmw-dev (dev, quality assurance, github integration, trello and other tech stuff)
-- bmw-alerts (alerts by the application)
+- **bmw-ux** (UX and Art stuff)
+- **bmw-dev** (dev, quality assurance, github integration, trello and other tech stuff)
+- **bmw-alerts** (alerts by the application)
 
-The last channel is the most important for this post, because we use it to log information when something goes wrong into the application.
+The last channel is the most important one for this post, because we use it to log information when something goes wrong into the application.
 Before to see how to use it, let me explain our logging workflow.
 
-The application is built partially on .NET hosted on Azure and we use Serilog as logging framework. It's a relly good logging framework and it offers several appenders.
+The application is built partially on .NET hosted on Azure and we use Serilog as logging framework. It's a really good logging framework and it offers several appenders.
 We store all logs into ElastichSearch and use Kibana as dashboard to see the log, reports and other cool stuff. The output of our dashbord looks more or less like this:
 
 ![Kibana-Dashboard]({{ site.url }}/assets/2015/11/SlackLog/Kibana.png)
@@ -68,12 +68,12 @@ ILogger log = new LoggerConfiguration()
 	
 ```
 
-As you can see in the code above, we use also to send the error via email for me is not the best way to have an important notification.
-All people could write you an email and you need a notification everytime you get an email so it's difficult to enphatize an log message is tons of email.
-For this reason we chosed to use a private channel on Slack to log important errors.
-I think it's pretty easy to do that with any logger but for sure it is using Serilog.
+As you can see in the code above, we use also to send the error via email. For me it's not the best way to have an important notification.
+All people could write you an email and you need a notification everytime you get an email so it's difficult to enphatize a log message in tons of emails.
+For this reason we chose to use a private channel on Slack to log important errors.
+I think it's pretty easy to do that with any logger, but it is for sure using Serilog.
 
-First thing to do is to configure Slack integration services:
+The first thing to do is to configure Slack integration services:
 
 Image 1:
 ![Slack-001]({{ site.url }}/assets/2015/11/SlackLog/001.jpg)
