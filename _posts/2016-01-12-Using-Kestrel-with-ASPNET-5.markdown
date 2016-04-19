@@ -18,7 +18,7 @@ For all people who don’t know what Kestrel is (but you should have guessed) le
 
 Now that you know what is Kestrel let’s see how to use it.
 
-First of all, when you create a new project from Visual Studio or Yeoman the project is automatically configured to run using Kestrel, in fact into your ```project.config```
+First of all, when you create a new project from Visual Studio or Yeoman the project is automatically configured to run using Kestrel, in fact into your ```project.json```
  you should have something like that
 
 ![Kestrel-001]({{ site.url }}/assets/2016/01/Kestrel-001.jpg)
@@ -55,7 +55,7 @@ Below the steps to create your own self signed certificate
 ![Kestrel-006]({{ site.url }}/assets/2016/01/Kestrel-006.jpg)
 
 Now your test certificate is ready, let’s add the Kestrel.Https dependency to our project.
-To do that let’s open the ```project.config``` and add ```Microsoft.AspNet.Server.Kestrel.Https```
+To do that let’s open the ```project.json``` and add ```Microsoft.AspNet.Server.Kestrel.Https```
 
 Now it’s time to configure the certificate into our Startup class like this:
 
